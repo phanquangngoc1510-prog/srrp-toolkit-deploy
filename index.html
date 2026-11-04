@@ -267,7 +267,11 @@
         </button>
         <button id="tabBtn-survey" onclick="switchTab('survey')" class="tab-btn px-3.5 py-1.5 rounded-lg font-medium text-slate-400 hover:text-white hover:bg-slate-800 transition-all flex items-center gap-2">
           <i class="fa-solid fa-square-poll-vertical"></i>
-          <span>Khảo Sát & SRRP-CCI</span>
+          <span>Khảo Sát KHKT</span>
+        </button>
+        <button id="tabBtn-league" onclick="switchTab('league')" class="tab-btn px-3.5 py-1.5 rounded-lg font-medium text-slate-400 hover:text-white hover:bg-slate-800 transition-all flex items-center gap-2">
+          <i class="fa-solid fa-trophy text-amber-400"></i>
+          <span>Thi Đua League</span>
         </button>
         <button id="tabBtn-solo" onclick="switchTab('solo')" class="tab-btn px-3.5 py-1.5 rounded-lg font-medium text-slate-400 hover:text-white hover:bg-slate-800 transition-all flex items-center gap-2">
           <i class="fa-solid fa-user-astronaut"></i>
@@ -607,15 +611,15 @@
                 <span class="px-2 py-0.5 rounded text-[10px] bg-indigo-500/20 text-indigo-300 font-mono">P1</span>
               </div>
 
-              <!-- Information Fragment (KHÔNG DÁN NHÃN THUẦN FACT HAY OPINION) -->
-              <div class="mt-2.5 p-2.5 rounded-xl bg-slate-900/90 border border-slate-800 text-xs space-y-1.5">
+              <!-- Information Fragment Container (Dynamic per Level 1, 2, 3) -->
+              <div id="memberA-info-box" class="mt-2.5 p-2.5 rounded-xl bg-slate-900/90 border border-slate-800 text-xs space-y-1.5">
                 <div class="flex items-center justify-between text-[11px]">
                   <span class="text-slate-400 font-medium">Mảnh ghép góc nhìn:</span>
                   <span id="memberA-tag" class="px-2 py-0.5 rounded text-[10px] bg-indigo-500/20 text-indigo-300 font-semibold border border-indigo-500/30">GÓC NHÌN: HỌC SINH</span>
                 </div>
-                <p id="memberA-data" class="text-slate-300 text-[11px] leading-relaxed">
+                <div id="memberA-data" class="text-slate-300 text-[11px] leading-relaxed space-y-1.5">
                   "Khảo sát trường THPT: 72% học sinh cảm thấy áp lực và bị xâm phạm riêng tư khi camera chĩa thẳng vào bàn học; nhưng 68% công nhận camera giúp giảm bớt nạn mất trộm vặt đồ dùng học tập."
-                </p>
+                </div>
               </div>
             </div>
 
@@ -723,17 +727,17 @@
                 <span class="px-2 py-0.5 rounded text-[10px] bg-emerald-500/20 text-emerald-300 font-mono">P2</span>
               </div>
 
-              <!-- Information Fragment -->
-              <div class="mt-2.5 p-2.5 rounded-xl bg-slate-900/90 border border-slate-800 text-xs space-y-1.5">
-                <div class="flex items-center justify-between text-[11px]">
-                  <span class="text-slate-400 font-medium">Mảnh ghép góc nhìn:</span>
-                  <span id="memberB-tag" class="px-2 py-0.5 rounded text-[10px] bg-emerald-500/20 text-emerald-300 font-semibold border border-emerald-500/30">GÓC NHÌN: NHÀ TRƯỜNG</span>
-                </div>
-                <p id="memberB-data" class="text-slate-300 text-[11px] leading-relaxed">
-                  "Báo cáo năm học: Sau khi lắp camera thử nghiệm tại hành lang và phòng học, tỷ lệ học sinh gian lận thi cử giảm 45%, các hành vi bạo lực học đường và mâu thuẫn xô xát được can thiệp kịp thời 90%."
-                </p>
-              </div>
-            </div>
+              <!-- Information Fragment Container (Dynamic per Level 1, 2, 3) -->
+              <div id="memberB-info-box" class="mt-2.5 p-2.5 rounded-xl bg-slate-900/90 border border-slate-800 text-xs space-y-1.5">
+                 <div class="flex items-center justify-between text-[11px]">
+                   <span class="text-slate-400 font-medium">Mảnh ghép góc nhìn:</span>
+                   <span id="memberB-tag" class="px-2 py-0.5 rounded text-[10px] bg-emerald-500/20 text-emerald-300 font-semibold border border-emerald-500/30">GÓC NHÌN: NHÀ TRƯỜNG</span>
+                 </div>
+                 <div id="memberB-data" class="text-slate-300 text-[11px] leading-relaxed space-y-1.5">
+                   "Báo cáo năm học: Sau khi lắp camera thử nghiệm tại hành lang và phòng học, tỷ lệ học sinh gian lận thi cử giảm 45%, các hành vi bạo lực học đường và mâu thuẫn xô xát được can thiệp kịp thời 90%."
+                 </div>
+               </div>
+             </div>
 
             <!-- GIAI ĐOẠN 1: PHÁT BIỂU QUAN ĐIỂM (5:00) -->
             <div class="p-3 rounded-xl bg-slate-900/95 border border-emerald-500/30 space-y-2">
@@ -833,17 +837,17 @@
                 <span class="px-2 py-0.5 rounded text-[10px] bg-amber-500/20 text-amber-300 font-mono">P3</span>
               </div>
 
-              <!-- Information Fragment -->
-              <div class="mt-2.5 p-2.5 rounded-xl bg-slate-900/90 border border-slate-800 text-xs space-y-1.5">
-                <div class="flex items-center justify-between text-[11px]">
-                  <span class="text-slate-400 font-medium">Mảnh ghép góc nhìn:</span>
-                  <span id="memberC-tag" class="px-2 py-0.5 rounded text-[10px] bg-amber-500/20 text-amber-300 font-semibold border border-amber-500/30">GÓC NHÌN: GIA ĐÌNH</span>
-                </div>
-                <p id="memberC-data" class="text-slate-300 text-[11px] leading-relaxed">
-                  "85% phụ huynh được hỏi đồng ý đóng góp kinh phí lắp đặt để đảm bảo con cái an toàn, tránh bị bạo lực học đường; nhưng 91% kiên quyết yêu cầu nhà trường không được công khai video lên Internet."
-                </p>
-              </div>
-            </div>
+              <!-- Information Fragment Container (Dynamic per Level 1, 2, 3) -->
+              <div id="memberC-info-box" class="mt-2.5 p-2.5 rounded-xl bg-slate-900/90 border border-slate-800 text-xs space-y-1.5">
+                 <div class="flex items-center justify-between text-[11px]">
+                   <span class="text-slate-400 font-medium">Mảnh ghép góc nhìn:</span>
+                   <span id="memberC-tag" class="px-2 py-0.5 rounded text-[10px] bg-amber-500/20 text-amber-300 font-semibold border border-amber-500/30">GÓC NHÌN: GIA ĐÌNH</span>
+                 </div>
+                 <div id="memberC-data" class="text-slate-300 text-[11px] leading-relaxed space-y-1.5">
+                   "85% phụ huynh được hỏi đồng ý đóng góp kinh phí lắp đặt để đảm bảo con cái an toàn, tránh bị bạo lực học đường; nhưng 91% kiên quyết yêu cầu nhà trường không được công khai video lên Internet."
+                 </div>
+               </div>
+             </div>
 
             <!-- GIAI ĐOẠN 1: PHÁT BIỂU QUAN ĐIỂM (5:00) -->
             <div class="p-3 rounded-xl bg-slate-900/95 border border-amber-500/30 space-y-2">
@@ -943,17 +947,17 @@
                 <span class="px-2 py-0.5 rounded text-[10px] bg-rose-500/20 text-rose-300 font-mono">P4</span>
               </div>
 
-              <!-- Information Fragment -->
-              <div class="mt-2.5 p-2.5 rounded-xl bg-slate-900/90 border border-slate-800 text-xs space-y-1.5">
-                <div class="flex items-center justify-between text-[11px]">
-                  <span class="text-slate-400 font-medium">Mảnh ghép góc nhìn:</span>
-                  <span id="memberD-tag" class="px-2 py-0.5 rounded text-[10px] bg-rose-500/20 text-rose-300 font-semibold border border-rose-500/30">GÓC NHÌN: CHUYÊN GIA</span>
-                </div>
-                <p id="memberD-data" class="text-slate-300 text-[11px] leading-relaxed">
-                  "Nghị định 13/2023/NĐ-CP: Hình ảnh và dữ liệu khuôn mặt học sinh là dữ liệu nhạy cảm. Nhà trường phải có quy trình mã hóa và được học sinh + cha mẹ đồng thuận trước khi triển khai AI phân tích."
-                </p>
-              </div>
-            </div>
+              <!-- Information Fragment Container (Dynamic per Level 1, 2, 3) -->
+              <div id="memberD-info-box" class="mt-2.5 p-2.5 rounded-xl bg-slate-900/90 border border-slate-800 text-xs space-y-1.5">
+                 <div class="flex items-center justify-between text-[11px]">
+                   <span class="text-slate-400 font-medium">Mảnh ghép góc nhìn:</span>
+                   <span id="memberD-tag" class="px-2 py-0.5 rounded text-[10px] bg-rose-500/20 text-rose-300 font-semibold border border-rose-500/30">GÓC NHÌN: CHUYÊN GIA</span>
+                 </div>
+                 <div id="memberD-data" class="text-slate-300 text-[11px] leading-relaxed space-y-1.5">
+                   "Nghị định 13/2023/NĐ-CP: Hình ảnh và dữ liệu khuôn mặt học sinh là dữ liệu nhạy cảm. Nhà trường phải có quy trình mã hóa và được học sinh + cha mẹ đồng thuận trước khi triển khai AI phân tích."
+                 </div>
+               </div>
+             </div>
 
             <!-- GIAI ĐOẠN 1: PHÁT BIỂU QUAN ĐIỂM (5:00) -->
             <div class="p-3 rounded-xl bg-slate-900/95 border border-rose-500/30 space-y-2">
@@ -1092,17 +1096,112 @@
 
           </div>
 
-          <!-- Big Action Button: Run AI Analysis -->
-          <div class="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <button onclick="runDeepAiAnalysis()" id="btnRunAiAnalysis" class="w-full sm:w-auto px-8 py-3.5 rounded-2xl bg-gradient-to-r from-purple-600 via-indigo-600 to-cyan-500 hover:from-purple-500 hover:to-cyan-400 text-white font-extrabold text-base shadow-xl shadow-indigo-600/30 transition-all flex items-center justify-center gap-3">
-              <i class="fa-solid fa-brain text-xl text-yellow-300 animate-bounce"></i>
-              <span>BẮT ĐẦU PHÂN TÍCH & CHẤM ĐIỂM AI CHO CẢ NHÓM (GEMINI 2.5)</span>
-            </button>
-            <button onclick="fillSampleDebateSpeech()" class="text-xs text-slate-400 hover:text-slate-200 underline">
-              Điền dữ liệu phát biểu & phản biện mẫu 4 người để thử nghiệm
-            </button>
+          <!-- Big Action Button: Run Socratic Challenge / AI Analysis -->
+          <div class="pt-4 flex flex-col items-center justify-center gap-3">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-amber-500/10 border border-amber-500/30 text-[11px] sm:text-xs text-amber-300 font-semibold shadow-inner text-center">
+              <i class="fa-solid fa-lock text-amber-400"></i>
+              <span>Yêu cầu phương pháp: Nhóm phải điền đủ 3 Điểm Đồng Thuận ở trên rồi bấm nút bên dưới để AI mở Thử thách Socrates.</span>
+            </div>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 w-full">
+              <button onclick="activateSocraticInterrogator()" id="btnGoToSocrates" class="w-full sm:w-auto px-8 py-3.5 rounded-2xl bg-gradient-to-r from-amber-600 via-purple-600 to-indigo-600 hover:from-amber-500 hover:to-indigo-500 text-white font-extrabold text-sm sm:text-base shadow-xl shadow-amber-600/30 transition-all flex items-center justify-center gap-3">
+                <i class="fa-solid fa-brain text-xl text-yellow-300 animate-bounce"></i>
+                <span>TIẾP TỤC ĐẾN BƯỚC 4B: THỬ THÁCH PHẢN BIỆN SOCRATES (2:00)</span>
+              </button>
+              <button onclick="fillSampleDebateSpeech()" class="text-xs text-slate-400 hover:text-slate-200 underline">
+                Điền dữ liệu phát biểu & phản biện mẫu 4 người để thử nghiệm
+              </button>
+            </div>
           </div>
 
+        </div>
+      </section>
+
+      <!-- ========================================== -->
+      <!-- BƯỚC 4B: THỬ THÁCH PHẢN BIỆN BẬC CAO SOCRATES (SOCRATIC AI INTERROGATOR) -->
+      <!-- CHỈ KÍCH HOẠT VÀ HIỂN THỊ SAU KHI NHÓM CHỐT ĐỦ 3 ĐIỂM TRÊN ANCHOR CARD -->
+      <!-- ========================================== -->
+      <section id="socraticSection" class="hidden glass-panel rounded-3xl p-6 lg:p-8 border border-amber-500/40 shadow-2xl space-y-6 relative overflow-hidden transition-all duration-500">
+        <div class="absolute -top-24 -left-24 w-80 h-80 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="space-y-5 relative z-10">
+          <div class="flex flex-wrap items-center justify-between gap-4 pb-4 border-b border-slate-800">
+            <div class="flex items-center gap-3">
+              <div class="w-12 h-12 rounded-2xl bg-amber-500/20 text-amber-300 flex items-center justify-center font-bold text-xl border border-amber-500/30 shadow-lg">
+                <i class="fa-solid fa-brain"></i>
+              </div>
+              <div>
+                <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-amber-500/20 text-amber-300 text-[11px] font-bold tracking-wide uppercase">
+                  <i class="fa-solid fa-bolt"></i> BƯỚC 4B: SOCRATIC AI INTERROGATOR • PHẢN BIỆN BẬC CAO
+                </div>
+                <h3 class="text-lg sm:text-xl font-bold text-white">Thử Thách Đối Thoại Phản Biện Socrates (Thảo Luận 2 Phút)</h3>
+                <p class="text-xs text-slate-400">AI đóng vai Phản biện viên khó tính, đặt ra 1-2 câu hỏi xoáy sâu vào lỗ hổng thực thi và biến số ngoại cảnh của Anchor Card.</p>
+              </div>
+            </div>
+
+            <!-- 2-Minute Socratic Countdown Timer -->
+            <div class="flex items-center gap-3 p-2.5 rounded-2xl bg-slate-900 border border-amber-500/30 shadow-inner">
+              <div class="text-right">
+                <span class="block text-[10px] text-slate-400 font-medium uppercase font-mono">Thời Gian Trả Lời</span>
+                <span id="socraticTimerText" class="font-mono text-2xl font-black text-amber-400">02:00</span>
+              </div>
+              <div class="flex gap-1.5">
+                <button onclick="toggleSocraticTimer()" id="btnSocraticTimer" class="px-3.5 py-1.5 rounded-xl bg-amber-600 hover:bg-amber-500 text-white text-xs font-bold transition flex items-center gap-1.5 shadow">
+                  <i id="btnSocraticIcon" class="fa-solid fa-play text-[10px]"></i>
+                  <span id="btnSocraticText">Bắt đầu</span>
+                </button>
+                <button onclick="resetSocraticTimer()" class="p-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs transition" title="Đặt lại 2:00">
+                  <i class="fa-solid fa-rotate-left text-xs"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Socratic Prompt / Question Display Box -->
+          <div class="p-5 rounded-2xl bg-amber-950/30 border border-amber-500/30 space-y-3 shadow-lg">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <span class="text-xs font-bold text-amber-300 flex items-center gap-2">
+                <i class="fa-solid fa-bolt text-amber-400"></i>
+                Câu Hỏi Phản Biện Của Socrates AI (Phân tích dựa trên 3 điểm Anchor Card của nhóm):
+              </span>
+              <button onclick="refreshSocraticQuestion()" class="text-xs text-amber-400 hover:text-amber-300 font-medium flex items-center gap-1 transition">
+                <i class="fa-solid fa-arrows-rotate text-[11px]"></i> Đổi góc hỏi Socrates khác
+              </button>
+            </div>
+            <div id="socraticQuestionBox" class="p-4 rounded-xl bg-slate-950/90 border border-slate-800 text-xs sm:text-sm text-slate-100 leading-relaxed font-sans italic border-l-4 border-l-amber-500 shadow-inner">
+              <p class="text-slate-400 italic flex items-center gap-2">
+                <i class="fa-solid fa-lock text-amber-400"></i>
+                Chưa kích hoạt. Hãy điền đủ 3 Điểm Đồng Thuận trên Anchor Card (Bước 4) ở trên và bấm "TIẾP TỤC ĐẾN BƯỚC 4B" để AI đọc giải pháp và đặt câu hỏi phản biện sâu.
+              </p>
+            </div>
+          </div>
+
+          <!-- Response Area for Group Defense Argument -->
+          <div class="space-y-2">
+            <div class="flex flex-wrap items-center justify-between gap-2 text-xs">
+              <label class="font-bold text-slate-200 flex items-center gap-2">
+                <i class="fa-solid fa-shield-halved text-cyan-400"></i>
+                Luận Cứ Giải Trình & Bảo Vệ Của Nhóm Trước Phản Biện Socrates:
+              </label>
+              <div class="flex items-center gap-2">
+                <button onclick="toggleSpeechRecording('SOCRATES', 'speech')" id="micBtn-SOCRATES-speech" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-cyan-300 text-[11px] font-semibold border border-cyan-500/30 transition flex items-center gap-1">
+                  <i class="fa-solid fa-microphone text-[10px]"></i>
+                  <span id="micLabel-SOCRATES-speech">Mic Nhóm</span>
+                </button>
+                <button onclick="fillSampleSocraticDefense()" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white text-[11px] font-medium border border-slate-700 transition">
+                  <i class="fa-solid fa-wand-magic-sparkles text-amber-400"></i> Điền giải trình mẫu
+                </button>
+              </div>
+            </div>
+            <textarea id="socraticDefenseInput" rows="3" placeholder="Nhập tóm tắt 2 phút phản biện của nhóm để giải quyết vấn đề Socrates AI đặt ra (ví dụ: bổ sung quỹ dự phòng rủi ro, phân định ngoại lệ, cơ chế kiểm toán chéo ba bên...)..." class="w-full bg-slate-950 border border-slate-800 rounded-2xl p-3 text-xs text-slate-200 placeholder-slate-600 focus:outline-none focus:ring-1 focus:ring-amber-500 leading-relaxed resize-none"></textarea>
+          </div>
+
+          <!-- Final Submit & Analyze Button -->
+          <div class="pt-3 flex flex-col sm:flex-row items-center justify-center gap-4">
+            <button onclick="runDeepAiAnalysis()" id="btnRunAiAnalysis" class="w-full sm:w-auto px-8 py-3.5 rounded-2xl bg-gradient-to-r from-amber-600 via-indigo-600 to-cyan-500 hover:from-amber-500 hover:to-cyan-400 text-white font-extrabold text-sm sm:text-base shadow-xl shadow-indigo-600/30 transition-all flex items-center justify-center gap-3">
+              <i class="fa-solid fa-brain text-xl text-yellow-300 animate-bounce"></i>
+              <span>NỘP BÀI & BẮT ĐẦU CHẤM ĐIỂM AI TOÀN DIỆN (SRRP-CCI + SOCRATES)</span>
+            </button>
+          </div>
         </div>
       </section>
 
@@ -1229,76 +1328,102 @@
     <!-- ========================================== -->
     <div id="tabContent-survey" class="hidden space-y-8">
       
+      <!-- ========================================== -->
+      <!-- TAB 2: KHẢO SÁT KHKT (NHÓM & GIÁM SÁT VIÊN) -->
+      <!-- ========================================== -->
       <section class="glass-panel rounded-3xl p-6 lg:p-8 border border-slate-700/60 shadow-2xl space-y-6">
         
         <div class="flex flex-wrap items-center justify-between gap-4 pb-4 border-b border-slate-800">
           <div>
             <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 text-xs font-semibold mb-2">
               <i class="fa-solid fa-clipboard-check"></i>
-              BƯỚC 5: KHẢO SÁT SAU THỰC NGHIỆM (POST-ACTIVITY LIKERT SURVEY)
+              BƯỚC 5: ĐO LƯỜNG ĐỊNH LƯỢNG KHKT 2026 (DUAL-SURVEY SYSTEM)
             </div>
-            <h2 class="text-2xl font-bold text-white">Phiếu Đánh Giá Trải Nghiệm & Chuyển Biến Nhận Thức</h2>
-            <p class="text-xs text-slate-400">Thu thập dữ liệu định lượng phục vụ xử lý thống kê KHKT (Mean, SD, T-Test).</p>
+            <h2 class="text-2xl font-bold text-white">Khảo Sát Đồng Thuận & Đánh Giá Giám Sát Viên</h2>
+            <p class="text-xs text-slate-400">Gồm 2 biểu mẫu độc lập phục vụ kiểm định thống kê KHKT (SPSS / JASP / T-Test) và đồng bộ Google Sheets thời gian thực.</p>
           </div>
 
-          <div class="flex items-center gap-2">
-            <button onclick="syncMockGoogleSheets()" class="px-3.5 py-1.5 rounded-lg bg-emerald-600/30 hover:bg-emerald-600/40 text-emerald-200 border border-emerald-500/40 text-xs font-semibold transition-all flex items-center gap-1.5">
-              <i class="fa-solid fa-file-excel text-emerald-400"></i>
-              <span>Đồng bộ Google Sheets</span>
+          <!-- Sub-Tab Switcher between Team Survey and Observer Survey -->
+          <div class="flex items-center gap-1.5 p-1 bg-slate-900 rounded-xl border border-slate-800">
+            <button type="button" id="btnSurveyModeTeam" onclick="setSurveyMode('team')" class="px-4 py-2 rounded-lg text-xs font-bold transition-all bg-emerald-600 text-white shadow-md shadow-emerald-600/30 flex items-center gap-2">
+              <i class="fa-solid fa-users"></i>
+              <span>1. Khảo Sát Nhóm</span>
+            </button>
+            <button type="button" id="btnSurveyModeObserver" onclick="setSurveyMode('observer')" class="px-4 py-2 rounded-lg text-xs font-bold transition-all text-slate-400 hover:text-white hover:bg-slate-800 flex items-center gap-2">
+              <i class="fa-solid fa-user-tie"></i>
+              <span>2. Khảo Sát Giám Sát Viên</span>
             </button>
           </div>
         </div>
 
-        <!-- Respondent Selection Form -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 p-4 rounded-2xl bg-slate-900/80 border border-slate-800">
-          <div>
-            <label class="block text-xs font-bold text-slate-300 mb-1.5">Người tham gia khảo sát:</label>
-            <select id="surveyRespondent" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3 py-2 text-xs text-slate-200 focus:outline-none focus:ring-1 focus:ring-emerald-500">
-              <option value="Thành viên A (Học sinh THPT)">Thành viên A (Học sinh THPT)</option>
-              <option value="Thành viên B (Giáo viên)">Thành viên B (Giáo viên)</option>
-              <option value="Thành viên C (Ban Phụ huynh)">Thành viên C (Ban Phụ huynh)</option>
-              <option value="Thành viên D (Chuyên gia CNTT/Tâm lý)">Thành viên D (Chuyên gia CNTT/Tâm lý)</option>
-              <option value="Giáo viên Quan sát viên">Giáo viên Quan sát viên (Observer)</option>
-            </select>
+        <!-- FORM 1: KHẢO SÁT ĐỒNG THUẬN CHUNG CỦA NHÓM (TEAM CONSENSUS SURVEY) -->
+        <div id="surveyFormTeam" class="space-y-6">
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 p-4 rounded-2xl bg-slate-900/80 border border-emerald-500/30 text-xs">
+            <div>
+              <label class="block font-bold text-slate-300 mb-1">Mã Nhóm Thực Nghiệm:</label>
+              <input type="text" id="surveyTeamId" value="NHOM-01" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3 py-2 text-slate-200 font-mono font-bold focus:outline-none focus:ring-1 focus:ring-emerald-500" />
+            </div>
+            <div>
+              <label class="block font-bold text-slate-300 mb-1">Đối tượng đại diện nộp phiếu:</label>
+              <select id="surveyRespondent" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3 py-2 text-slate-200 focus:outline-none focus:ring-1 focus:ring-emerald-500">
+                <option value="Thành viên A (Học sinh THPT)">Thành viên A (Học sinh THPT)</option>
+                <option value="Thành viên B (Giáo viên)">Thành viên B (Giáo viên)</option>
+                <option value="Thành viên C (Ban Phụ huynh)">Thành viên C (Ban Phụ huynh)</option>
+                <option value="Thành viên D (Chuyên gia)">Thành viên D (Chuyên gia)</option>
+                <option value="Đại diện cả nhóm" selected>Đại diện cả nhóm (Tập thể 4 người)</option>
+              </select>
+            </div>
+            <div>
+              <label class="block font-bold text-slate-300 mb-1">Cấp độ thực nghiệm:</label>
+              <select id="surveyTeamLevel" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3 py-2 text-slate-200 focus:outline-none focus:ring-1 focus:ring-emerald-500">
+                <option value="1">Cấp độ 1: Nhận diện thông tin</option>
+                <option value="2">Cấp độ 2: Đánh giá bằng chứng</option>
+                <option value="3" selected>Cấp độ 3: Kiến tạo đồng thuận Jigsaw</option>
+              </select>
+            </div>
           </div>
 
-          <div>
-            <label class="block text-xs font-bold text-slate-300 mb-1.5">Mức độ đồng tình ban đầu (Trước khi đối thoại):</label>
-            <select id="surveyPreAgreement" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3 py-2 text-xs text-slate-200 focus:outline-none focus:ring-1 focus:ring-emerald-500">
-              <option value="1">1 - Hoàn toàn phản đối</option>
-              <option value="2">2 - Không đồng tình</option>
-              <option value="3" selected>3 - Phân vân / Trung lập</option>
-              <option value="4">4 - Đồng tình một phần</option>
-              <option value="5">5 - Hoàn toàn đồng tình</option>
-            </select>
+          <!-- Pre vs Post Likert Scale Inputs -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div class="p-4 rounded-2xl bg-slate-900/90 border border-slate-800 space-y-2">
+              <label class="block text-xs font-bold text-amber-300">
+                <i class="fa-solid fa-clock-rotate-left mr-1"></i> Pre-Test: Mức độ đồng thuận ban đầu (Trước thảo luận):
+              </label>
+              <select id="surveyPreAgreement" class="w-full bg-slate-950 border border-slate-700 rounded-xl p-2.5 text-xs text-slate-200 focus:outline-none focus:ring-1 focus:ring-amber-500">
+                <option value="1.0">1.0 / 5.0 - Hoàn toàn phân hóa / Bất đồng gay gắt</option>
+                <option value="2.0" selected>2.0 / 5.0 - Nghi ngờ / Bất đồng quan điểm</option>
+                <option value="3.0">3.0 / 5.0 - Phân vân / Trung lập</option>
+                <option value="4.0">4.0 / 5.0 - Đồng tình một phần</option>
+                <option value="5.0">5.0 / 5.0 - Đã thống nhất từ trước</option>
+              </select>
+            </div>
+
+            <div class="p-4 rounded-2xl bg-slate-900/90 border border-slate-800 space-y-2">
+              <label class="block text-xs font-bold text-emerald-300">
+                <i class="fa-solid fa-circle-check mr-1"></i> Post-Test: Mức độ đồng thuận sau SRRP & Socrates:
+              </label>
+              <select id="surveyPostAgreement" class="w-full bg-slate-950 border border-slate-700 rounded-xl p-2.5 text-xs text-slate-200 focus:outline-none focus:ring-1 focus:ring-emerald-500">
+                <option value="1.0">1.0 / 5.0 - Vẫn bất đồng / Không thể dung hòa</option>
+                <option value="2.0">2.0 / 5.0 - Thỏa hiệp gượng ép</option>
+                <option value="3.0">3.0 / 5.0 - Chấp nhận tạm thời</option>
+                <option value="4.0">4.0 / 5.0 - Đồng thuận cao (Hài lòng)</option>
+                <option value="5.0" selected>5.0 / 5.0 - Hoàn toàn đồng thuận bền vững (Anchor Card)</option>
+              </select>
+            </div>
           </div>
 
-          <div>
-            <label class="block text-xs font-bold text-slate-300 mb-1.5">Mức độ đồng tình sau đối thoại (Sau hoạt động):</label>
-            <select id="surveyPostAgreement" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3 py-2 text-xs text-slate-200 focus:outline-none focus:ring-1 focus:ring-emerald-500">
-              <option value="1">1 - Hoàn toàn phản đối</option>
-              <option value="2">2 - Không đồng tình</option>
-              <option value="3">3 - Trung lập</option>
-              <option value="4">4 - Đồng tình một phần</option>
-              <option value="5" selected>5 - Hoàn toàn đồng thuận với giải pháp chung</option>
-            </select>
-          </div>
-        </div>
-
-        <!-- 5 Likert Scale Questions (1 to 5 points) -->
-        <div class="space-y-4">
-          <h3 class="text-sm font-bold text-slate-200 flex items-center gap-2">
-            <i class="fa-solid fa-star text-amber-400"></i>
-            Thang Đo Likert 5 Điểm (1: Rất không đồng ý → 5: Rất đồng ý):
-          </h3>
-
+          <!-- 5 Likert Scale Questions for Team -->
           <div class="space-y-3">
-            
+            <h3 class="text-xs font-bold text-slate-300 uppercase tracking-wider flex items-center gap-2">
+              <i class="fa-solid fa-list-check text-emerald-400"></i>
+              Bộ Câu Hỏi Thang Đo Likert Nhóm (1: Rất không đồng ý → 5: Rất đồng ý):
+            </h3>
+
             <!-- Question 1 -->
             <div class="p-3.5 rounded-xl bg-slate-900/90 border border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
               <div class="text-xs text-slate-200 flex-1">
                 <span class="font-bold text-emerald-400 mr-1.5">Câu 1:</span>
-                Tôi cảm thấy mình được các thành viên khác trong nhóm lắng nghe đầy đủ và trọn vẹn trong lượt phát biểu.
+                Quy trình phân định 5:00 phát biểu và thẻ LISTEN giúp mọi thành viên trong nhóm cảm thấy quan điểm của mình được lắng nghe trọn vẹn và tôn trọng.
               </div>
               <div class="flex items-center gap-1.5">
                 <button type="button" onclick="setLikert(1, 1)" id="likert-1-1" class="likert-btn-1 w-7 h-7 rounded-lg bg-slate-800 text-xs font-mono text-slate-300 hover:bg-slate-700">1</button>
@@ -1313,7 +1438,7 @@
             <div class="p-3.5 rounded-xl bg-slate-900/90 border border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
               <div class="text-xs text-slate-200 flex-1">
                 <span class="font-bold text-emerald-400 mr-1.5">Câu 2:</span>
-                Tôi cảm thấy ý kiến và góc nhìn cá nhân của mình được nhóm tôn trọng, không bị bài xích.
+                Các thành viên sẵn sàng điều chỉnh quan điểm và định kiến ban đầu khi nhóm đối lập viện dẫn bằng chứng thực nghiệm và số liệu khách quan.
               </div>
               <div class="flex items-center gap-1.5">
                 <button type="button" onclick="setLikert(2, 1)" id="likert-2-1" class="likert-btn-2 w-7 h-7 rounded-lg bg-slate-800 text-xs font-mono text-slate-300 hover:bg-slate-700">1</button>
@@ -1328,14 +1453,14 @@
             <div class="p-3.5 rounded-xl bg-slate-900/90 border border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
               <div class="text-xs text-slate-200 flex-1">
                 <span class="font-bold text-emerald-400 mr-1.5">Câu 3:</span>
-                Tôi sẵn sàng điều chỉnh quan điểm khi đối phương đưa ra bằng chứng thực nghiệm thuyết phục.
+                Nhóm đạt mức độ hài lòng và cam kết cao với 3 giải pháp dung hòa trong Anchor Card cuối cùng, không có cảm giác bị áp đặt.
               </div>
               <div class="flex items-center gap-1.5">
                 <button type="button" onclick="setLikert(3, 1)" id="likert-3-1" class="likert-btn-3 w-7 h-7 rounded-lg bg-slate-800 text-xs font-mono text-slate-300 hover:bg-slate-700">1</button>
                 <button type="button" onclick="setLikert(3, 2)" id="likert-3-2" class="likert-btn-3 w-7 h-7 rounded-lg bg-slate-800 text-xs font-mono text-slate-300 hover:bg-slate-700">2</button>
                 <button type="button" onclick="setLikert(3, 3)" id="likert-3-3" class="likert-btn-3 w-7 h-7 rounded-lg bg-slate-800 text-xs font-mono text-slate-300 hover:bg-slate-700">3</button>
-                <button type="button" onclick="setLikert(3, 4)" id="likert-3-4" class="likert-btn-3 w-7 h-7 rounded-lg bg-emerald-600 text-xs font-mono text-white font-bold">4</button>
-                <button type="button" onclick="setLikert(3, 5)" id="likert-3-5" class="likert-btn-3 w-7 h-7 rounded-lg bg-slate-800 text-xs font-mono text-slate-300 hover:bg-slate-700">5</button>
+                <button type="button" onclick="setLikert(3, 4)" id="likert-3-4" class="likert-btn-3 w-7 h-7 rounded-lg bg-slate-800 text-xs font-mono text-slate-300 hover:bg-slate-700">4</button>
+                <button type="button" onclick="setLikert(3, 5)" id="likert-3-5" class="likert-btn-3 w-7 h-7 rounded-lg bg-emerald-600 text-xs font-mono text-white font-bold">5</button>
               </div>
             </div>
 
@@ -1343,7 +1468,7 @@
             <div class="p-3.5 rounded-xl bg-slate-900/90 border border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
               <div class="text-xs text-slate-200 flex-1">
                 <span class="font-bold text-emerald-400 mr-1.5">Câu 4:</span>
-                Tôi chấp nhận và hoàn toàn cam kết thực hiện phương án đồng thuận (Anchor Card) cuối cùng.
+                Thẻ PAUSE hạ nhiệt và thử thách phản biện Socrates AI giúp nhóm nhìn thấy các lỗ hổng thực thi và nâng cao chất lượng tư duy phản biện bậc cao.
               </div>
               <div class="flex items-center gap-1.5">
                 <button type="button" onclick="setLikert(4, 1)" id="likert-4-1" class="likert-btn-4 w-7 h-7 rounded-lg bg-slate-800 text-xs font-mono text-slate-300 hover:bg-slate-700">1</button>
@@ -1358,7 +1483,7 @@
             <div class="p-3.5 rounded-xl bg-slate-900/90 border border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
               <div class="text-xs text-slate-200 flex-1">
                 <span class="font-bold text-emerald-400 mr-1.5">Câu 5:</span>
-                Quy trình phân định 5:00 phát biểu + 4:00 phản biện và Thẻ PAUSE giúp nhóm đối thoại văn minh, giảm áp lực tranh cãi.
+                Sau hoạt động, sự phân mảnh nhận thức giảm rõ rệt; tôi hiểu và đồng cảm hơn với góc nhìn của các bên liên quan khác trong môi trường học đường.
               </div>
               <div class="flex items-center gap-1.5">
                 <button type="button" onclick="setLikert(5, 1)" id="likert-5-1" class="likert-btn-5 w-7 h-7 rounded-lg bg-slate-800 text-xs font-mono text-slate-300 hover:bg-slate-700">1</button>
@@ -1368,41 +1493,161 @@
                 <button type="button" onclick="setLikert(5, 5)" id="likert-5-5" class="likert-btn-5 w-7 h-7 rounded-lg bg-emerald-600 text-xs font-mono text-white font-bold">5</button>
               </div>
             </div>
+          </div>
 
+          <!-- Primary Factor Radio -->
+          <div class="p-4 rounded-2xl bg-slate-900/80 border border-slate-800 space-y-2">
+            <label class="block text-xs font-bold text-slate-300">
+              Yếu tố tác động quyết định giúp nhóm đạt được đồng thuận bền vững:
+            </label>
+            <div class="grid grid-cols-1 sm:grid-cols-4 gap-2 text-xs">
+              <label class="p-2.5 rounded-xl bg-slate-950 border border-slate-800 flex items-center gap-2 cursor-pointer hover:border-emerald-500">
+                <input type="radio" name="impactFactor" value="Bằng chứng và số liệu thực nghiệm" checked class="text-emerald-600 focus:ring-emerald-500" />
+                <span>Bằng chứng thực nghiệm</span>
+              </label>
+              <label class="p-2.5 rounded-xl bg-slate-950 border border-slate-800 flex items-center gap-2 cursor-pointer hover:border-emerald-500">
+                <input type="radio" name="impactFactor" value="Quy trình thẻ LISTEN & lắng nghe chủ động" class="text-emerald-600 focus:ring-emerald-500" />
+                <span>Quy trình thẻ LISTEN</span>
+              </label>
+              <label class="p-2.5 rounded-xl bg-slate-950 border border-slate-800 flex items-center gap-2 cursor-pointer hover:border-emerald-500">
+                <input type="radio" name="impactFactor" value="Thử thách phản biện Socrates AI" class="text-emerald-600 focus:ring-emerald-500" />
+                <span>Thử thách Socrates AI</span>
+              </label>
+              <label class="p-2.5 rounded-xl bg-slate-950 border border-slate-800 flex items-center gap-2 cursor-pointer hover:border-emerald-500">
+                <input type="radio" name="impactFactor" value="Thẻ PAUSE hạ nhiệt cảm xúc" class="text-emerald-600 focus:ring-emerald-500" />
+                <span>Thẻ PAUSE & Nhạc Thiền</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Submit Button Team Survey -->
+          <div class="flex items-center justify-end gap-3 pt-2">
+            <button onclick="submitTeamSurvey()" class="px-6 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs sm:text-sm shadow-lg shadow-emerald-600/25 transition flex items-center gap-2">
+              <i class="fa-solid fa-paper-plane"></i>
+              <span>Gửi Phiếu Khảo Sát Nhóm & Đồng Bộ Google Sheets</span>
+            </button>
           </div>
         </div>
 
-        <!-- Primary Factor Affecting Cognitive Change -->
-        <div class="p-4 rounded-2xl bg-slate-900/80 border border-slate-800 space-y-2">
-          <label class="block text-xs font-bold text-slate-300">
-            Yếu tố tác động lớn nhất đến sự thay đổi nhận thức của bạn trong phiên này:
-          </label>
-          <div class="grid grid-cols-1 sm:grid-cols-4 gap-2 text-xs">
-            <label class="p-2.5 rounded-xl bg-slate-950 border border-slate-800 flex items-center gap-2 cursor-pointer hover:border-indigo-500">
-              <input type="radio" name="impactFactor" value="Dữ liệu và bằng chứng thực tế" checked class="text-indigo-600 focus:ring-indigo-500" />
-              <span>Dữ liệu & bằng chứng</span>
-            </label>
-            <label class="p-2.5 rounded-xl bg-slate-950 border border-slate-800 flex items-center gap-2 cursor-pointer hover:border-indigo-500">
-              <input type="radio" name="impactFactor" value="Ý kiến và cảm xúc thành viên khác" class="text-indigo-600 focus:ring-indigo-500" />
-              <span>Góc nhìn thành viên khác</span>
-            </label>
-            <label class="p-2.5 rounded-xl bg-slate-950 border border-slate-800 flex items-center gap-2 cursor-pointer hover:border-indigo-500">
-              <input type="radio" name="impactFactor" value="Quy trình đối thoại và Thẻ LISTEN" class="text-indigo-600 focus:ring-indigo-500" />
-              <span>Quy trình thẻ LISTEN</span>
-            </label>
-            <label class="p-2.5 rounded-xl bg-slate-950 border border-slate-800 flex items-center gap-2 cursor-pointer hover:border-indigo-500">
-              <input type="radio" name="impactFactor" value="Thẻ PAUSE hạ nhiệt cảm xúc" class="text-indigo-600 focus:ring-indigo-500" />
-              <span>Thẻ PAUSE & Nhạc Thiền</span>
-            </label>
+        <!-- FORM 2: KHẢO SÁT DÀNH CHO NGƯỜI GIÁM SÁT / GIÁO VIÊN (OBSERVER ASSESSMENT) -->
+        <div id="surveyFormObserver" class="hidden space-y-6">
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 p-4 rounded-2xl bg-slate-900/80 border border-cyan-500/30 text-xs">
+            <div>
+              <label class="block font-bold text-slate-300 mb-1">Mã Giám Sát Viên / Giáo Viên:</label>
+              <input type="text" id="observerId" value="GV-GIAMSAT-01" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3 py-2 text-slate-200 font-mono font-bold focus:outline-none focus:ring-1 focus:ring-cyan-500" />
+            </div>
+            <div>
+              <label class="block font-bold text-slate-300 mb-1">Nhóm Được Quan Sát Đánh Giá:</label>
+              <input type="text" id="observerTargetTeam" value="NHOM-01" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3 py-2 text-slate-200 font-mono font-bold focus:outline-none focus:ring-1 focus:ring-cyan-500" />
+            </div>
+            <div>
+              <label class="block font-bold text-slate-300 mb-1">Vai trò quan sát viên:</label>
+              <select id="observerRole" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3 py-2 text-slate-200 focus:outline-none focus:ring-1 focus:ring-cyan-500">
+                <option value="Giáo viên hướng dẫn nghiên cứu">Giáo viên hướng dẫn nghiên cứu</option>
+                <option value="Giám khảo KHKT độc lập">Giám khảo KHKT độc lập</option>
+                <option value="Quan sát viên tâm lý học đường">Quan sát viên tâm lý học đường</option>
+              </select>
+            </div>
           </div>
-        </div>
 
-        <!-- Submit Survey Button -->
-        <div class="flex items-center justify-end gap-3 pt-2">
-          <button onclick="submitSurveyResponse()" class="px-6 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm shadow-lg shadow-emerald-600/25 transition-all flex items-center gap-2">
-            <i class="fa-solid fa-paper-plane"></i>
-            <span>Gửi Phiếu Khảo Sát & Ghi Vào CSDL Nghiên Cứu</span>
-          </button>
+          <!-- 5 Observer Criteria (1 to 5) -->
+          <div class="space-y-3">
+            <h3 class="text-xs font-bold text-slate-300 uppercase tracking-wider flex items-center gap-2">
+              <i class="fa-solid fa-clipboard-user text-cyan-400"></i>
+              5 Tiêu Chí Đánh Giá Hành Vi Thực Tế Của Nhóm (Thang điểm 1 - 5):
+            </h3>
+
+            <!-- Criteria 1 -->
+            <div class="p-3.5 rounded-xl bg-slate-900/90 border border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+              <div class="text-xs text-slate-200 flex-1">
+                <span class="font-bold text-cyan-400 mr-1.5">Tiêu chí 1 (Lắng nghe):</span>
+                Mức độ tuân thủ quy tắc Thẻ LISTEN (Người phản biện có tóm tắt trung thực, khách quan quan điểm người trước trước khi phản hồi hay không).
+              </div>
+              <div class="flex items-center gap-1.5">
+                <button type="button" onclick="setObserverCriterion(1, 1)" id="obs-1-1" class="obs-btn-1 w-7 h-7 rounded-lg bg-slate-800 text-xs font-mono text-slate-300 hover:bg-slate-700">1</button>
+                <button type="button" onclick="setObserverCriterion(1, 2)" id="obs-1-2" class="obs-btn-1 w-7 h-7 rounded-lg bg-slate-800 text-xs font-mono text-slate-300 hover:bg-slate-700">2</button>
+                <button type="button" onclick="setObserverCriterion(1, 3)" id="obs-1-3" class="obs-btn-1 w-7 h-7 rounded-lg bg-slate-800 text-xs font-mono text-slate-300 hover:bg-slate-700">3</button>
+                <button type="button" onclick="setObserverCriterion(1, 4)" id="obs-1-4" class="obs-btn-1 w-7 h-7 rounded-lg bg-slate-800 text-xs font-mono text-slate-300 hover:bg-slate-700">4</button>
+                <button type="button" onclick="setObserverCriterion(1, 5)" id="obs-1-5" class="obs-btn-1 w-7 h-7 rounded-lg bg-cyan-600 text-xs font-mono text-white font-bold">5</button>
+              </div>
+            </div>
+
+            <!-- Criteria 2 -->
+            <div class="p-3.5 rounded-xl bg-slate-900/90 border border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+              <div class="text-xs text-slate-200 flex-1">
+                <span class="font-bold text-cyan-400 mr-1.5">Tiêu chí 2 (Hạ nhiệt cảm xúc):</span>
+                Mức độ giữ gìn văn hóa tranh luận tôn trọng, điềm tĩnh; chủ động đề xuất Thẻ PAUSE khi tranh luận có dấu hiệu căng thẳng hoặc công kích cá nhân.
+              </div>
+              <div class="flex items-center gap-1.5">
+                <button type="button" onclick="setObserverCriterion(2, 1)" id="obs-2-1" class="obs-btn-2 w-7 h-7 rounded-lg bg-slate-800 text-xs font-mono text-slate-300 hover:bg-slate-700">1</button>
+                <button type="button" onclick="setObserverCriterion(2, 2)" id="obs-2-2" class="obs-btn-2 w-7 h-7 rounded-lg bg-slate-800 text-xs font-mono text-slate-300 hover:bg-slate-700">2</button>
+                <button type="button" onclick="setObserverCriterion(2, 3)" id="obs-2-3" class="obs-btn-2 w-7 h-7 rounded-lg bg-slate-800 text-xs font-mono text-slate-300 hover:bg-slate-700">3</button>
+                <button type="button" onclick="setObserverCriterion(2, 4)" id="obs-2-4" class="obs-btn-2 w-7 h-7 rounded-lg bg-slate-800 text-xs font-mono text-slate-300 hover:bg-slate-700">4</button>
+                <button type="button" onclick="setObserverCriterion(2, 5)" id="obs-2-5" class="obs-btn-2 w-7 h-7 rounded-lg bg-cyan-600 text-xs font-mono text-white font-bold">5</button>
+              </div>
+            </div>
+
+            <!-- Criteria 3 -->
+            <div class="p-3.5 rounded-xl bg-slate-900/90 border border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+              <div class="text-xs text-slate-200 flex-1">
+                <span class="font-bold text-cyan-400 mr-1.5">Tiêu chí 3 (Khách quan dữ liệu):</span>
+                Năng lực phân định chính xác giữa sự thật khách quan (FACT) và cảm xúc chủ quan (OPINION); nhận diện và né tránh được các bẫy suy diễn logic.
+              </div>
+              <div class="flex items-center gap-1.5">
+                <button type="button" onclick="setObserverCriterion(3, 1)" id="obs-3-1" class="obs-btn-3 w-7 h-7 rounded-lg bg-slate-800 text-xs font-mono text-slate-300 hover:bg-slate-700">1</button>
+                <button type="button" onclick="setObserverCriterion(3, 2)" id="obs-3-2" class="obs-btn-3 w-7 h-7 rounded-lg bg-slate-800 text-xs font-mono text-slate-300 hover:bg-slate-700">2</button>
+                <button type="button" onclick="setObserverCriterion(3, 3)" id="obs-3-3" class="obs-btn-3 w-7 h-7 rounded-lg bg-slate-800 text-xs font-mono text-slate-300 hover:bg-slate-700">3</button>
+                <button type="button" onclick="setObserverCriterion(3, 4)" id="obs-3-4" class="obs-btn-3 w-7 h-7 rounded-lg bg-slate-800 text-xs font-mono text-slate-300 hover:bg-slate-700">4</button>
+                <button type="button" onclick="setObserverCriterion(3, 5)" id="obs-3-5" class="obs-btn-3 w-7 h-7 rounded-lg bg-cyan-600 text-xs font-mono text-white font-bold">5</button>
+              </div>
+            </div>
+
+            <!-- Criteria 4 -->
+            <div class="p-3.5 rounded-xl bg-slate-900/90 border border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+              <div class="text-xs text-slate-200 flex-1">
+                <span class="font-bold text-cyan-400 mr-1.5">Tiêu chí 4 (Bản lĩnh phản biện Socrates):</span>
+                Chất lượng và chiều sâu phản biện khi nhóm giải trình trước câu hỏi phản biện bậc cao của Socrates AI trong vòng 2 phút.
+              </div>
+              <div class="flex items-center gap-1.5">
+                <button type="button" onclick="setObserverCriterion(4, 1)" id="obs-4-1" class="obs-btn-4 w-7 h-7 rounded-lg bg-slate-800 text-xs font-mono text-slate-300 hover:bg-slate-700">1</button>
+                <button type="button" onclick="setObserverCriterion(4, 2)" id="obs-4-2" class="obs-btn-4 w-7 h-7 rounded-lg bg-slate-800 text-xs font-mono text-slate-300 hover:bg-slate-700">2</button>
+                <button type="button" onclick="setObserverCriterion(4, 3)" id="obs-4-3" class="obs-btn-4 w-7 h-7 rounded-lg bg-slate-800 text-xs font-mono text-slate-300 hover:bg-slate-700">3</button>
+                <button type="button" onclick="setObserverCriterion(4, 4)" id="obs-4-4" class="obs-btn-4 w-7 h-7 rounded-lg bg-slate-800 text-xs font-mono text-slate-300 hover:bg-slate-700">4</button>
+                <button type="button" onclick="setObserverCriterion(4, 5)" id="obs-4-5" class="obs-btn-4 w-7 h-7 rounded-lg bg-cyan-600 text-xs font-mono text-white font-bold">5</button>
+              </div>
+            </div>
+
+            <!-- Criteria 5 -->
+            <div class="p-3.5 rounded-xl bg-slate-900/90 border border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+              <div class="text-xs text-slate-200 flex-1">
+                <span class="font-bold text-cyan-400 mr-1.5">Tiêu chí 5 (Chất lượng Anchor Card):</span>
+                3 Điểm đồng thuận cốt lõi có tính khả thi thực tiễn cao, cân bằng hài hòa quyền lợi và trách nhiệm của cả 4 bên, có cơ chế đối thoại định kỳ.
+              </div>
+              <div class="flex items-center gap-1.5">
+                <button type="button" onclick="setObserverCriterion(5, 1)" id="obs-5-1" class="obs-btn-5 w-7 h-7 rounded-lg bg-slate-800 text-xs font-mono text-slate-300 hover:bg-slate-700">1</button>
+                <button type="button" onclick="setObserverCriterion(5, 2)" id="obs-5-2" class="obs-btn-5 w-7 h-7 rounded-lg bg-slate-800 text-xs font-mono text-slate-300 hover:bg-slate-700">2</button>
+                <button type="button" onclick="setObserverCriterion(5, 3)" id="obs-5-3" class="obs-btn-5 w-7 h-7 rounded-lg bg-slate-800 text-xs font-mono text-slate-300 hover:bg-slate-700">3</button>
+                <button type="button" onclick="setObserverCriterion(5, 4)" id="obs-5-4" class="obs-btn-5 w-7 h-7 rounded-lg bg-slate-800 text-xs font-mono text-slate-300 hover:bg-slate-700">4</button>
+                <button type="button" onclick="setObserverCriterion(5, 5)" id="obs-5-5" class="obs-btn-5 w-7 h-7 rounded-lg bg-cyan-600 text-xs font-mono text-white font-bold">5</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Qualitative Teacher Comment -->
+          <div class="space-y-2">
+            <label class="block text-xs font-bold text-slate-300">
+              Nhận xét định tính của Giám sát viên / Giáo viên:
+            </label>
+            <textarea id="observerComment" rows="3" placeholder="Ghi nhận các biểu hiện tâm lý, thái độ lắng nghe, sự thay đổi nhận thức hoặc kỹ năng đối thoại nổi bật của nhóm học sinh trong phiên thực nghiệm..." class="w-full bg-slate-950 border border-slate-800 rounded-2xl p-3 text-xs text-slate-200 placeholder-slate-600 focus:outline-none focus:ring-1 focus:ring-cyan-500 leading-relaxed resize-none"></textarea>
+          </div>
+
+          <!-- Submit Button Observer Survey -->
+          <div class="flex items-center justify-end gap-3 pt-2">
+            <button onclick="submitObserverSurvey()" class="px-6 py-2.5 rounded-xl bg-cyan-600 hover:bg-cyan-500 text-white font-bold text-xs sm:text-sm shadow-lg shadow-cyan-600/25 transition flex items-center gap-2">
+              <i class="fa-solid fa-check-double"></i>
+              <span>Gửi Đánh Giá Giám Sát Viên & Đồng Bộ Google Sheets</span>
+            </button>
+          </div>
         </div>
 
       </section>
@@ -1414,7 +1659,7 @@
         <div class="lg:col-span-5 glass-panel rounded-2xl p-5 border border-slate-800 space-y-4">
           <h3 class="text-sm font-bold text-slate-200 flex items-center gap-2">
             <i class="fa-solid fa-chart-column text-cyan-400"></i>
-            So Sánh Nhận Thức Trước vs Sau Can Thiệp
+            Chỉ Số Thống Kê Can Thiệp (Pre vs Post Test & Observer)
           </h3>
           <div class="p-4 rounded-xl bg-slate-900/90 border border-slate-800 space-y-4">
             <div class="space-y-1">
@@ -1437,21 +1682,33 @@
               </div>
             </div>
 
+            <div class="space-y-1">
+              <div class="flex justify-between text-xs">
+                <span class="text-slate-400">Điểm đánh giá của Giám Sát Viên (Observer Mean):</span>
+                <span id="statObserverMean" class="font-mono font-bold text-cyan-400">4.80 / 5.0 (96%)</span>
+              </div>
+              <div class="w-full bg-slate-800 rounded-full h-3">
+                <div id="barStatObserver" class="bg-cyan-500 h-3 rounded-full" style="width: 96%;"></div>
+              </div>
+            </div>
+
             <div class="p-3 rounded-lg bg-emerald-950/30 border border-emerald-500/20 text-[11px] text-emerald-300">
               <i class="fa-solid fa-circle-check mr-1"></i>
-              <strong>Kết luận thống kê (p < 0.01):</strong> Mức độ đồng thuận và cảm giác được lắng nghe tăng trung bình <strong>+76.1%</strong> sau khi áp dụng quy trình SRRP Toolkit.
+              <strong>Kết luận thống kê (p < 0.01):</strong> Tỷ lệ đồng thuận nhóm tăng <strong>+76.1%</strong>, năng lực lắng nghe chủ động được giám sát viên xác nhận đạt <strong>96%</strong>.
             </div>
           </div>
         </div>
 
         <!-- Research Database Table (Synced Records) -->
         <div class="lg:col-span-7 glass-panel rounded-2xl p-5 border border-slate-800 space-y-3">
-          <div class="flex items-center justify-between">
+          <div class="flex flex-wrap items-center justify-between gap-2">
             <h3 class="text-sm font-bold text-slate-200 flex items-center gap-2">
               <i class="fa-solid fa-database text-indigo-400"></i>
-              Nhật Ký Dữ Liệu Thực Nghiệm (Live AppSheet Database)
+              Nhật Ký Dữ Liệu Khảo Sát KHKT (Live Database)
             </h3>
-            <span id="recordCountBadge" class="text-xs px-2 py-0.5 rounded bg-indigo-500/20 text-indigo-300 font-mono">4 mẫu khảo sát</span>
+            <div class="flex items-center gap-2">
+              <span id="recordCountBadge" class="text-xs px-2 py-0.5 rounded bg-indigo-500/20 text-indigo-300 font-mono">4 mẫu khảo sát</span>
+            </div>
           </div>
 
           <div class="overflow-x-auto max-h-56">
@@ -1459,10 +1716,10 @@
               <thead class="bg-slate-900 text-slate-400 border-b border-slate-800 uppercase font-mono text-[10px]">
                 <tr>
                   <th class="py-2 px-2.5">Thời Gian</th>
-                  <th class="py-2 px-2.5">Đối Tượng</th>
-                  <th class="py-2 px-2.5">Pre / Post</th>
+                  <th class="py-2 px-2.5">Đối Tượng / Nhóm</th>
+                  <th class="py-2 px-2.5">Pre → Post</th>
                   <th class="py-2 px-2.5">Likert TB</th>
-                  <th class="py-2 px-2.5">Yếu Tố Chính</th>
+                  <th class="py-2 px-2.5">Loại Dữ Liệu</th>
                 </tr>
               </thead>
               <tbody id="surveyTableBody" class="divide-y divide-slate-800/60 font-mono">
@@ -1487,13 +1744,13 @@
             <!-- If Not Logged In: Show Official Google Sign In Button -->
             <div id="sheetsLoggedOutView" class="flex flex-col sm:flex-row items-center justify-between gap-3 p-2 bg-slate-900/60 rounded-lg">
               <p class="text-[11px] text-slate-300 leading-relaxed">
-                Đăng nhập tài khoản Google để cấp quyền tự động tạo file và ghi kết quả khảo sát thang đo Likert vào Google Sheets phục vụ phân tích SPSS / JASP:
+                Đăng nhập tài khoản Google để cấp quyền tự động ghi cả 2 phiếu khảo sát (Nhóm & Giám sát) vào Google Sheets:
               </p>
               <button onclick="handleGoogleSignIn()" class="gsi-material-button shrink-0">
                 <div class="gsi-material-button-state"></div>
                 <div class="gsi-material-button-content-wrapper">
                   <div class="gsi-material-button-icon">
-                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" xmlns:xlink="http://www.w3.org/1999/xlink" style="display: block;">
+                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" style="display: block;">
                       <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"></path>
                       <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"></path>
                       <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"></path>
@@ -1547,6 +1804,239 @@
     </div>
 
     <!-- ========================================== -->
+    <!-- TAB 3: THI ĐUA & XẾP HẠNG NHÓM (DEBATE LEAGUE) -->
+    <!-- ========================================== -->
+    <div id="tabContent-league" class="hidden space-y-8">
+      
+      <!-- League Banner -->
+      <section class="glass-panel rounded-3xl p-6 lg:p-8 border border-amber-500/40 shadow-2xl relative overflow-hidden">
+        <div class="absolute -top-24 -right-24 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
+          <div class="space-y-3 max-w-2xl">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 text-xs font-semibold">
+              <i class="fa-solid fa-trophy text-amber-400"></i>
+              DEBATE LEAGUE & GAMIFICATION • KHKT 2026
+            </div>
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+              Đấu Trường Tranh Biện: <span class="bg-gradient-to-r from-amber-400 via-yellow-300 to-orange-400 bg-clip-text text-transparent">Bảng Xếp Hạng Lớp Học</span>
+            </h2>
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+              Cơ chế trò chơi hóa (Gamification) biến buổi học chuyên đề thành ngày hội trí tuệ. Nhóm được cộng điểm khi <strong class="text-cyan-300">dùng đúng thẻ LISTEN</strong> (+20đ), <strong class="text-emerald-300">phân định FACT/OPINION khách quan</strong> (+15đ), <strong class="text-rose-300">hạ nhiệt cảm xúc bằng Thẻ PAUSE</strong> (+10đ) và <strong class="text-amber-300">vượt qua phản biện Socrates</strong>.
+            </p>
+          </div>
+
+          <div class="flex flex-col sm:flex-row items-center gap-3">
+            <button onclick="openClassroomBigScreen()" class="px-5 py-3 rounded-2xl bg-gradient-to-r from-amber-600 via-amber-500 to-yellow-500 hover:opacity-90 text-slate-950 font-black text-xs sm:text-sm shadow-xl shadow-amber-500/30 transition flex items-center gap-2">
+              <i class="fa-solid fa-display text-base"></i>
+              <span>Chiếu Màn Hình Lớn Lớp Học</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- League Scoreboard & Real-Time Leaderboard Grid -->
+      <section class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+        
+        <!-- Left: Your Team Scorecard (Thang điểm 1000) -->
+        <div class="lg:col-span-5 glass-panel rounded-2xl p-6 border border-slate-800 space-y-5">
+          <div class="flex items-center justify-between pb-3 border-b border-slate-800">
+            <div>
+              <span class="text-[10px] font-bold text-amber-400 uppercase font-mono tracking-wider">BẢNG ĐIỂM NHÓM BẠN</span>
+              <h3 id="leagueTeamTitle" class="text-lg font-black text-white font-mono">NHÓM 01 (CỦA BẠN)</h3>
+            </div>
+            <span id="leagueBadgeCurrent" class="px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 text-xs font-bold border border-amber-500/30 flex items-center gap-1.5">
+              <i class="fa-solid fa-medal text-amber-400"></i> Hạng 3 Toàn Khối
+            </span>
+          </div>
+
+          <!-- Total League Score Circle / Big Display -->
+          <div class="p-5 rounded-2xl bg-slate-900/90 border border-amber-500/30 text-center space-y-2">
+            <div class="flex items-baseline justify-center gap-2">
+              <span id="leagueTotalScore" class="text-5xl font-black font-mono text-amber-400">935</span>
+              <span class="text-sm font-semibold text-slate-400">/ 1000 Điểm</span>
+            </div>
+            <p id="leagueRankTier" class="text-xs font-bold text-emerald-400">Hạng: Kim Cương (Diamond League Master)</p>
+            <p class="text-[11px] text-slate-400">Dựa trên dữ liệu phân tích AI phiên tranh biện và phiếu đánh giá của giám sát viên.</p>
+          </div>
+
+          <!-- 5 Scoring Criteria Breakdown -->
+          <div class="space-y-3 text-xs">
+            <div class="space-y-1">
+              <div class="flex justify-between text-slate-300 font-medium">
+                <span>🎧 1. Lắng Nghe Chủ Động (Thẻ LISTEN)</span>
+                <span id="scoreLgListen" class="font-mono font-bold text-cyan-400">235 / 250đ</span>
+              </div>
+              <div class="w-full bg-slate-800 rounded-full h-2">
+                <div id="barLgListen" class="bg-cyan-500 h-2 rounded-full" style="width: 94%;"></div>
+              </div>
+            </div>
+
+            <div class="space-y-1">
+              <div class="flex justify-between text-slate-300 font-medium">
+                <span>⚖️ 2. Tư Duy Khách Quan (Fact vs Opinion)</span>
+                <span id="scoreLgFact" class="font-mono font-bold text-emerald-400">240 / 250đ</span>
+              </div>
+              <div class="w-full bg-slate-800 rounded-full h-2">
+                <div id="barLgFact" class="bg-emerald-500 h-2 rounded-full" style="width: 96%;"></div>
+              </div>
+            </div>
+
+            <div class="space-y-1">
+              <div class="flex justify-between text-slate-300 font-medium">
+                <span>🕊️ 3. Hạ Nhiệt & Hòa Giải (Thẻ PAUSE)</span>
+                <span id="scoreLgPause" class="font-mono font-bold text-rose-400">140 / 150đ</span>
+              </div>
+              <div class="w-full bg-slate-800 rounded-full h-2">
+                <div id="barLgPause" class="bg-rose-500 h-2 rounded-full" style="width: 93%;"></div>
+              </div>
+            </div>
+
+            <div class="space-y-1">
+              <div class="flex justify-between text-slate-300 font-medium">
+                <span>⚓ 4. Mỏ Neo Đồng Thuận (Anchor Card)</span>
+                <span id="scoreLgAnchor" class="font-mono font-bold text-purple-400">185 / 200đ</span>
+              </div>
+              <div class="w-full bg-slate-800 rounded-full h-2">
+                <div id="barLgAnchor" class="bg-purple-500 h-2 rounded-full" style="width: 92%;"></div>
+              </div>
+            </div>
+
+            <div class="space-y-1">
+              <div class="flex justify-between text-slate-300 font-medium">
+                <span>⚡ 5. Bản Lĩnh Socrates (Phản Biện 2:00)</span>
+                <span id="scoreLgSocrates" class="font-mono font-bold text-amber-400">135 / 150đ</span>
+              </div>
+              <div class="w-full bg-slate-800 rounded-full h-2">
+                <div id="barLgSocrates" class="bg-amber-500 h-2 rounded-full" style="width: 90%;"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Actions -->
+          <div class="pt-2 flex flex-col gap-2">
+            <button onclick="updateLeagueScoreFromDebate()" class="w-full py-2.5 px-4 rounded-xl bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-500 hover:to-orange-500 text-white font-bold text-xs shadow-md transition flex items-center justify-center gap-2">
+              <i class="fa-solid fa-arrows-rotate"></i>
+              <span>Cập Nhật Điểm Từ Phiên Tranh Biện Vừa Chấm</span>
+            </button>
+            <button onclick="promptAddLeagueTeam()" class="w-full py-2 px-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-300 text-xs font-semibold border border-slate-700 transition flex items-center justify-center gap-1.5">
+              <i class="fa-solid fa-plus text-amber-400"></i>
+              <span>Thêm Điểm Nhóm Khác (Dành Cho Giáo Viên Quản Trị)</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Right: Real-time Leaderboard -->
+        <div class="lg:col-span-7 glass-panel rounded-2xl p-6 border border-slate-800 space-y-4">
+          <div class="flex flex-wrap items-center justify-between gap-2 pb-3 border-b border-slate-800">
+            <div>
+              <h3 class="text-base font-bold text-white flex items-center gap-2">
+                <i class="fa-solid fa-ranking-star text-amber-400"></i>
+                Bảng Xếp Hạng Trực Tuyến Lớp Học (Live Leaderboard)
+              </h3>
+              <p class="text-xs text-slate-400">Cập nhật điểm theo thời gian thực trong buổi học chuyên đề KHKT</p>
+            </div>
+            <span class="text-xs px-2.5 py-1 rounded bg-slate-900 border border-slate-800 text-amber-300 font-mono">
+              <i class="fa-solid fa-wifi text-emerald-400 mr-1 animate-pulse"></i> Real-time
+            </span>
+          </div>
+
+          <div class="space-y-2.5" id="leagueLeaderboardList">
+            <!-- Dynamically populated Leaderboard Cards -->
+          </div>
+
+          <!-- Achievements Badges Showcase -->
+          <div class="pt-3 border-t border-slate-800">
+            <span class="block text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-2">Huy Hiệu Danh Dự KHKT Đã Mở Khóa:</span>
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs">
+              <div class="p-2.5 rounded-xl bg-slate-900 border border-cyan-500/30 text-center space-y-1">
+                <div class="text-lg">🎧</div>
+                <div class="font-bold text-cyan-300 text-[11px]">Bậc Thầy Lắng Nghe</div>
+                <div class="text-[9px] text-slate-400">> 90% Dùng LISTEN</div>
+              </div>
+              <div class="p-2.5 rounded-xl bg-slate-900 border border-emerald-500/30 text-center space-y-1">
+                <div class="text-lg">⚖️</div>
+                <div class="font-bold text-emerald-300 text-[11px]">Khách Quan Khắc Kỷ</div>
+                <div class="text-[9px] text-slate-400">Không Mắc Bẫy Suy Diễn</div>
+              </div>
+              <div class="p-2.5 rounded-xl bg-slate-900 border border-purple-500/30 text-center space-y-1">
+                <div class="text-lg">🕊️</div>
+                <div class="font-bold text-purple-300 text-[11px]">Sứ Giả Hòa Giải</div>
+                <div class="text-[9px] text-slate-400">Anchor Card Toàn Diện</div>
+              </div>
+              <div class="p-2.5 rounded-xl bg-slate-900 border border-amber-500/30 text-center space-y-1">
+                <div class="text-lg">⚡</div>
+                <div class="font-bold text-amber-300 text-[11px]">Chiến Binh Socrates</div>
+                <div class="text-[9px] text-slate-400">Vượt Phản Biện Khó 2m</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+    </div>
+
+    <!-- Classroom Big Screen Mode Modal (Projector View) -->
+    <div id="classroomBigScreenModal" class="fixed inset-0 z-50 bg-slate-950/95 backdrop-blur-xl p-6 lg:p-12 overflow-y-auto hidden flex-col justify-between">
+      <div class="flex items-center justify-between pb-4 border-b border-slate-800">
+        <div class="flex items-center gap-3">
+          <div class="w-12 h-12 rounded-2xl bg-amber-500/20 text-amber-300 flex items-center justify-center font-bold text-2xl border border-amber-500/40">
+            <i class="fa-solid fa-trophy"></i>
+          </div>
+          <div>
+            <h1 class="text-2xl lg:text-3xl font-black text-white tracking-tight">SRRP DEBATE LEAGUE • MÀN HÌNH VINH DANH LỚP HỌC</h1>
+            <p class="text-sm text-slate-400">Insight Collective Framework • KHKT 2026</p>
+          </div>
+        </div>
+        <button onclick="closeClassroomBigScreen()" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-xs flex items-center gap-2">
+          <i class="fa-solid fa-xmark"></i> Thoát Toàn Màn Hình
+        </button>
+      </div>
+
+      <div class="my-8 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto w-full">
+        <!-- Top 1 Gold -->
+        <div class="p-6 rounded-3xl bg-gradient-to-b from-amber-500/20 to-slate-900/90 border-2 border-amber-400 text-center space-y-3 shadow-2xl relative order-1 md:order-2 transform md:-translate-y-4">
+          <div class="w-16 h-16 rounded-full bg-amber-400 text-slate-950 font-black text-2xl flex items-center justify-center mx-auto shadow-lg shadow-amber-400/50">
+            1
+          </div>
+          <span class="px-3 py-1 rounded-full bg-amber-400/20 text-amber-300 font-bold text-xs">QUÁN QUÂN DEBATE LEAGUE</span>
+          <h3 id="bigScreenTop1Name" class="text-2xl font-black text-white">Nhóm Alpha (THPT Chuyên)</h3>
+          <div class="text-4xl font-black font-mono text-amber-400" id="bigScreenTop1Score">965 Điểm</div>
+          <p class="text-xs text-slate-300">Đồng thuận 96% • Đạt danh hiệu Bậc Thầy Socrates</p>
+        </div>
+
+        <!-- Top 2 Silver -->
+        <div class="p-6 rounded-3xl bg-gradient-to-b from-slate-400/20 to-slate-900/90 border border-slate-400 text-center space-y-3 shadow-xl order-2 md:order-1">
+          <div class="w-14 h-14 rounded-full bg-slate-300 text-slate-950 font-black text-xl flex items-center justify-center mx-auto">
+            2
+          </div>
+          <span class="px-3 py-1 rounded-full bg-slate-400/20 text-slate-300 font-bold text-xs">Á QUÂN 1</span>
+          <h3 id="bigScreenTop2Name" class="text-xl font-bold text-white">Nhóm Gamma (Khối Tự Nhiên)</h3>
+          <div class="text-3xl font-black font-mono text-slate-300" id="bigScreenTop2Score">940 Điểm</div>
+          <p class="text-xs text-slate-400">Đồng thuận 94% • Sứ Giả Hòa Giải</p>
+        </div>
+
+        <!-- Top 3 Bronze -->
+        <div class="p-6 rounded-3xl bg-gradient-to-b from-amber-700/20 to-slate-900/90 border border-amber-700 text-center space-y-3 shadow-xl order-3">
+          <div class="w-14 h-14 rounded-full bg-amber-600 text-white font-black text-xl flex items-center justify-center mx-auto">
+            3
+          </div>
+          <span class="px-3 py-1 rounded-full bg-amber-700/20 text-amber-300 font-bold text-xs">Á QUÂN 2</span>
+          <h3 id="bigScreenTop3Name" class="text-xl font-bold text-white">Nhóm 01 (Nhóm Của Bạn)</h3>
+          <div class="text-3xl font-black font-mono text-amber-300" id="bigScreenTop3Score">935 Điểm</div>
+          <p class="text-xs text-slate-400">Đồng thuận 92% • Bậc Thầy Lắng Nghe</p>
+        </div>
+      </div>
+
+      <div class="text-center text-xs text-slate-500 py-4 border-t border-slate-800">
+        Khung Thực Nghiệm SRRP Toolkit • Nâng Cao Năng Lực Kiến Tạo Đồng Thuận Nhóm 2026
+      </div>
+    </div>
+
+    </div>
+
+    <!-- ========================================== -->
     <!-- TAB 3: PHÒNG TỰ LUYỆN TƯ DUY PHẢN BIỆN (SOLO) -->
     <!-- ========================================== -->
     <div id="tabContent-solo" class="hidden space-y-8">
@@ -1557,38 +2047,89 @@
           <div>
             <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/20 text-cyan-300 text-xs font-semibold mb-2">
               <i class="fa-solid fa-user-ninja"></i>
-              SOLO CRITICAL THINKING LAB • RÈN LUYỆN RỜI
+              SOLO CRITICAL THINKING LAB • RÈN LUYỆN ĐỘC LẬP
             </div>
             <h2 class="text-2xl font-bold text-white">Phòng Tự Luyện Năng Lực Tranh Biện & Phản Biện Cá Nhân</h2>
-            <p class="text-xs text-slate-400">Phát đề ngẫu nhiên, bấm giờ 5:00 chuẩn bị & phát biểu, AI chấm điểm phản biện đa chiều.</p>
+            <p class="text-xs text-slate-400">Tự chọn đề tài từ kho 20 chủ đề, tự gõ đề tài riêng hoặc phát đề ngẫu nhiên để rèn luyện theo chuẩn Rubric KHKT 2026.</p>
           </div>
 
-          <button onclick="randomSoloTopic()" class="px-4 py-2 rounded-xl bg-cyan-600/30 hover:bg-cyan-600/40 text-cyan-200 border border-cyan-500/40 text-xs font-bold transition-all flex items-center gap-2">
-            <i class="fa-solid fa-shuffle"></i>
-            <span>Đổi Đề Tài Mới</span>
-          </button>
+          <!-- Random Shuffle Button with Dice -->
+          <div class="flex items-center gap-2">
+            <button onclick="randomSoloTopic()" class="px-4 py-2.5 rounded-xl bg-gradient-to-r from-cyan-600 via-blue-600 to-indigo-600 hover:from-cyan-500 hover:to-indigo-500 text-white text-xs font-extrabold transition-all flex items-center gap-2.5 shadow-lg shadow-cyan-600/30 group">
+              <i class="fa-solid fa-dice text-base text-yellow-300 group-hover:rotate-180 transition-transform duration-300"></i>
+              <span>Xáo Trộn Đề Ngẫu Nhiên (Random)</span>
+            </button>
+          </div>
         </div>
 
-        <!-- Solo Challenge Card -->
+        <!-- Solo Challenge Card with Dropdown & Custom Input & Stance Selector -->
         <div class="p-5 rounded-2xl bg-slate-900/90 border border-slate-800 space-y-4">
-          <div class="flex items-center justify-between">
-            <span class="text-xs font-mono text-cyan-400 font-bold uppercase">ĐỀ TÀI THỬ THÁCH NGẪU NHIÊN:</span>
-            <span class="px-2 py-0.5 rounded text-[10px] bg-amber-500/20 text-amber-300 font-mono">THỜI GIAN CHUẨN BỊ: 5 PHÚT</span>
+          
+          <!-- Dual Topic Selector: Dropdown (20 Topics) & Free Custom Input -->
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-3.5 pb-4 border-b border-slate-800/80">
+            <!-- Option 1: Dropdown selector (20 topics grouped) -->
+            <div class="lg:col-span-7 space-y-1.5">
+              <div class="flex items-center justify-between">
+                <label for="soloTopicDropdown" class="text-[11px] font-bold text-cyan-300 uppercase tracking-wider flex items-center gap-1.5">
+                  <i class="fa-solid fa-list-check text-cyan-400"></i> CÁCH 1: TỰ CHỌN TỪ KHO 20 ĐỀ TÀI THỰC NGHIỆM THPT
+                </label>
+                <span class="text-[10px] text-slate-400">4 nhóm chuyên đề</span>
+              </div>
+              <select id="soloTopicDropdown" onchange="onSelectSoloTopicDropdown()" class="w-full bg-slate-950 border border-cyan-500/40 rounded-xl px-3 py-2.5 text-xs text-white focus:outline-none focus:ring-2 focus:ring-cyan-400 shadow-inner">
+                <!-- Dynamically populated by initSoloTopicLab() -->
+              </select>
+            </div>
+
+            <!-- Option 2: Custom Topic Input -->
+            <div class="lg:col-span-5 space-y-1.5">
+              <div class="flex items-center justify-between">
+                <label for="soloCustomTopicInput" class="text-[11px] font-bold text-purple-300 uppercase tracking-wider flex items-center gap-1.5">
+                  <i class="fa-solid fa-pen-nib text-purple-400"></i> CÁCH 2: TỰ GÕ ĐỀ TÀI RIÊNG CỦA BẠN
+                </label>
+                <span class="text-[10px] text-slate-400">Tự do 100%</span>
+              </div>
+              <div class="relative">
+                <input id="soloCustomTopicInput" type="text" placeholder="Gõ bất kỳ đề tài tranh biện nào bạn muốn rèn luyện..." oninput="onSoloCustomTopicTyped()" class="w-full bg-slate-950 border border-purple-500/40 rounded-xl pl-3 pr-8 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-purple-400 shadow-inner" />
+                <button type="button" onclick="clearSoloCustomTopic()" title="Xóa đề tự gõ" class="absolute right-2.5 top-2.5 text-slate-500 hover:text-rose-400 text-xs">
+                  <i class="fa-solid fa-circle-xmark"></i>
+                </button>
+              </div>
+            </div>
           </div>
 
-          <h3 id="solocurrentTopic" class="text-lg font-extrabold text-white leading-snug">
-            "Có nên cấm vĩnh viễn việc sử dụng hình ảnh và giọng nói do Deepfake AI tạo ra trong các tác phẩm tranh luận chính trị và xã hội học đường?"
-          </h3>
+          <!-- Active Topic Display Card -->
+          <div class="p-4 rounded-xl bg-slate-950/90 border border-slate-800 space-y-2 relative overflow-hidden">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-mono text-cyan-400 font-bold uppercase flex items-center gap-2">
+                <i class="fa-solid fa-bullseye text-cyan-300"></i> ĐỀ TÀI TRANH BIỆN ĐANG RÈN LUYỆN:
+              </span>
+              <div class="flex items-center gap-2">
+                <span id="soloTopicSourceBadge" class="px-2.5 py-0.5 rounded-full text-[10px] bg-cyan-500/20 text-cyan-300 font-mono font-semibold">Kho Đề Chọn Sẵn</span>
+                <span class="px-2 py-0.5 rounded text-[10px] bg-amber-500/20 text-amber-300 font-mono">THỜI GIAN: 5:00</span>
+              </div>
+            </div>
+
+            <h3 id="solocurrentTopic" class="text-base sm:text-lg font-black text-white leading-relaxed">
+              "Có nên cấm vĩnh viễn việc sử dụng hình ảnh và giọng nói do Deepfake AI tạo ra trong các tác phẩm tranh luận chính trị và xã hội học đường?"
+            </h3>
+          </div>
 
           <!-- Pro / Con Stance Selection -->
-          <div class="flex flex-wrap items-center gap-3 pt-2">
-            <span class="text-xs font-bold text-slate-400">Lập trường của bạn:</span>
-            <button type="button" id="soloStancePro" onclick="setSoloStance('PRO')" class="px-3.5 py-1.5 rounded-lg bg-emerald-600 text-white text-xs font-bold transition-all flex items-center gap-1.5 ring-2 ring-emerald-500/30">
-              <i class="fa-solid fa-thumbs-up"></i> TÁN THÀNH (PRO)
-            </button>
-            <button type="button" id="soloStanceCon" onclick="setSoloStance('CON')" class="px-3.5 py-1.5 rounded-lg bg-slate-800 text-slate-300 hover:text-white text-xs font-bold transition-all flex items-center gap-1.5">
-              <i class="fa-solid fa-thumbs-down"></i> PHẢN ĐỐI (CON)
-            </button>
+          <div class="flex flex-wrap items-center justify-between gap-3 pt-1">
+            <div class="flex flex-wrap items-center gap-3">
+              <span class="text-xs font-bold text-slate-300 flex items-center gap-1.5">
+                <i class="fa-solid fa-scale-balanced text-indigo-400"></i> Lập trường đăng ký của bạn:
+              </span>
+              <button type="button" id="soloStancePro" onclick="setSoloStance('PRO')" class="px-4 py-2 rounded-xl bg-emerald-600 text-white text-xs font-bold transition-all flex items-center gap-2 ring-2 ring-emerald-500/30 shadow-lg shadow-emerald-600/20">
+                <i class="fa-solid fa-thumbs-up"></i> TÁN THÀNH (PRO)
+              </button>
+              <button type="button" id="soloStanceCon" onclick="setSoloStance('CON')" class="px-4 py-2 rounded-xl bg-slate-800 text-slate-300 hover:text-white text-xs font-bold transition-all flex items-center gap-2">
+                <i class="fa-solid fa-thumbs-down"></i> PHẢN ĐỐI (CON)
+              </button>
+            </div>
+            <div class="text-[11px] text-slate-400 italic">
+              * Giám khảo AI sẽ thẩm định lập luận dựa trên đề tài và lập trường bạn đã chọn.
+            </div>
           </div>
         </div>
 
@@ -2096,22 +2637,43 @@
         SOLO: { seconds: 300, max: 300, interval: null, running: false },
         PAUSE: { seconds: 60, max: 60, interval: null, running: false }
       },
+      surveyMode: 'team', // 'team' or 'observer'
+      observerAnswers: { crit1: 5, crit2: 5, crit3: 5, crit4: 5, crit5: 5 },
+      socraticTimer: { seconds: 120, max: 120, interval: null, running: false },
+      socraticEvaluated: false,
+      socraticScore: 0,
+      leagueScores: {
+        listenCard: 180,
+        factCheck: 160,
+        pauseCard: 90,
+        anchorCard: 260,
+        socratesChallenge: 170,
+        total: 860
+      },
+      leagueTeams: [
+        { rank: 1, name: "THPT Chuyên Hà Nội - Amsterdam", topic: "Camera AI Lớp Học", score: 940, badges: ["Master LISTEN", "Socrates Shield", "Golden Anchor"], trend: "+45" },
+        { rank: 2, name: "THPT Chuyên Lê Hồng Phong (TP.HCM)", topic: "Chatbot AI & Liêm Chính", score: 915, badges: ["Master LISTEN", "Bằng Chứng Vàng"], trend: "+30" },
+        { rank: 3, name: "THPT Chu Văn An (Hà Nội)", topic: "Điện Thoại Giờ Ra Chơi", score: 890, badges: ["Hạ Nhiệt Thiền", "Golden Anchor"], trend: "+20" },
+        { rank: 4, name: "THPT Chuyên Quốc Học Huế", topic: "Bạo Lực Mạng & Kỷ Luật", score: 875, badges: ["Master LISTEN", "Socrates Shield"], trend: "+15" },
+        { rank: 5, name: "Nhóm Bạn Đang Thực Hiện (Team Hiện Tại)", topic: "Chủ đề đang tranh luận", score: 860, isCurrent: true, badges: ["Thực Nghiệm KHKT", "Đang Tranh Biện"], trend: "Live" }
+      ],
+      currentRolesData: null,
       audioContext: null,
       meditationAudio: {
         isPlaying: false,
         nodes: []
       },
       recognition: null,
-      currentRecordingTarget: null, // e.g. 'A-speech', 'A-debate', 'SOLO-speech'
+      currentRecordingTarget: null, // e.g. 'A-speech', 'A-debate', 'SOLO-speech', 'SOCRATES-speech'
       soloStance: 'PRO',
       likertAnswers: { 1: 5, 2: 5, 3: 4, 4: 5, 5: 5 },
       apiKey: localStorage.getItem('SRRP_GEMINI_API_KEY') || '',
       model: localStorage.getItem('SRRP_GEMINI_MODEL') || 'gemini-2.5-flash',
       surveyRecords: [
-        { time: '08:15:30', respondent: 'Thành viên A (Học sinh)', pre: '2.0', post: '5.0', mean: '4.8', factor: 'Dữ liệu & bằng chứng' },
-        { time: '08:16:12', respondent: 'Thành viên B (Giáo viên)', pre: '3.0', post: '5.0', mean: '4.6', factor: 'Quy trình thẻ LISTEN' },
-        { time: '08:17:05', respondent: 'Thành viên C (Phụ huynh)', pre: '3.0', post: '4.0', mean: '4.4', factor: 'Góc nhìn thành viên khác' },
-        { time: '08:18:22', respondent: 'Thành viên D (Chuyên gia)', pre: '2.0', post: '5.0', mean: '5.0', factor: 'Dữ liệu & bằng chứng' }
+        { time: '08:15:30', respondent: 'Thành viên A (Học sinh)', pre: '2.0', post: '5.0', mean: '4.8', factor: 'Dữ liệu & bằng chứng', type: 'TEAM', teamId: 'SRRP-01', level: 3 },
+        { time: '08:16:12', respondent: 'Thành viên B (Giáo viên)', pre: '3.0', post: '5.0', mean: '4.6', factor: 'Quy trình thẻ LISTEN', type: 'TEAM', teamId: 'SRRP-01', level: 3 },
+        { time: '08:17:05', respondent: 'Thành viên C (Phụ huynh)', pre: '3.0', post: '4.0', mean: '4.4', factor: 'Góc nhìn thành viên khác', type: 'TEAM', teamId: 'SRRP-01', level: 3 },
+        { time: '08:18:22', respondent: 'Thành viên D (Chuyên gia)', pre: '2.0', post: '5.0', mean: '5.0', factor: 'Dữ liệu & bằng chứng', type: 'TEAM', teamId: 'SRRP-01', level: 3 }
       ]
     };
 
@@ -2573,7 +3135,7 @@
 
     /* Tab Switching System */
     function switchTab(tabId) {
-      const tabs = ['debate', 'survey', 'solo', 'dossier'];
+      const tabs = ['debate', 'survey', 'league', 'solo', 'dossier'];
       tabs.forEach(t => {
         const content = document.getElementById(`tabContent-${t}`) || document.getElementById(`${t}Content-tab`);
         const btn = document.getElementById(`tabBtn-${t}`);
@@ -2628,12 +3190,178 @@
       const desc = document.getElementById('levelDescriptionBox');
       if (desc) {
         if (lvl === 1) {
-          desc.innerHTML = '<span class="font-bold text-emerald-300">Cấp độ 1 (Nhận diện):</span> Cung cấp mảnh thông tin có lồng ghép các yếu tố trực quan để học sinh tự luyện phân tách giữa sự thật và định kiến cá nhân.';
+          desc.innerHTML = '<span class="font-bold text-emerald-300">Cấp độ 1 – Nhận diện thông tin:</span> Học sinh nhận danh sách các phát ngôn gồm FACT (dữ liệu xác thực), OPINION (quan điểm) và BẪY SUY DIỄN gây nhiễu. Giao diện KHÔNG ghi nhãn sẵn để học sinh tự phân loại vào bài phát biểu.';
         } else if (lvl === 2) {
-          desc.innerHTML = '<span class="font-bold text-amber-300">Cấp độ 2 (Đánh giá bằng chứng):</span> Cung cấp các góc nhìn đa nguồn kèm câu hỏi định hướng: "Nguồn nào đáng tin cậy hơn?", "Đã đủ cơ sở để kết luận chưa?".';
+          desc.innerHTML = '<span class="font-bold text-amber-300">Cấp độ 2 – Đánh giá bằng chứng:</span> Cung cấp các nguồn dữ liệu đối chứng (nghiên cứu độc lập vs khảo sát thăm dò) kèm 3 câu hỏi định hướng: <em>"Nguồn nào đáng tin cậy hơn?", "Cần kiểm chứng thêm gì?", "Đã đủ căn cứ kết luận chưa?"</em>.';
         } else {
-          desc.innerHTML = '<span class="font-bold text-indigo-300">Cấp độ 3 (Kiến tạo đồng thuận):</span> Mô hình mảnh ghép thông tin 4 góc nhìn độc lập (Information Jigsaw). Bắt buộc 4 bên phải đối thoại tích cực để xây dựng Anchor Card.';
+          desc.innerHTML = '<span class="font-bold text-indigo-300">Cấp độ 3 – Kiến tạo đồng thuận (Jigsaw):</span> Mô hình mảnh ghép thông tin 4 góc nhìn độc lập (A, B, C, D). Buộc các thành viên phải chia sẻ và tổng hợp thông tin để xây dựng Anchor Card chung.';
         }
+      }
+
+      // Re-render the 4 member role cards if data is present or trigger re-generation
+      const topicInput = document.getElementById('customTopicInput')?.value.trim() || "Chủ đề tranh luận";
+      const rolesData = buildDynamicSemanticRoles(topicInput, lvl);
+      APP_STATE.currentRolesData = rolesData;
+      ['A', 'B', 'C', 'D'].forEach(m => {
+        renderMemberRoleCard(m, rolesData[m], lvl);
+      });
+    }
+
+    /* Helper: Toggle Pedagogical Teacher Check for Level 1 Statements */
+    function togglePedagogicalAnswer(member) {
+      playTone(500, 'sine', 0.08);
+      const box = document.getElementById(`teacherCheck-${member}`);
+      const btn = document.getElementById(`btnTeacherCheck-${member}`);
+      if (!box) return;
+      if (box.classList.contains('hidden')) {
+        box.classList.remove('hidden');
+        if (btn) btn.innerHTML = '<i class="fa-solid fa-eye-slash text-[9px]"></i> Ẩn đáp án đối chiếu';
+      } else {
+        box.classList.add('hidden');
+        if (btn) btn.innerHTML = '<i class="fa-solid fa-graduation-cap text-[9px]"></i> Xem đối chiếu sư phạm';
+      }
+    }
+
+    /* Helper: Insert Statement into Speech Textarea */
+    function useStatementInSpeech(member, text) {
+      playTone(540, 'sine', 0.08);
+      const textarea = document.getElementById(`speechText-${member}`);
+      if (!textarea) return;
+      const clean = text.replace(/^[+•\-]\s*/, '').trim();
+      if (textarea.value.trim()) {
+        textarea.value += '\n' + clean;
+      } else {
+        textarea.value = clean;
+      }
+      textarea.focus();
+      textarea.scrollTop = textarea.scrollHeight;
+      showToast(`Đã đưa phát ngôn vào bài phát biểu của Thành viên ${member}!`, 'indigo');
+    }
+
+    /* Dynamic Member Card Renderer across 3 Experimental Levels */
+    function renderMemberRoleCard(member, dataObj, level) {
+      const roleElem = document.getElementById(`member${member}-role`);
+      const tagElem = document.getElementById(`member${member}-tag`);
+      const dataElem = document.getElementById(`member${member}-data`);
+
+      if (roleElem && dataObj.role) roleElem.textContent = dataObj.role;
+      if (tagElem && dataObj.tag) tagElem.textContent = dataObj.tag;
+      if (!dataElem) return;
+
+      if (level === 1) {
+        // CẤP ĐỘ 1: NHẬN DIỆN THÔNG TIN (FACT vs OPINION vs BẪY SUY DIỄN)
+        // Không ghi sẵn nhãn trong text phát ngôn để học sinh tự phân biệt!
+        const items = dataObj.level1Items || [
+          { text: "Camera AI thực chất là một công cụ vi phạm quyền tự do cá nhân nghiêm trọng của học sinh THPT.", type: "OPINION", hint: "Quan điểm cá nhân: Mang tính nhận định chủ quan, cảm xúc bảo vệ tự do cá nhân." },
+          { text: "Khảo sát tâm lý học sinh của ĐH Sư phạm cho thấy việc lắp camera giám sát trong phòng học làm tăng mức độ lo âu của học sinh lên 25%.", type: "FACT", hint: "Dữ liệu xác thực (FACT): Có nguồn khảo sát và tỷ lệ phần trăm thực nghiệm." },
+          { text: "Sự lo âu và cảm giác bị giám sát liên tục này chắc chắn sẽ khiến 100% học sinh sa sút học tập vì không thể tập trung nổi.", type: "FALLACY", hint: "Bẫy suy diễn gây nhiễu: Ngụy biện vội vã kết luận (Hasty Generalization), khẳng định cực đoan '100%' thiếu cơ sở." },
+          { text: "Theo Thuyết tự quyết, việc bị giám sát liên tục 24/7 triệt tiêu hoàn toàn nhu cầu tự chủ và giảm 30% tư duy sáng tạo tự nhiên của học sinh.", type: "FACT", hint: "Dữ liệu xác thực (FACT): Dựa trên lý thuyết tâm lý học hành vi và số liệu kiểm chứng." },
+          { text: "Nhà trường không nên vì muốn tiện quản lý mà tước đi không gian tự do tối thiểu của học sinh.", type: "OPINION", hint: "Quan điểm cá nhân (OPINION): Đề xuất chính sách dựa trên giá trị đạo đức và cảm tính." }
+        ];
+
+        let html = `
+          <div class="space-y-2">
+            <div class="flex items-center justify-between text-[10px] text-emerald-400 font-semibold pb-1 border-b border-slate-800">
+              <span><i class="fa-solid fa-list-check mr-1"></i> Các phát ngôn cần phân loại (Tự nhận diện):</span>
+              <button onclick="togglePedagogicalAnswer('${member}')" id="btnTeacherCheck-${member}" class="text-[9px] px-2 py-0.5 rounded bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white transition flex items-center gap-1 border border-slate-700">
+                <i class="fa-solid fa-graduation-cap text-[9px]"></i> Xem đối chiếu sư phạm
+              </button>
+            </div>
+            <div class="space-y-1.5">
+        `;
+
+        items.forEach((it, idx) => {
+          const escaped = it.text.replace(/"/g, '&quot;');
+          html += `
+            <div class="p-2 rounded-lg bg-slate-950 border border-slate-800/80 hover:border-indigo-500/50 transition flex items-start justify-between gap-2 group">
+              <div class="flex-1 text-[11px] text-slate-200 leading-snug">
+                <span class="text-indigo-400 font-bold mr-1">${idx + 1}.</span>
+                <span>${it.text}</span>
+              </div>
+              <button onclick="useStatementInSpeech('${member}', '${escaped}')" class="shrink-0 text-[10px] px-1.5 py-0.5 rounded bg-indigo-500/20 text-indigo-300 hover:bg-indigo-500 hover:text-white transition font-medium" title="Đưa câu này vào bài phát biểu">
+                +Dùng câu
+              </button>
+            </div>
+          `;
+        });
+
+        html += `
+            </div>
+            <div id="teacherCheck-${member}" class="hidden p-2.5 rounded-xl bg-indigo-950/70 border border-indigo-500/40 text-[10px] space-y-1.5 animate-fadeIn">
+              <span class="font-bold text-amber-300 block"><i class="fa-solid fa-chalkboard-user mr-1"></i> Bảng Đáp Án Đối Chiếu Sư Phạm:</span>
+              <ul class="space-y-1 text-slate-300">
+        `;
+
+        items.forEach((it, idx) => {
+          const typeBadge = it.type === 'FACT' 
+            ? '<span class="px-1.5 py-0.2 rounded bg-emerald-500/30 text-emerald-300 font-bold">FACT</span>' 
+            : (it.type === 'OPINION' ? '<span class="px-1.5 py-0.2 rounded bg-amber-500/30 text-amber-300 font-bold">OPINION</span>' : '<span class="px-1.5 py-0.2 rounded bg-rose-500/30 text-rose-300 font-bold">BẪY SUY DIỄN</span>');
+          html += `
+            <li class="leading-relaxed">
+              <strong>${idx + 1}.</strong> ${typeBadge} - <em>${it.hint}</em>
+            </li>
+          `;
+        });
+
+        html += `
+              </ul>
+            </div>
+          </div>
+        `;
+        dataElem.innerHTML = html;
+
+      } else if (level === 2) {
+        // CẤP ĐỘ 2: ĐÁNH GIÁ BẰNG CHỨNG (2 Nguồn dữ liệu + 3 câu hỏi định hướng)
+        const sources = dataObj.level2Sources || {
+          source1: { name: "Nguồn A: Nghiên cứu độc lập của Viện Tâm lý Giáo dục (2025)", content: "Khảo sát ngẫu nhiên 1.200 học sinh có đối chứng: Tỷ lệ tập trung giảm 18% trong tháng đầu lắp camera do phản ứng 'bị theo dõi', sau đó hồi phục một phần." },
+          source2: { name: "Nguồn B: Thăm dò ý kiến mở trên mạng xã hội Facebook trường", content: "Bài đăng thu hút 850 bình luận tự phát; 90% bình luận phàn nàn cảm thấy bức bối và cho rằng camera là 'xâm phạm nhân quyền'." }
+        };
+
+        const html = `
+          <div class="space-y-2">
+            <div class="text-[10px] text-amber-400 font-bold pb-1 border-b border-slate-800 flex items-center justify-between">
+              <span><i class="fa-solid fa-scale-balanced mr-1"></i> So sánh nguồn dữ liệu đối chứng:</span>
+              <span class="text-slate-400 font-mono text-[9px]">Cấp độ 2</span>
+            </div>
+            <div class="space-y-1.5 text-[11px]">
+              <div class="p-2 rounded-lg bg-slate-950 border border-emerald-500/30">
+                <span class="block text-[10px] font-bold text-emerald-400">${sources.source1.name}</span>
+                <p class="text-slate-300 leading-relaxed text-[11px]">${sources.source1.content}</p>
+              </div>
+              <div class="p-2 rounded-lg bg-slate-950 border border-amber-500/30">
+                <span class="block text-[10px] font-bold text-amber-400">${sources.source2.name}</span>
+                <p class="text-slate-300 leading-relaxed text-[11px]">${sources.source2.content}</p>
+              </div>
+            </div>
+            <!-- 3 Guided Critical Questions -->
+            <div class="p-2 rounded-lg bg-slate-950/80 border border-slate-800 text-[10px] space-y-1">
+              <span class="font-bold text-cyan-300 block"><i class="fa-solid fa-compass mr-1"></i> 3 Câu hỏi định hướng đánh giá:</span>
+              <p class="text-slate-300">• <strong>Nguồn nào đáng tin cậy hơn?</strong> (Mẫu ngẫu nhiên có đối chứng vs Khảo sát tự phát trên mạng xã hội).</p>
+              <p class="text-slate-300">• <strong>Thông tin nào cần kiểm chứng thêm?</strong> (Quy trình thu thập và các biến số ngoại cảnh).</p>
+              <p class="text-slate-300">• <strong>Có đủ căn cứ để kết luận hay chưa?</strong> (Cần thêm cơ sở thực nghiệm dài hạn).</p>
+            </div>
+          </div>
+        `;
+        dataElem.innerHTML = html;
+
+      } else {
+        // CẤP ĐỘ 3: MẢNG GHÉP THÔNG TIN JIGSAW (Trọng tâm SRRP Toolkit)
+        const content = typeof dataObj.data === 'string' ? dataObj.data : JSON.stringify(dataObj.data);
+        const html = `
+          <div class="space-y-1.5">
+            <div class="flex items-center justify-between text-[10px] text-indigo-300 font-bold pb-1 border-b border-slate-800">
+              <span><i class="fa-solid fa-puzzle-piece mr-1"></i> Mảnh ghép thông tin độc lập (Jigsaw):</span>
+              <span class="px-1.5 py-0.2 rounded bg-indigo-500/20 text-[9px] font-mono">Bất đối xứng</span>
+            </div>
+            <p class="text-slate-200 text-[11px] leading-relaxed italic bg-slate-950 p-2.5 rounded-xl border border-slate-800">
+              "${content}"
+            </p>
+            <p class="text-[10px] text-slate-400 leading-normal">
+              💡 <em>Chỉ bạn nắm thông tin này. Bạn phải chia sẻ và đối thoại với 3 thành viên còn lại để tìm ra giải pháp chung trên Anchor Card!</em>
+            </p>
+          </div>
+        `;
+        dataElem.innerHTML = html;
       }
     }
 
@@ -2647,7 +3375,6 @@
     }
 
     function onCustomTopicTyped() {
-      // Clear sample select if user writes their own custom topic
       const select = document.getElementById('sampleTopicsSelect');
       if (select) {
         select.value = "";
@@ -2677,7 +3404,6 @@
       const statusText = document.getElementById('aiStatusText');
       const statusPulse = document.getElementById('aiStatusPulse');
 
-      // Visual Loading state - AI takes realistic time to generate recommendations
       if (btn) btn.disabled = true;
       if (btnText) btnText.innerHTML = '<i class="fa-solid fa-spinner fa-spin mr-1"></i> AI đang phân tích chủ đề & xây dựng 4 mảnh ghép...';
       if (statusText) statusText.innerHTML = `Đang phân tích ngữ cảnh đề tài: <strong class="text-indigo-300">"${topicInput}"</strong> (Cấp độ ${level})...`;
@@ -2685,38 +3411,31 @@
 
       let generatedData = null;
 
-      // Check if user has real Gemini API key
       if (APP_STATE.apiKey && APP_STATE.apiKey.startsWith('AIza')) {
         try {
           generatedData = await callGeminiGenerateRoles(APP_STATE.apiKey, topicInput, level);
         } catch (err) {
           console.warn("API role generation failed, falling back to dynamic semantic engine", err);
-          await new Promise(r => setTimeout(r, 1500));
+          await new Promise(r => setTimeout(r, 1200));
           generatedData = buildDynamicSemanticRoles(topicInput, level);
         }
       } else {
-        // High fidelity semantic synthesis with realistic thinking delay (1.5 seconds)
-        await new Promise(r => setTimeout(r, 1400));
+        await new Promise(r => setTimeout(r, 1200));
         generatedData = buildDynamicSemanticRoles(topicInput, level);
       }
 
-      // Populate 4 Members
+      APP_STATE.currentRolesData = generatedData;
+
+      // Populate 4 Members with custom Level representation
       const members = ['A', 'B', 'C', 'D'];
       members.forEach(m => {
-        const item = generatedData[m];
-        const roleElem = document.getElementById(`member${m}-role`);
-        const tagElem = document.getElementById(`member${m}-tag`);
-        const dataElem = document.getElementById(`member${m}-data`);
-
-        if (roleElem && item.role) roleElem.textContent = item.role;
-        if (tagElem && item.tag) tagElem.textContent = item.tag;
-        if (dataElem && item.data) dataElem.textContent = `"${item.data}"`;
+        renderMemberRoleCard(m, generatedData[m], level);
       });
 
       // Finish Loading state
       if (btn) btn.disabled = false;
       if (btnText) btnText.innerHTML = '<i class="fa-solid fa-wand-magic-sparkles mr-1"></i> AI Tự Động Phân Bổ Mảnh Ghép Vai Chơi (4 Người)';
-      if (statusText) statusText.innerHTML = `Đã phân bổ thành công 4 mảnh ghép cho chủ đề: <strong class="text-emerald-300">"${topicInput}"</strong>`;
+      if (statusText) statusText.innerHTML = `Đã phân bổ thành công 4 mảnh ghép cho chủ đề: <strong class="text-emerald-300">"${topicInput}"</strong> (Cấp độ ${level})`;
       if (statusPulse) statusPulse.className = 'inline-block w-2.5 h-2.5 rounded-full bg-emerald-400';
 
       playBell();
@@ -2913,7 +3632,7 @@ Trả về DUY NHẤT một chuỗi JSON hợp lệ không kèm markdown theo đ
     }
 
     /* ========================================================================= */
-    /* FLOATING TOAST NOTIFICATIONS                                              */
+    /* FLOATING TOAST NOTIFICATIONS (WITH ANTI-STACK DEBOUNCING)                 */
     /* ========================================================================= */
     function showToast(message, type = 'indigo') {
       let container = document.getElementById('toastContainer');
@@ -2922,6 +3641,21 @@ Trả về DUY NHẤT một chuỗi JSON hợp lệ không kèm markdown theo đ
         container.id = 'toastContainer';
         container.className = 'fixed bottom-5 right-5 z-50 flex flex-col gap-2 max-w-sm pointer-events-none';
         document.body.appendChild(container);
+      }
+
+      // Ngăn chặn hiển thị trùng lặp các thông báo giống nhau (anti-spam stack)
+      const existing = Array.from(container.children);
+      const isDuplicate = existing.some(el => {
+        const text = el.innerText || el.textContent || '';
+        return text.includes(message.substring(0, 30));
+      });
+      if (isDuplicate) {
+        return; // Đã có thông báo tương tự đang hiển thị, không xếp chồng thêm
+      }
+
+      // Giới hạn tối đa hiển thị cùng lúc 2 thông báo
+      while (container.children.length >= 2) {
+        container.removeChild(container.firstChild);
       }
 
       const toast = document.createElement('div');
@@ -2961,7 +3695,7 @@ Trả về DUY NHẤT một chuỗi JSON hợp lệ không kèm markdown theo đ
       setTimeout(() => {
         toast.classList.add('opacity-0', 'translate-y-2');
         setTimeout(() => toast.remove(), 300);
-      }, 4500);
+      }, 4000);
     }
 
     /* ========================================================================= */
@@ -3412,6 +4146,299 @@ Trả về DUY NHẤT một chuỗi JSON hợp lệ không kèm markdown theo đ
     }
 
     /* ========================================================================= */
+    /* BƯỚC 4B: THỬ THÁCH PHẢN BIỆN BẬC CAO SOCRATES (SOCRATIC AI INTERROGATOR)   */
+    /* ========================================================================= */
+    function activateSocraticInterrogator() {
+      initAudio();
+
+      const a1 = document.getElementById('anchor1');
+      const a2 = document.getElementById('anchor2');
+      const a3 = document.getElementById('anchor3');
+      const val1 = a1 ? a1.value.trim() : "";
+      const val2 = a2 ? a2.value.trim() : "";
+      const val3 = a3 ? a3.value.trim() : "";
+
+      // Kiểm tra tính đầy đủ của 3 Điểm Đồng Thuận trên Anchor Card
+      const missing = [];
+      if (val1.length < 8) missing.push({ elem: a1, num: 1, name: "Điểm 1 (Phạm Vi & Giới Hạn)" });
+      if (val2.length < 8) missing.push({ elem: a2, num: 2, name: "Điểm 2 (Cơ Chế Bảo Mật & Minh Bạch)" });
+      if (val3.length < 8) missing.push({ elem: a3, num: 3, name: "Điểm 3 (Ban Giám Sát & Đánh Giá)" });
+
+      if (missing.length > 0) {
+        playTone(280, 'sawtooth', 0.2);
+        // Hiệu ứng cảnh báo đỏ xung quanh ô bị thiếu
+        missing.forEach(m => {
+          if (m.elem) {
+            m.elem.classList.add('ring-2', 'ring-rose-500', 'border-rose-500');
+            setTimeout(() => {
+              m.elem.classList.remove('ring-2', 'ring-rose-500', 'border-rose-500');
+            }, 3000);
+          }
+        });
+
+        if (missing[0].elem) {
+          missing[0].elem.focus();
+          missing[0].elem.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+        showToast(`⚠️ Để mở Thử Thách Socrates, nhóm cần điền đủ 3 Điểm Đồng Thuận trên Anchor Card (chưa hoàn thành: ${missing.map(m => m.name).join(', ')})!`, "amber");
+        return;
+      }
+
+      // Khi đã có đủ 3 điểm đồng thuận: Mở khóa và hiển thị Bước 4B
+      const socraticSection = document.getElementById('socraticSection');
+      if (socraticSection) {
+        socraticSection.classList.remove('hidden');
+        socraticSection.scrollIntoView({ behavior: 'smooth' });
+      }
+      playBell();
+
+      // Phân tích trực tiếp 3 điểm Anchor Card và tạo câu hỏi phản biện chuyên sâu
+      generateSocraticQuestion();
+      showToast("🔥 Socrates AI đã đọc 3 Điểm Đồng Thuận của nhóm và đưa ra thử thách phản biện bậc cao!", "amber");
+    }
+
+    function generateSocraticQuestion() {
+      const topic = document.getElementById('customTopicInput')?.value.trim() || "Vấn đề thực nghiệm";
+      const a1 = document.getElementById('anchor1')?.value.trim() || "";
+      const a2 = document.getElementById('anchor2')?.value.trim() || "";
+      const a3 = document.getElementById('anchor3')?.value.trim() || "";
+      const box = document.getElementById('socraticQuestionBox');
+      if (!box) return;
+
+      const p1 = a1.length > 60 ? a1.substring(0, 57) + '...' : a1;
+      const p2 = a2.length > 60 ? a2.substring(0, 57) + '...' : a2;
+      const p3 = a3.length > 60 ? a3.substring(0, 57) + '...' : a3;
+
+      const questions = [
+        `"Về Điểm Đồng Thuận 1 mà nhóm đề xuất: '${p1}'. Socrates đặt câu hỏi: Các bạn đã tính đến rào cản tài chính và chênh lệch cơ sở vật chất giữa các trường thành thị và trường THPT nông thôn chưa? Liệu giải pháp thỏa hiệp này có vô tình tạo ra sự bất bình đẳng cơ hội giáo dục không?"`,
+        `"Đối với Điểm Đồng Thuận 2 về cơ chế bảo mật & kiểm soát: '${p2}'. Nếu một nhóm thiểu số phụ huynh hoặc học sinh cực đoan kiên quyết từ chối hợp tác và đe dọa khiếu nại pháp lý, nhóm bạn có kế hoạch dự phòng (Plan B) nào để bảo vệ tính bền vững của thỏa thuận này?"`,
+        `"Ở Điểm Đồng Thuận 3: '${p3}'. Trong tâm lý học tổ chức, hiện tượng 'thông đồng nhóm' (Groupthink) hoặc lợi ích cục bộ giữa ban quản lý và đơn vị giám sát rất dễ phát sinh. Bằng chứng kiểm chứng chéo độc lập nào bảo đảm cơ chế này không biến thành hình thức 'vừa đá bóng vừa thổi còi'?"`,
+        `"Bản Anchor Card của các bạn cho chủ đề '${topic}' đạt được sự dung hòa rất khéo léo. Nhưng nếu chi phí thực tế phát sinh vượt quá 200% dự toán ban đầu, bên nào trong 4 vai trò (Học sinh, Nhà trường, Phụ huynh, Chuyên gia) sẽ buộc phải nhượng bộ quyền lợi đầu tiên?"`
+      ];
+
+      const randIdx = Math.floor(Math.random() * questions.length);
+      const chosen = questions[randIdx];
+      box.innerHTML = `
+        <div class="space-y-2.5">
+          <div class="text-[11px] font-mono text-amber-400 font-bold flex items-center gap-1.5 not-italic">
+            <i class="fa-solid fa-magnifying-glass-chart text-amber-300"></i> AI ĐÃ ĐỌC BẢN ĐỒNG THUẬN ANCHOR CARD VÀ ĐẶT CÂU HỎI PHẢN BIỆN CHUYÊN SÂU:
+          </div>
+          <p class="leading-relaxed font-serif text-amber-100 text-xs sm:text-sm"><i class="fa-solid fa-quote-left text-amber-400 mr-2 opacity-60"></i>${chosen}<i class="fa-solid fa-quote-right text-amber-400 ml-2 opacity-60"></i></p>
+        </div>
+      `;
+    }
+
+    function refreshSocraticQuestion() {
+      playTone(550, 'sine', 0.1);
+      generateSocraticQuestion();
+      showToast("Đã đổi góc thử thách phản biện Socrates khác!", "cyan");
+    }
+
+    function fillSampleSocraticDefense() {
+      playTone(580, 'sine', 0.08);
+      const input = document.getElementById('socraticDefenseInput');
+      if (!input) return;
+      input.value = `[GIẢI TRÌNH PHẢN BIỆN SOCRATES] Để giải quyết biến số ngoại cảnh mà Socrates AI đặt ra, nhóm chúng tôi đề xuất bổ sung 2 cơ chế dự phòng:
+1. VỀ BẤT BÌNH ĐẲNG VÙNG MIỀN: Thiết lập 'Quỹ hỗ trợ chuyển đổi số công bằng' do ngân sách giáo dục tài trợ 100% cho các trường khó khăn, kết hợp bản hướng dẫn kỹ thuật tối giản hóa chi phí.
+2. VỀ RỦI RO LỢI ÍCH NHÓM: Bắt buộc thành phần Hội đồng giám sát phải có 1/3 là đại diện học sinh được bầu ngẫu nhiên theo nhiệm kỳ học kỳ, cùng 1 chuyên gia luật độc lập ngoài trường để đảm bảo không bị thao túng quyền lực.`;
+      input.focus();
+      showToast("Đã điền luận cứ giải trình mẫu cho Thử thách Socrates!", "emerald");
+    }
+
+    function toggleSocraticTimer() {
+      initAudio();
+      const timer = APP_STATE.socraticTimer;
+      const textElem = document.getElementById('socraticTimerText');
+      const btn = document.getElementById('btnSocraticTimer');
+      const icon = document.getElementById('btnSocraticIcon');
+      const label = document.getElementById('btnSocraticText');
+
+      if (timer.running) {
+        clearInterval(timer.interval);
+        timer.running = false;
+        if (icon) icon.className = 'fa-solid fa-play text-[10px]';
+        if (label) label.textContent = 'Tiếp tục';
+        playTone(380, 'sine', 0.1);
+      } else {
+        timer.running = true;
+        if (icon) icon.className = 'fa-solid fa-pause text-[10px]';
+        if (label) label.textContent = 'Tạm dừng';
+        playTone(580, 'sine', 0.1);
+
+        timer.interval = setInterval(() => {
+          if (timer.seconds > 0) {
+            timer.seconds--;
+            const mins = Math.floor(timer.seconds / 60);
+            const secs = timer.seconds % 60;
+            if (textElem) {
+              textElem.textContent = `${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+              if (timer.seconds <= 20) {
+                textElem.className = 'font-mono text-2xl font-black text-rose-400 animate-pulse';
+              } else if (timer.seconds <= 40) {
+                textElem.className = 'font-mono text-2xl font-black text-amber-400';
+              } else {
+                textElem.className = 'font-mono text-2xl font-black text-emerald-400';
+              }
+            }
+          } else {
+            clearInterval(timer.interval);
+            timer.running = false;
+            playBell();
+            if (icon) icon.className = 'fa-solid fa-check text-[10px]';
+            if (label) label.textContent = 'Hết 2:00';
+            showToast("⏰ Đã hết 2 phút thảo luận Socrates! Hãy nộp luận cứ giải trình để AI chấm điểm.", "amber");
+          }
+        }, 1000);
+      }
+    }
+
+    function resetSocraticTimer() {
+      const timer = APP_STATE.socraticTimer;
+      clearInterval(timer.interval);
+      timer.running = false;
+      timer.seconds = 120;
+      const textElem = document.getElementById('socraticTimerText');
+      if (textElem) {
+        textElem.textContent = '02:00';
+        textElem.className = 'font-mono text-2xl font-black text-amber-400';
+      }
+      const icon = document.getElementById('btnSocraticIcon');
+      const label = document.getElementById('btnSocraticText');
+      if (icon) icon.className = 'fa-solid fa-play text-[10px]';
+      if (label) label.textContent = 'Bắt đầu 2:00';
+      playTone(450, 'sine', 0.08);
+    }
+
+    /* ========================================================================= */
+    /* CHẾ ĐỘ THI ĐUA & BẢNG XẾP HẠNG LEAGUE (GAMIFICATION & DEBATE LEAGUE)       */
+    /* ========================================================================= */
+    function updateLeagueScoreFromDebate(overallAiScore, hasSocrates) {
+      const parsed = parseFloat(overallAiScore) || 75;
+      const socratesPts = hasSocrates ? 180 : 80;
+      const listenPts = Math.min(200, Math.round(parsed * 2.1));
+      const factPts = Math.min(200, Math.round(parsed * 1.9));
+      const pausePts = 90;
+      const anchorPts = Math.min(300, Math.round(parsed * 2.8));
+
+      const total = listenPts + factPts + pausePts + anchorPts + socratesPts;
+      APP_STATE.leagueScores = {
+        listenCard: listenPts,
+        factCheck: factPts,
+        pauseCard: pausePts,
+        anchorCard: anchorPts,
+        socratesChallenge: socratesPts,
+        total: total
+      };
+
+      // Update UI Scorecards
+      const totalElem = document.getElementById('leagueScoreTotal');
+      const barElem = document.getElementById('leagueScoreBar');
+      if (totalElem) totalElem.textContent = `${total} / 1000`;
+      if (barElem) barElem.style.width = `${(total / 1000) * 100}%`;
+
+      const sub1 = document.getElementById('leagueSubScore-listen');
+      const sub2 = document.getElementById('leagueSubScore-fact');
+      const sub3 = document.getElementById('leagueSubScore-pause');
+      const sub4 = document.getElementById('leagueSubScore-anchor');
+      const sub5 = document.getElementById('leagueSubScore-socrates');
+
+      if (sub1) sub1.textContent = `${listenPts}/200`;
+      if (sub2) sub2.textContent = `${factPts}/200`;
+      if (sub3) sub3.textContent = `${pausePts}/100`;
+      if (sub4) sub4.textContent = `${anchorPts}/300`;
+      if (sub5) sub5.textContent = `${socratesPts}/200`;
+
+      // Update current team in league array
+      const curTeam = APP_STATE.leagueTeams.find(t => t.isCurrent);
+      if (curTeam) {
+        curTeam.score = total;
+        const topic = document.getElementById('customTopicInput')?.value || "Chủ đề nghiên cứu";
+        curTeam.topic = topic.length > 25 ? topic.substring(0, 25) + '...' : topic;
+      }
+
+      // Re-sort teams
+      APP_STATE.leagueTeams.sort((a, b) => b.score - a.score);
+      APP_STATE.leagueTeams.forEach((t, i) => t.rank = i + 1);
+
+      renderLeagueLeaderboard();
+    }
+
+    function renderLeagueLeaderboard() {
+      const tbody = document.getElementById('leagueLeaderboardBody');
+      const bigTbody = document.getElementById('classroomBigLeaderboardBody');
+      const topic = document.getElementById('customTopicInput')?.value || "Thực nghiệm KHKT";
+
+      const rowsHtml = APP_STATE.leagueTeams.map(t => {
+        const isCur = t.isCurrent;
+        const rankBadge = t.rank === 1 
+          ? '<span class="w-6 h-6 rounded-full bg-amber-400 text-slate-950 font-black flex items-center justify-center text-xs shadow-md shadow-amber-400/40">1</span>'
+          : (t.rank === 2 
+            ? '<span class="w-6 h-6 rounded-full bg-slate-300 text-slate-950 font-black flex items-center justify-center text-xs shadow">2</span>'
+            : (t.rank === 3 
+              ? '<span class="w-6 h-6 rounded-full bg-amber-700 text-white font-black flex items-center justify-center text-xs shadow">3</span>'
+              : `<span class="w-6 h-6 rounded-full bg-slate-800 text-slate-400 font-mono font-bold flex items-center justify-center text-xs">${t.rank}</span>`));
+
+        const badgesHtml = (t.badges || []).map(b => `<span class="px-2 py-0.5 rounded-full text-[10px] bg-slate-800 text-slate-300 border border-slate-700 font-medium">${b}</span>`).join(' ');
+
+        return `
+          <tr class="${isCur ? 'bg-indigo-950/60 border-l-4 border-l-indigo-500 font-bold' : 'border-b border-slate-800/60 hover:bg-slate-900/40'} transition">
+            <td class="py-3 px-3">${rankBadge}</td>
+            <td class="py-3 px-3">
+              <div class="flex items-center gap-2">
+                <span class="${isCur ? 'text-indigo-300 font-extrabold' : 'text-slate-200'} text-xs sm:text-sm">${t.name}</span>
+                ${isCur ? '<span class="px-2 py-0.5 rounded text-[10px] bg-indigo-500/20 text-indigo-300 border border-indigo-500/40 uppercase tracking-wider font-mono">Nhóm Của Bạn</span>' : ''}
+              </div>
+              <span class="text-[10px] text-slate-400 block">${t.topic}</span>
+            </td>
+            <td class="py-3 px-3">
+              <div class="flex flex-wrap gap-1">${badgesHtml}</div>
+            </td>
+            <td class="py-3 px-3 text-right">
+              <span class="font-mono text-base font-black ${t.score >= 900 ? 'text-emerald-400' : 'text-indigo-300'}">${t.score}</span>
+              <span class="text-[10px] text-slate-400 block">/ 1000 pts</span>
+            </td>
+          </tr>
+        `;
+      }).join('');
+
+      if (tbody) tbody.innerHTML = rowsHtml;
+      if (bigTbody) bigTbody.innerHTML = rowsHtml;
+    }
+
+    function openClassroomBigScreen() {
+      playBell();
+      renderLeagueLeaderboard();
+      const modal = document.getElementById('classroomBigScreenModal');
+      if (modal) modal.classList.remove('hidden');
+    }
+
+    function closeClassroomBigScreen() {
+      const modal = document.getElementById('classroomBigScreenModal');
+      if (modal) modal.classList.add('hidden');
+    }
+
+    function promptAddLeagueTeam() {
+      const name = prompt("Nhập tên trường / tên nhóm tham gia giải đấu (League):", "THPT Chu Văn An - Nhóm 2");
+      if (!name) return;
+      const score = Math.floor(Math.random() * 140) + 820; // 820 - 960
+      const topic = prompt("Nhập chủ đề tranh luận của nhóm:", "Bảo mật dữ liệu học đường") || "Vấn đề KHKT";
+
+      APP_STATE.leagueTeams.push({
+        rank: APP_STATE.leagueTeams.length + 1,
+        name: name.trim(),
+        topic: topic.trim(),
+        score: score,
+        badges: ["Master LISTEN", "Thực Nghiệm"],
+        trend: "+25"
+      });
+
+      APP_STATE.leagueTeams.sort((a, b) => b.score - a.score);
+      APP_STATE.leagueTeams.forEach((t, i) => t.rank = i + 1);
+
+      renderLeagueLeaderboard();
+      playBell();
+      showToast(`🎉 Đã thêm [${name}] vào Bảng Xếp Hạng League Lớp Học!`, "emerald");
+    }
     /* RUN DEEP AI ANALYSIS: EVALUATE BOTH SPEECH (5:00) & DEBATE (4:00)         */
     /* ========================================================================= */
     async function runDeepAiAnalysis() {
@@ -3461,6 +4488,11 @@ Trả về DUY NHẤT một chuỗi JSON hợp lệ không kèm markdown theo đ
 
       renderAiResults(aiResponseData);
 
+      // Evaluate Socratic defense input and update League Gamification Scorecard
+      const socraticDefense = document.getElementById('socraticDefenseInput')?.value.trim() || "";
+      const hasSocraticDefense = socraticDefense.length >= 20;
+      updateLeagueScoreFromDebate(aiResponseData.overallScore, hasSocraticDefense);
+
       if (resultsSection) {
         resultsSection.classList.remove('hidden');
         resultsSection.scrollIntoView({ behavior: 'smooth' });
@@ -3472,6 +4504,7 @@ Trả về DUY NHẤT một chuỗi JSON hợp lệ không kèm markdown theo đ
       }
 
       playBell();
+      showToast("🏆 Đã cập nhật điểm thi đua League và Bảng Xếp Hạng của nhóm!", "indigo");
     }
 
     /* Real Gemini Evaluation API với Rubric Chấm Điểm Khoa Học Khắt Khe */
@@ -3868,31 +4901,58 @@ Kết luận: Phiên đối thoại biến thành phát ngôn đơn thoại cá 
       }
     }
 
-    /* Likert Scale Survey Handler */
-    function setLikert(questionNum, val) {
-      APP_STATE.likertAnswers[questionNum] = val;
-      playTone(400 + val * 40, 'sine', 0.08);
+    /* ========================================================================= */
+    /* DUAL SURVEY SYSTEM: TEAM CONSENSUS SURVEY & OBSERVER FORM (KHKT 2026)     */
+    /* ========================================================================= */
+    function setSurveyMode(mode) {
+      APP_STATE.surveyMode = mode;
+      playTone(mode === 'team' ? 520 : 580, 'sine', 0.08);
+
+      const btnTeam = document.getElementById('btnSurveyModeTeam');
+      const btnObs = document.getElementById('btnSurveyModeObserver');
+      const formTeam = document.getElementById('surveyFormTeam');
+      const formObs = document.getElementById('surveyFormObserver');
+
+      if (mode === 'team') {
+        if (btnTeam) btnTeam.className = 'px-4 py-2 rounded-lg text-xs font-bold transition-all bg-emerald-600 text-white shadow-md shadow-emerald-600/30 flex items-center gap-2';
+        if (btnObs) btnObs.className = 'px-4 py-2 rounded-lg text-xs font-bold transition-all text-slate-400 hover:text-white hover:bg-slate-800 flex items-center gap-2';
+        if (formTeam) formTeam.classList.remove('hidden');
+        if (formObs) formObs.classList.add('hidden');
+      } else {
+        if (btnTeam) btnTeam.className = 'px-4 py-2 rounded-lg text-xs font-bold transition-all text-slate-400 hover:text-white hover:bg-slate-800 flex items-center gap-2';
+        if (btnObs) btnObs.className = 'px-4 py-2 rounded-lg text-xs font-bold transition-all bg-cyan-600 text-white shadow-md shadow-cyan-600/30 flex items-center gap-2';
+        if (formTeam) formTeam.classList.add('hidden');
+        if (formObs) formObs.classList.remove('hidden');
+      }
+    }
+
+    function setObserverCriterion(critNum, val) {
+      APP_STATE.observerAnswers[`crit${critNum}`] = val;
+      playTone(420 + val * 35, 'sine', 0.08);
 
       for (let i = 1; i <= 5; i++) {
-        const btn = document.getElementById(`likert-${questionNum}-${i}`);
+        const btn = document.getElementById(`obs-${critNum}-${i}`);
         if (!btn) continue;
         if (i === val) {
-          btn.className = `likert-btn-${questionNum} w-7 h-7 rounded-lg bg-emerald-600 text-xs font-mono text-white font-bold`;
+          btn.className = `obs-btn-${critNum} w-7 h-7 rounded-lg bg-cyan-600 text-xs font-mono text-white font-bold`;
         } else {
-          btn.className = `likert-btn-${questionNum} w-7 h-7 rounded-lg bg-slate-800 text-xs font-mono text-slate-300 hover:bg-slate-700`;
+          btn.className = `obs-btn-${critNum} w-7 h-7 rounded-lg bg-slate-800 text-xs font-mono text-slate-300 hover:bg-slate-700`;
         }
       }
     }
 
-    async function submitSurveyResponse() {
+    async function submitTeamSurvey() {
       initAudio();
       playTone(600, 'sine', 0.15);
 
-      const respondent = document.getElementById('surveyRespondent')?.value || 'Thành viên A';
-      const pre = document.getElementById('surveyPreAgreement')?.value || '3';
-      const post = document.getElementById('surveyPostAgreement')?.value || '5';
+      const teamId = document.getElementById('surveyTeamId')?.value || 'NHOM-01';
+      const respondent = document.getElementById('surveyRespondent')?.value || 'Đại diện cả nhóm';
+      const level = document.getElementById('surveyTeamLevel')?.value || `${APP_STATE.currentLevel}`;
+      const pre = document.getElementById('surveyPreAgreement')?.value || '2.0';
+      const post = document.getElementById('surveyPostAgreement')?.value || '5.0';
       const factorElem = document.querySelector('input[name="impactFactor"]:checked');
-      const factor = factorElem ? factorElem.value : 'Dữ liệu và bằng chứng';
+      const factor = factorElem ? factorElem.value : 'Bằng chứng và số liệu thực nghiệm';
+      const topic = document.getElementById('customTopicInput')?.value || "Chủ đề tranh luận";
 
       const vals = Object.values(APP_STATE.likertAnswers);
       const sum = vals.reduce((a, b) => a + b, 0);
@@ -3902,12 +4962,16 @@ Kết luận: Phiên đối thoại biến thành phát ngôn đơn thoại cá 
       const timeStr = `${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}:${String(now.getSeconds()).padStart(2, '0')}`;
 
       const newRecord = {
+        type: 'TEAM',
         time: timeStr,
+        teamId: teamId,
         respondent: respondent,
+        level: level,
         pre: `${parseFloat(pre).toFixed(1)}`,
         post: `${parseFloat(post).toFixed(1)}`,
         mean: mean,
-        factor: factor
+        factor: factor,
+        topic: topic
       };
 
       APP_STATE.surveyRecords.unshift(newRecord);
@@ -3917,17 +4981,73 @@ Kết luận: Phiên đối thoại biến thành phát ngôn đơn thoại cá 
       // Check if Google Sheets is logged in
       if (window.GoogleSheetsSync && window.GoogleSheetsSync.getCachedToken()) {
         try {
-          showToast(`⏳ Đang tự động đẩy phiếu khảo sát của [${respondent}] lên Google Sheets...`, "cyan");
+          showToast(`⏳ Đang tự động đẩy phiếu khảo sát nhóm [${teamId}] lên Google Sheets...`, "cyan");
           await window.GoogleSheetsSync.appendRecords([newRecord]);
           playBell();
-          showToast(`✅ Đã lưu phiếu và tự động đồng bộ dòng mới vào Google Sheets!`, "emerald");
-          alert(`✅ Cảm ơn bạn! Phiếu khảo sát của [${respondent}] đã được lưu vào CSDL Nghiên cứu và TỰ ĐỘNG ĐỒNG BỘ thành công vào Google Sheets.`);
+          showToast(`✅ Đã lưu phiếu nhóm và đồng bộ vào Google Sheets!`, "emerald");
+          alert(`✅ Cảm ơn bạn! Phiếu khảo sát của nhóm [${teamId}] (${respondent}) đã được lưu vào CSDL Nghiên cứu và TỰ ĐỘNG ĐỒNG BỘ thành công vào Google Sheets.`);
         } catch (syncErr) {
           console.warn("Auto sync failed:", syncErr);
-          alert(`✅ Đã lưu phiếu khảo sát vào bộ nhớ cục bộ!\n(Ghi chú: Đồng bộ tự động lên Google Sheets gặp lỗi: ${syncErr.message}. Bạn có thể bấm nút "Đồng Bộ Toàn Bộ Dữ Liệu Lên Sheet" để thử lại sau).`);
+          alert(`✅ Đã lưu phiếu khảo sát nhóm vào bộ nhớ cục bộ!\n(Ghi chú: Lỗi đồng bộ Google Sheets: ${syncErr.message}).`);
         }
       } else {
-        alert(`✅ Cảm ơn bạn! Phiếu khảo sát của [${respondent}] đã được lưu vào CSDL Nghiên cứu KHKT.\n\n💡 Mẹo: Bạn có thể bấm nút "Google Sheets" hoặc "Sign in with Google" để tự động đẩy toàn bộ phiếu khảo sát vào Google Sheets của bạn.`);
+        alert(`✅ Cảm ơn bạn! Phiếu khảo sát của nhóm [${teamId}] đã được lưu vào CSDL Nghiên cứu KHKT 2026.\n\n💡 Mẹo: Bấm 'Sign in with Google' ở góc trên để tự động xuất toàn bộ kết quả vào Google Sheets.`);
+      }
+    }
+
+    async function submitObserverSurvey() {
+      initAudio();
+      playTone(640, 'sine', 0.15);
+
+      const obsId = document.getElementById('observerId')?.value || 'GV-GIAMSAT-01';
+      const targetTeam = document.getElementById('observerTargetTeam')?.value || 'NHOM-01';
+      const role = document.getElementById('observerRole')?.value || 'Giáo viên hướng dẫn nghiên cứu';
+      const comment = document.getElementById('observerComment')?.value.trim() || 'Học sinh tuân thủ tốt quy trình đối thoại SRRP Toolkit';
+      const topic = document.getElementById('customTopicInput')?.value || "Chủ đề tranh luận";
+
+      const obsVals = Object.values(APP_STATE.observerAnswers);
+      const sum = obsVals.reduce((a, b) => a + b, 0);
+      const mean = (sum / obsVals.length).toFixed(1);
+      const totalScore = (sum * 2).toFixed(1); // Scale 50 to 10
+
+      const now = new Date();
+      const timeStr = `${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}:${String(now.getSeconds()).padStart(2, '0')}`;
+
+      const newRecord = {
+        type: 'OBSERVER',
+        time: timeStr,
+        observerId: obsId,
+        teamId: targetTeam,
+        role: role,
+        critListen: APP_STATE.observerAnswers.crit1,
+        critPause: APP_STATE.observerAnswers.crit2,
+        critFact: APP_STATE.observerAnswers.crit3,
+        critSocrates: APP_STATE.observerAnswers.crit4,
+        critAnchor: APP_STATE.observerAnswers.crit5,
+        mean: mean,
+        totalScore: totalScore,
+        comment: comment,
+        topic: topic
+      };
+
+      APP_STATE.surveyRecords.unshift(newRecord);
+      renderSurveyTable();
+      updateSurveyStats();
+
+      // Check if Google Sheets is logged in
+      if (window.GoogleSheetsSync && window.GoogleSheetsSync.getCachedToken()) {
+        try {
+          showToast(`⏳ Đang tự động đẩy phiếu đánh giá giám sát [${obsId}] lên Google Sheets...`, "cyan");
+          await window.GoogleSheetsSync.appendRecords([newRecord]);
+          playBell();
+          showToast(`✅ Đã lưu đánh giá giám sát và đồng bộ vào Google Sheets!`, "emerald");
+          alert(`✅ Cảm ơn thầy/cô! Phiếu đánh giá của Giám sát viên [${obsId}] dành cho [${targetTeam}] đã được đồng bộ trực tiếp vào Google Sheets.`);
+        } catch (syncErr) {
+          console.warn("Auto sync failed:", syncErr);
+          alert(`✅ Đã lưu phiếu giám sát vào bộ nhớ cục bộ!\n(Ghi chú: Lỗi đồng bộ Google Sheets: ${syncErr.message}).`);
+        }
+      } else {
+        alert(`✅ Cảm ơn thầy/cô! Phiếu đánh giá của Giám sát viên [${obsId}] cho nhóm [${targetTeam}] đã được ghi nhận vào CSDL KHKT.`);
       }
     }
 
@@ -3938,14 +5058,36 @@ Kết luận: Phiên đối thoại biến thành phát ngôn đơn thoại cá 
 
       if (tbody) {
         tbody.innerHTML = '';
-        APP_STATE.surveyRecords.slice(0, 10).forEach(r => {
+        APP_STATE.surveyRecords.slice(0, 15).forEach(r => {
+          const isObserver = r.type === 'OBSERVER';
+          const typeBadge = isObserver 
+            ? '<span class="px-1.5 py-0.5 rounded bg-cyan-500/20 text-cyan-300 font-mono text-[9px] font-bold">GIÁM SÁT</span>' 
+            : '<span class="px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-mono text-[9px] font-bold">NHÓM</span>';
+
+          const respondentDisplay = isObserver 
+            ? `${r.observerId || 'Observer'} → ${r.teamId || 'N/A'}`
+            : `${r.respondent || 'Thành viên'} (${r.teamId || 'SRRP'})`;
+
+          const scoreDisplay = isObserver 
+            ? `Quan sát: ${r.totalScore || '9.0'}/10`
+            : `${r.pre || '2.0'} → ${r.post || '5.0'}`;
+
+          const factorDisplay = isObserver 
+            ? (r.comment ? (r.comment.length > 35 ? r.comment.substring(0, 35) + '...' : r.comment) : 'Quan sát độc lập')
+            : (r.factor || 'Dữ liệu và bằng chứng');
+
           const rowHtml = `
-            <tr>
-              <td class="py-2 px-2.5 text-slate-400 font-mono">${r.time}</td>
-              <td class="py-2 px-2.5 text-indigo-300 font-sans font-medium">${r.respondent}</td>
-              <td class="py-2 px-2.5 text-slate-300 font-mono">${r.pre} → ${r.post}</td>
-              <td class="py-2 px-2.5 text-emerald-400 font-bold font-mono">${r.mean}</td>
-              <td class="py-2 px-2.5 text-slate-400 font-sans">${r.factor}</td>
+            <tr class="border-b border-slate-800/60 hover:bg-slate-900/40 transition">
+              <td class="py-2.5 px-2.5 text-slate-400 font-mono text-[11px]">${r.time}</td>
+              <td class="py-2.5 px-2.5 font-sans font-medium text-xs">
+                <div class="flex items-center gap-1.5">
+                  ${typeBadge}
+                  <span class="${isObserver ? 'text-cyan-300' : 'text-indigo-300'}">${respondentDisplay}</span>
+                </div>
+              </td>
+              <td class="py-2.5 px-2.5 text-slate-300 font-mono text-[11px]">${scoreDisplay}</td>
+              <td class="py-2.5 px-2.5 font-bold font-mono text-xs ${isObserver ? 'text-cyan-400' : 'text-emerald-400'}">${r.mean}</td>
+              <td class="py-2.5 px-2.5 text-slate-400 font-sans text-xs">${factorDisplay}</td>
             </tr>
           `;
           tbody.insertAdjacentHTML('beforeend', rowHtml);
@@ -3957,12 +5099,19 @@ Kết luận: Phiên đối thoại biến thành phát ngôn đơn thoại cá 
       if (APP_STATE.surveyRecords.length === 0) return;
       let totalPre = 0;
       let totalPost = 0;
+      let teamCount = 0;
+
       APP_STATE.surveyRecords.forEach(r => {
-        totalPre += parseFloat(r.pre) || 2.5;
-        totalPost += parseFloat(r.post) || 4.5;
+        if (r.type !== 'OBSERVER') {
+          totalPre += parseFloat(r.pre) || 2.0;
+          totalPost += parseFloat(r.post) || 4.8;
+          teamCount++;
+        }
       });
-      const avgPre = (totalPre / APP_STATE.surveyRecords.length).toFixed(2);
-      const avgPost = (totalPost / APP_STATE.surveyRecords.length).toFixed(2);
+
+      const count = teamCount > 0 ? teamCount : 1;
+      const avgPre = (totalPre / count).toFixed(2);
+      const avgPost = (totalPost / count).toFixed(2);
 
       const preElem = document.getElementById('statPreMean');
       const postElem = document.getElementById('statPostMean');
@@ -4164,21 +5313,200 @@ Kết luận: Phiên đối thoại biến thành phát ngôn đơn thoại cá 
       handleSyncAllSurveys();
     }
 
-    /* Solo Debate Lab Functions */
-    const SOLO_TOPICS = [
-      "Có nên cấm vĩnh viễn việc sử dụng hình ảnh và giọng nói do Deepfake AI tạo ra trong các tác phẩm tranh luận chính trị và xã hội học đường?",
-      "Trường học có nên thay thế hoàn toàn điểm số chữ và thang điểm 10 bằng Báo cáo đánh giá năng lực tích hợp?",
-      "Có nên cấm học sinh dưới 16 tuổi mở tài khoản mạng xã hội công khai để bảo vệ sức khỏe tâm thần?",
-      "Nên hay không áp dụng hình thức lao động công ích trong khuôn viên trường thay cho hình thức đình chỉ học tập?",
-      "Học sinh có quyền từ chối chia sẻ bài viết luận cá nhân cho các hệ thống AI của trường dùng để huấn luyện dữ liệu?"
+    /* ========================================================================= */
+    /* PHÒNG TỰ LUYỆN TRANH BIỆN CÁ NHÂN (SOLO LAB): KHO 20 ĐỀ & TỰ CHỌN ĐỀ TÀI */
+    /* ========================================================================= */
+    const SOLO_TOPIC_CATEGORIES = [
+      {
+        category: "🤖 Trí Tuệ Nhân Tạo & Chuyển Đổi Số",
+        topics: [
+          "Có nên cấm vĩnh viễn việc sử dụng hình ảnh và giọng nói do Deepfake AI tạo ra trong các tác phẩm tranh luận chính trị và xã hội học đường?",
+          "Học sinh có quyền từ chối chia sẻ bài viết luận cá nhân cho các hệ thống AI của trường dùng để huấn luyện dữ liệu?",
+          "Có nên cho phép học sinh THPT sử dụng các mô hình AI tạo sinh (như ChatGPT, Gemini) làm công cụ hỗ trợ trong các bài kiểm tra đánh giá định kỳ?",
+          "Nhà trường có nên lắp đặt hệ thống nhận diện khuôn mặt và cảm biến AI để điểm danh và phát hiện hành vi bạo lực học đường?",
+          "Có nên thay thế một phần giáo viên bộ môn bằng gia sư AI thích ứng cá nhân hóa cho học sinh học lực yếu?"
+        ]
+      },
+      {
+        category: "📚 Học Đường, Đánh Giá & Kỷ Luật Sư Phạm",
+        topics: [
+          "Trường học có nên thay thế hoàn toàn điểm số chữ và thang điểm 10 bằng Báo cáo đánh giá năng lực tích hợp?",
+          "Nên hay không áp dụng hình thức lao động công ích trong khuôn viên trường thay cho hình thức đình chỉ học tập?",
+          "Có nên bỏ hoàn toàn đồng phục học sinh để khuyến khích sự tự do thể hiện cá tính và bình đẳng bản dạng?",
+          "Trường THPT có nên chuyển toàn bộ lịch học buổi sáng bắt đầu từ 8h30 để phù hợp với đồng hồ sinh học vị thành niên?",
+          "Có nên cho phép học sinh tham gia bỏ phiếu đánh giá hiệu quả giảng dạy của giáo viên vào cuối mỗi học kỳ?"
+        ]
+      },
+      {
+        category: "🧠 Tâm Lý Lứa Tuổi & Mạng Xã Hội",
+        topics: [
+          "Có nên cấm học sinh dưới 16 tuổi mở và duy trì tài khoản mạng xã hội công khai để bảo vệ sức khỏe tâm thần?",
+          "Phụ huynh có quyền cài đặt phần mềm định vị GPS và giám sát tin nhắn trên điện thoại của con em học sinh THPT không?",
+          "Có nên đưa môn 'Sức khỏe Tâm thần & Quản trị Cảm xúc' thành môn học bắt buộc có tính điểm tốt nghiệp THPT?",
+          "Áp lực đồng trang lứa (Peer Pressure) trên mạng xã hội là động lực tích cực hay nguồn cơn gây kiệt quệ cảm xúc?",
+          "Trường học có nên cấm học sinh mang điện thoại thông minh vào lớp học trong toàn bộ thời gian học chính khóa?"
+        ]
+      },
+      {
+        category: "🌍 Đạo Đức, Môi Trường & Trách Nhiệm Xã Hội",
+        topics: [
+          "Có nên đánh thuế carbon đối với các sản phẩm thức ăn nhanh và đồ uống đóng chai tiêu thụ trong căng tin trường học?",
+          "Học sinh THPT có nên bắt buộc phải hoàn thành tối thiểu 40 giờ công tác tình nguyện xã hội trước khi được xét tốt nghiệp?",
+          "Nên ưu tiên ngân sách quốc gia cho việc bảo tồn văn hóa truyền thống hay phát triển hạ tầng công nghệ số tương lai?",
+          "Các cơ sở giáo dục có nên áp dụng chính sách 'Ăn chay 1 ngày mỗi tuần' để giáo dục ý thức bảo vệ môi trường toàn cầu?",
+          "Có nên hợp pháp hóa và cho phép học sinh tham gia bỏ phiếu bầu cử Hội đồng nhân dân cấp xã/phường từ năm 16 tuổi?"
+        ]
+      }
     ];
 
-    function randomSoloTopic() {
-      playTone(550, 'sine', 0.1);
-      const rand = SOLO_TOPICS[Math.floor(Math.random() * SOLO_TOPICS.length)];
+    // Mảng phẳng 20 đề tài phục vụ random và tra cứu nhanh
+    const SOLO_TOPICS = SOLO_TOPIC_CATEGORIES.flatMap(c => c.topics);
+    let lastSoloTopicIndex = 0;
+
+    // Khởi tạo danh sách 20 đề tài phân nhóm vào dropdown khi tải trang
+    function initSoloTopicLab() {
+      const select = document.getElementById('soloTopicDropdown');
+      if (!select) return;
+
+      select.innerHTML = '<option value="">-- Bấm để chọn 1 trong 20 đề tài mẫu theo nhóm --</option>';
+      SOLO_TOPIC_CATEGORIES.forEach(cat => {
+        const group = document.createElement('optgroup');
+        group.label = cat.category;
+        cat.topics.forEach(t => {
+          const opt = document.createElement('option');
+          opt.value = t;
+          opt.textContent = t.length > 80 ? t.substring(0, 77) + '...' : t;
+          group.appendChild(opt);
+        });
+        select.appendChild(group);
+      });
+
+      // Mặc định chọn đề đầu tiên
+      select.value = SOLO_TOPICS[0];
       const elem = document.getElementById('solocurrentTopic');
-      if (elem) elem.textContent = `"${rand}"`;
+      if (elem) elem.textContent = `"${SOLO_TOPICS[0]}"`;
+    }
+
+    // Khi học sinh chọn đề tài từ Dropdown
+    function onSelectSoloTopicDropdown() {
+      const select = document.getElementById('soloTopicDropdown');
+      const val = select ? select.value : "";
+      if (!val) return;
+
+      const customInput = document.getElementById('soloCustomTopicInput');
+      if (customInput) customInput.value = "";
+
+      const topicElem = document.getElementById('solocurrentTopic');
+      if (topicElem) topicElem.textContent = `"${val}"`;
+
+      const badge = document.getElementById('soloTopicSourceBadge');
+      if (badge) {
+        badge.textContent = "Kho Đề Chọn Sẵn";
+        badge.className = "px-2.5 py-0.5 rounded-full text-[10px] bg-cyan-500/20 text-cyan-300 font-mono font-semibold";
+      }
+
       resetSoloTimer();
+      clearSoloAiFeedback();
+      playTone(520, 'sine', 0.08);
+      showToast(`🎯 Đã chọn đề tài tự luyện: "${val.substring(0, 40)}..."`, "cyan");
+    }
+
+    // Khi học sinh tự gõ đề tài bất kỳ của mình
+    function onSoloCustomTopicTyped() {
+      const customInput = document.getElementById('soloCustomTopicInput');
+      const val = customInput ? customInput.value.trim() : "";
+      const topicElem = document.getElementById('solocurrentTopic');
+      const badge = document.getElementById('soloTopicSourceBadge');
+      const select = document.getElementById('soloTopicDropdown');
+
+      if (val.length >= 3) {
+        if (topicElem) topicElem.textContent = `"${val}"`;
+        if (select) select.value = "";
+        if (badge) {
+          badge.textContent = "Đề Tài Cá Nhân Tự Nhập";
+          badge.className = "px-2.5 py-0.5 rounded-full text-[10px] bg-purple-500/20 text-purple-300 font-mono font-semibold";
+        }
+        clearSoloAiFeedback();
+      } else if (val.length === 0) {
+        // Nếu xóa trắng thì khôi phục đề đang chọn ở dropdown hoặc đề mặc định
+        if (select && select.value) {
+          if (topicElem) topicElem.textContent = `"${select.value}"`;
+        } else {
+          if (topicElem) topicElem.textContent = `"${SOLO_TOPICS[0]}"`;
+          if (select) select.value = SOLO_TOPICS[0];
+        }
+        if (badge) {
+          badge.textContent = "Kho Đề Chọn Sẵn";
+          badge.className = "px-2.5 py-0.5 rounded-full text-[10px] bg-cyan-500/20 text-cyan-300 font-mono font-semibold";
+        }
+      }
+    }
+
+    // Xóa đề tự gõ để quay về kho đề
+    function clearSoloCustomTopic() {
+      const customInput = document.getElementById('soloCustomTopicInput');
+      if (customInput) customInput.value = "";
+      const select = document.getElementById('soloTopicDropdown');
+      if (select) select.value = SOLO_TOPICS[0];
+      const topicElem = document.getElementById('solocurrentTopic');
+      if (topicElem) topicElem.textContent = `"${SOLO_TOPICS[0]}"`;
+      const badge = document.getElementById('soloTopicSourceBadge');
+      if (badge) {
+        badge.textContent = "Kho Đề Chọn Sẵn";
+        badge.className = "px-2.5 py-0.5 rounded-full text-[10px] bg-cyan-500/20 text-cyan-300 font-mono font-semibold";
+      }
+      playTone(450, 'sine', 0.08);
+      showToast("Đã xóa đề tự nhập, khôi phục đề mẫu từ kho.", "indigo");
+    }
+
+    // Xáo trộn ngẫu nhiên đề tài thật (tránh trùng lặp ngay câu vừa rồi)
+    function randomSoloTopic() {
+      playTone(580, 'sine', 0.12);
+
+      let nextIndex;
+      do {
+        nextIndex = Math.floor(Math.random() * SOLO_TOPICS.length);
+      } while (nextIndex === lastSoloTopicIndex && SOLO_TOPICS.length > 1);
+
+      lastSoloTopicIndex = nextIndex;
+      const picked = SOLO_TOPICS[nextIndex];
+
+      const topicElem = document.getElementById('solocurrentTopic');
+      if (topicElem) topicElem.textContent = `"${picked}"`;
+
+      const select = document.getElementById('soloTopicDropdown');
+      if (select) select.value = picked;
+
+      const customInput = document.getElementById('soloCustomTopicInput');
+      if (customInput) customInput.value = "";
+
+      const badge = document.getElementById('soloTopicSourceBadge');
+      if (badge) {
+        badge.textContent = `Đề Ngẫu Nhiên #${nextIndex + 1}`;
+        badge.className = "px-2.5 py-0.5 rounded-full text-[10px] bg-amber-500/20 text-amber-300 font-mono font-semibold";
+      }
+
+      resetSoloTimer();
+      clearSoloAiFeedback();
+      showToast(`🎲 Đã xáo trộn ngẫu nhiên đề tài #${nextIndex + 1}!`, "cyan");
+    }
+
+    // Xóa kết quả chấm cũ khi đổi đề tài để tránh gây hiểu nhầm
+    function clearSoloAiFeedback() {
+      const scoreTotalElem = document.getElementById('soloScoreTotal');
+      const content = document.getElementById('soloAiFeedbackContent');
+      if (scoreTotalElem) {
+        scoreTotalElem.className = "text-2xl font-black font-mono text-cyan-400";
+        scoreTotalElem.textContent = "-- / 10 Điểm (Chưa Chấm)";
+      }
+      if (content) {
+        content.innerHTML = `
+          <div class="p-4 rounded-xl bg-slate-950/60 border border-slate-800 text-xs text-slate-400 leading-relaxed text-center">
+            <i class="fa-solid fa-microphone-lines text-cyan-400 text-base mb-1 block"></i>
+            Đề tài đã được cập nhật. Bạn hãy chọn lập trường (Tán Thành / Phản Đối), bấm giờ và thu âm bài nói rồi nhấn "AI Giám Khảo Chấm Điểm Thẩm Định".
+          </div>
+        `;
+      }
     }
 
     function setSoloStance(stance) {
@@ -4188,12 +5516,13 @@ Kết luận: Phiên đối thoại biến thành phát ngôn đơn thoại cá 
       const conBtn = document.getElementById('soloStanceCon');
 
       if (stance === 'PRO') {
-        if (proBtn) proBtn.className = 'px-3.5 py-1.5 rounded-lg bg-emerald-600 text-white text-xs font-bold transition-all flex items-center gap-1.5 ring-2 ring-emerald-500/30';
-        if (conBtn) conBtn.className = 'px-3.5 py-1.5 rounded-lg bg-slate-800 text-slate-300 hover:text-white text-xs font-bold transition-all flex items-center gap-1.5';
+        if (proBtn) proBtn.className = 'px-4 py-2 rounded-xl bg-emerald-600 text-white text-xs font-bold transition-all flex items-center gap-2 ring-2 ring-emerald-500/30 shadow-lg shadow-emerald-600/20';
+        if (conBtn) conBtn.className = 'px-4 py-2 rounded-xl bg-slate-800 text-slate-300 hover:text-white text-xs font-bold transition-all flex items-center gap-2';
       } else {
-        if (proBtn) proBtn.className = 'px-3.5 py-1.5 rounded-lg bg-slate-800 text-slate-300 hover:text-white text-xs font-bold transition-all flex items-center gap-1.5';
-        if (conBtn) conBtn.className = 'px-3.5 py-1.5 rounded-lg bg-rose-600 text-white text-xs font-bold transition-all flex items-center gap-1.5 ring-2 ring-rose-500/30';
+        if (proBtn) proBtn.className = 'px-4 py-2 rounded-xl bg-slate-800 text-slate-300 hover:text-white text-xs font-bold transition-all flex items-center gap-2';
+        if (conBtn) conBtn.className = 'px-4 py-2 rounded-xl bg-rose-600 text-white text-xs font-bold transition-all flex items-center gap-2 ring-2 ring-rose-500/30 shadow-lg shadow-rose-600/20';
       }
+      showToast(`Đã chọn lập trường: ${stance === 'PRO' ? 'TÁN THÀNH (PRO)' : 'PHẢN ĐỐI (CON)'}`, stance === 'PRO' ? 'emerald' : 'rose');
     }
 
     function toggleSoloTimer() {
@@ -4773,6 +6102,15 @@ TRẢ VỀ DUY NHẤT 1 CHUỖI JSON HỢP LỆ THEO ĐỊNH DẠNG (không kèm
       document.body.removeChild(a);
       URL.revokeObjectURL(url);
     }
+
+    // Auto-initialize on page load
+    window.addEventListener('DOMContentLoaded', () => {
+      selectLevel(3);
+      initSoloTopicLab();
+      renderLeagueLeaderboard();
+      renderSurveyTable();
+      updateSurveyStats();
+    });
   </script>
 </body>
 </html>
