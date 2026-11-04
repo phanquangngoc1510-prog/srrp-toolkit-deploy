@@ -1167,8 +1167,8 @@
                 <i class="fa-solid fa-arrows-rotate text-[11px]"></i> Đổi góc hỏi Socrates khác
               </button>
             </div>
-            <div id="socraticQuestionBox" class="p-4 rounded-xl bg-slate-950/90 border border-slate-800 text-xs sm:text-sm text-slate-100 leading-relaxed font-sans italic border-l-4 border-l-amber-500 shadow-inner">
-              <p class="text-slate-400 italic flex items-center gap-2">
+            <div id="socraticQuestionBox" class="p-4 rounded-xl bg-slate-950/90 border border-slate-800 text-xs sm:text-sm text-slate-100 leading-relaxed font-sans not-italic border-l-4 border-l-amber-500 shadow-inner">
+              <p class="text-slate-400 font-sans not-italic flex items-center gap-2">
                 <i class="fa-solid fa-lock text-amber-400"></i>
                 Chưa kích hoạt. Hãy điền đủ 3 Điểm Đồng Thuận trên Anchor Card (Bước 4) ở trên và bấm "TIẾP TỤC ĐẾN BƯỚC 4B" để AI đọc giải pháp và đặt câu hỏi phản biện sâu.
               </p>
@@ -2677,266 +2677,266 @@
       ]
     };
 
-    /* Comprehensive 10 Sample Topics Knowledge Base */
+    /* Comprehensive 10 Sample Topics Knowledge Base (Đầy đủ Cấp độ 1, 2, 3 cho từng chủ đề) */
     const TOPIC_PRESETS = {
       1: {
         keyword: "camera",
         title: "Lắp đặt Camera AI giám sát hành vi và cảm xúc học sinh trong lớp học THPT",
+        level1Items: [
+          { text: "Camera AI thực chất là một công cụ vi phạm quyền riêng tư và tự do tối thiểu của học sinh THPT.", type: "OPINION", hint: "Quan điểm cá nhân (OPINION): Nhận định chủ quan dựa trên cảm xúc bảo vệ tự do cá nhân." },
+          { text: "Khảo sát tâm lý học sinh của ĐH Sư phạm cho thấy việc lắp camera giám sát trong phòng học làm tăng mức độ lo âu lên 25%.", type: "FACT", hint: "Dữ liệu xác thực (FACT): Có nguồn cơ quan khảo sát và tỷ lệ % đo lường thực nghiệm." },
+          { text: "Sự lo âu và cảm giác bị soi xét này chắc chắn sẽ khiến 100% học sinh sa sút học tập và không thể đỗ tốt nghiệp.", type: "FALLACY", hint: "Bẫy suy diễn gây nhiễu (FALLACY): Ngụy biện vội vã kết luận và phóng đại cực đoan '100%' thiếu căn cứ." },
+          { text: "Theo Thuyết tự quyết (Deci & Ryan), việc bị giám sát liên tục 24/7 triệt tiêu nhu cầu tự chủ và làm giảm 30% tư duy sáng tạo tự nhiên.", type: "FACT", hint: "Dữ liệu xác thực (FACT): Căn cứ vào lý thuyết tâm lý học hành vi được công nhận quốc tế." },
+          { text: "Nhà trường không nên vì muốn thuận tiện cho ban giám thị mà biến lớp học thành nơi thử nghiệm công nghệ kiểm soát.", type: "OPINION", hint: "Quan điểm cá nhân (OPINION): Đề xuất giá trị đạo đức và quan điểm điều hành sư phạm." }
+        ],
+        level2Sources: {
+          source1: { name: "Nguồn A: Nghiên cứu độc lập của Viện Tâm lý Giáo dục (2025)", content: "Khảo sát ngẫu nhiên có nhóm đối chứng trên 1.200 học sinh: Tỷ lệ tập trung giảm 18% trong tháng đầu lắp camera do phản xạ e dè, sau đó hồi phục và mức độ gian lận thi cử giảm 45%." },
+          source2: { name: "Nguồn B: Thảo luận mở trên trang Facebook Confessions của học sinh", content: "Bài đăng thu hút 850 bình luận bức xúc tự phát; 90% ý kiến cho rằng camera là 'nhà tù thu nhỏ' và đòi tẩy chay không vào lớp." },
+          questions: [
+            "Nghiên cứu có nhóm đối chứng (1.200 học sinh) đáng tin cậy hơn hay các bình luận ẩn danh trên Facebook?",
+            "Cần kiểm chứng thêm yếu tố góc quay camera và quy chế mã hóa dữ liệu máy chủ trước khi đưa ra kết luận?",
+            "Số liệu giảm tập trung ban đầu có đủ làm căn cứ khoa học để bác bỏ hoàn toàn camera hay cần khảo sát dài hạn?"
+          ]
+        },
         roles: {
-          A: {
-            role: "Học Sinh THPT",
-            tag: "GÓC NHÌN: HỌC SINH",
-            data: "Khảo sát thực tế: 72% học sinh THPT cảm thấy bị áp lực tâm lý và mất tự nhiên khi camera ghi nhận liên tục từng cử chỉ; 68% công nhận camera giảm trộm cắp nhưng lo ngại dữ liệu bị rò rỉ."
-          },
-          B: {
-            role: "Giáo Viên Bộ Môn",
-            tag: "GÓC NHÌN: NHÀ TRƯỜNG",
-            data: "Báo cáo nề nếp: Khi có camera thử nghiệm, hiện tượng gian lận thi cử giảm 45%, phát hiện và ngăn chặn kịp thời 90% các vụ mâu thuẫn xô xát đầu giờ hoặc giờ ra chơi."
-          },
-          C: {
-            role: "Ban Phụ Huynh",
-            tag: "GÓC NHÌN: GIA ĐÌNH",
-            data: "85% phụ huynh sẵn sàng đóng góp kinh phí để con được an toàn trong trường học; nhưng 91% kiên quyết yêu cầu nhà trường không được chia sẻ video công khai lên Internet."
-          },
-          D: {
-            role: "Chuyên Gia CNTT & Luật",
-            tag: "GÓC NHÌN: CHUYÊN GIA",
-            data: "Nghị định 13/2023/NĐ-CP: Dữ liệu hình ảnh và biểu cảm học sinh là dữ liệu nhạy cảm. Nhà trường phải có quy chế mã hóa bảo mật và được phụ huynh đồng thuận rõ ràng."
-          }
+          A: { role: "Học Sinh THPT", tag: "GÓC NHÌN: HỌC SINH", data: "Khảo sát thực tế: 72% học sinh THPT cảm thấy bị áp lực tâm lý và mất tự nhiên khi camera ghi nhận liên tục từng cử chỉ; 68% công nhận camera giảm trộm cắp nhưng lo ngại dữ liệu bị rò rỉ." },
+          B: { role: "Giáo Viên Bộ Môn", tag: "GÓC NHÌN: NHÀ TRƯỜNG", data: "Báo cáo nề nếp: Khi có camera thử nghiệm, hiện tượng gian lận thi cử giảm 45%, phát hiện và ngăn chặn kịp thời 90% các vụ mâu thuẫn xô xát đầu giờ hoặc giờ ra chơi." },
+          C: { role: "Ban Phụ Huynh", tag: "GÓC NHÌN: GIA ĐÌNH", data: "85% phụ huynh sẵn sàng đóng góp kinh phí để con được an toàn trong trường học; nhưng 91% kiên quyết yêu cầu nhà trường không được chia sẻ video công khai lên Internet." },
+          D: { role: "Chuyên Gia CNTT & Luật", tag: "GÓC NHÌN: CHUYÊN GIA", data: "Nghị định 13/2023/NĐ-CP: Dữ liệu hình ảnh và biểu cảm học sinh là dữ liệu nhạy cảm. Nhà trường phải có quy chế mã hóa bảo mật và được phụ huynh đồng thuận rõ ràng." }
         }
       },
       2: {
         keyword: "chatbot",
         title: "Cho phép học sinh sử dụng Chatbot AI (ChatGPT/Gemini) hỗ trợ làm bài tập về nhà và dự án",
+        level1Items: [
+          { text: "Chatbot AI giúp em giải thích cặn kẽ các bước giải phương trình Hóa học và tìm tài liệu tiếng Anh nhanh hơn 50%.", type: "FACT", hint: "Dữ liệu xác thực (FACT): Số liệu định lượng về tốc độ tra cứu và khả năng tương tác." },
+          { text: "Nếu nhà trường cho phép dùng AI, toàn bộ học sinh sẽ trở nên ỷ lại và sau 1 năm sẽ không còn ai tự biết viết một đoạn văn.", type: "FALLACY", hint: "Bẫy suy diễn gây nhiễu (FALLACY): Ngụy biện dốc trơn (Slippery Slope) quy chụp tương lai cực đoan." },
+          { text: "Khảo sát của UNESCO (2024): 64% giáo viên lo ngại việc học sinh sao chép nguyên văn văn bản AI mà không hiểu bản chất.", type: "FACT", hint: "Dữ liệu xác thực (FACT): Có trích dẫn báo cáo khảo sát từ tổ chức giáo dục quốc tế uy tín." },
+          { text: "Học sinh THPT có quyền sử dụng công nghệ tiên tiến nhất để tự học và bắt kịp thời đại trí tuệ nhân tạo.", type: "OPINION", hint: "Quan điểm cá nhân (OPINION): Đưa ra nhận định dựa trên quyền cá nhân và quan niệm thời đại." },
+          { text: "Bài tập về nhà chỉ có giá trị khi nó được làm hoàn toàn bằng trí não thủ công, không có sự can thiệp của máy tính tính toán.", type: "OPINION", hint: "Quan điểm cá nhân (OPINION): Định kiến chủ quan về phương pháp học tập truyền thống." }
+        ],
+        level2Sources: {
+          source1: { name: "Nguồn A: Đề tài thực nghiệm ĐH Giáo dục (2025)", content: "Thử nghiệm có kiểm soát trên 600 học sinh: Nhóm dùng AI kèm bộ câu hỏi hướng dẫn tự học đạt điểm kiểm tra tư duy phản biện cao hơn 22% so với nhóm tự học không dùng AI." },
+          source2: { name: "Nguồn B: Bài đăng phản ánh của giáo viên trên nhóm mạng xã hội", content: "Nhiều giáo viên chia sẻ ảnh chụp bài làm giống hệt nhau từng dấu phẩy từ ChatGPT và khẳng định 'AI đang giết chết liêm chính học đường'." },
+          questions: [
+            "Việc sử dụng AI có định hướng phương pháp khác gì so với việc sao chép thụ động không có hướng dẫn?",
+            "Cần thêm thước đo nào (như vấn đáp trực tiếp tại lớp) để đánh giá năng lực thực chất của học sinh?",
+            "Có căn cứ xác đáng để cấm hoàn toàn AI hay giải pháp là dạy học sinh cách kiểm chứng thông tin AI đưa ra?"
+          ]
+        },
         roles: {
-          A: {
-            role: "Học Sinh Tự Học",
-            tag: "GÓC NHÌN: HỌC SINH",
-            data: "AI giúp giải thích các khái niệm Toán Lý Hóa khó hiểu theo cách cá nhân hóa 24/7, tiết kiệm 50% thời gian tra cứu tài liệu học thuật nước ngoài."
-          },
-          B: {
-            role: "Giáo Viên Bộ Môn",
-            tag: "GÓC NHÌN: NHÀ TRƯỜNG",
-            data: "Khó khăn trong đánh giá năng lực thực chất vì hơn 40% bài tập nộp có dấu hiệu sao chép nguyên văn lời văn từ AI mà học sinh không hiểu bản chất."
-          },
-          C: {
-            role: "Ban Phụ Huynh",
-            tag: "GÓC NHÌN: GIA ĐÌNH",
-            data: "Ủng hộ con học cách làm chủ công nghệ tương lai, nhưng lo sợ con lười tư duy độc lập và suy giảm khả năng viết văn sáng tạo."
-          },
-          D: {
-            role: "Chuyên Gia Giáo Dục",
-            tag: "GÓC NHÌN: CHUYÊN GIA",
-            data: "Thay vì cấm đoán, nhà trường cần chuyển đổi hình thức kiểm tra sang vấn đáp phản biện và rèn luyện kỹ năng phân tích kiểm chứng nguồn tin do AI đưa ra."
-          }
+          A: { role: "Học Sinh Tự Học", tag: "GÓC NHÌN: HỌC SINH", data: "AI giúp giải thích các khái niệm Toán Lý Hóa khó hiểu theo cách cá nhân hóa 24/7, tiết kiệm 50% thời gian tra cứu tài liệu học thuật nước ngoài." },
+          B: { role: "Giáo Viên Bộ Môn", tag: "GÓC NHÌN: NHÀ TRƯỜNG", data: "Khó khăn trong đánh giá năng lực thực chất vì hơn 40% bài tập nộp có dấu hiệu sao chép nguyên văn lời văn từ AI mà học sinh không hiểu bản chất." },
+          C: { role: "Ban Phụ Huynh", tag: "GÓC NHÌN: GIA ĐÌNH", data: "Ủng hộ con học cách làm chủ công nghệ tương lai, nhưng lo sợ con lười tư duy độc lập và suy giảm khả năng viết văn sáng tạo." },
+          D: { role: "Chuyên Gia Giáo Dục", tag: "GÓC NHÌN: CHUYÊN GIA", data: "Thay vì cấm đoán, nhà trường cần chuyển đổi hình thức kiểm tra sang vấn đáp phản biện và rèn luyện kỹ năng phân tích kiểm chứng nguồn tin do AI đưa ra." }
         }
       },
       3: {
         keyword: "điện thoại",
         title: "Quy định cấm hoàn toàn học sinh mang điện thoại thông minh (Smartphone) vào trường học",
+        level1Items: [
+          { text: "Nghiên cứu y khoa chỉ ra thông báo từ smartphone làm phân mảnh sự chú ý và mất trung bình 20 phút để não bộ quay lại trạng thái tập trung sâu.", type: "FACT", hint: "Dữ liệu xác thực (FACT): Đo lường y sinh học về chu kỳ tập trung của hệ thần kinh." },
+          { text: "Điện thoại là tài sản thuộc quyền sở hữu cá nhân, nhà trường không có quyền tịch thu hay cấm đem vào trường.", type: "OPINION", hint: "Quan điểm cá nhân (OPINION): Lập luận dựa trên quyền sở hữu tài sản cá nhân." },
+          { text: "Cấm điện thoại chắc chắn sẽ xóa bỏ 100% hiện tượng học sinh lười biếng và đưa tỷ lệ tốt nghiệp trường lên tuyệt đối.", type: "FALLACY", hint: "Bẫy suy diễn gây nhiễu (FALLACY): Ngụy biện nguyên nhân đơn nhất (Single Cause Fallacy) và khẳng định viển vông." },
+          { text: "Thống kê tại 15 trường thí điểm mô hình cấm dùng điện thoại trong giờ học: Điểm kiểm tra định kỳ tăng 8.5% và hoạt động thể chất giờ ra chơi tăng 40%.", type: "FACT", hint: "Dữ liệu xác thực (FACT): Số liệu khảo sát thực nghiệm cụ thể trước và sau khi áp dụng." },
+          { text: "Học sinh THPT đã đủ nhận thức và tự chủ, cấm đoán tuyệt đối là phương pháp giáo dục lỗi thời và thiếu niềm tin.", type: "OPINION", hint: "Quan điểm cá nhân (OPINION): Đánh giá mang tính cảm xúc về phương pháp sư phạm." }
+        ],
+        level2Sources: {
+          source1: { name: "Nguồn A: Nghiên cứu theo dõi dọc của Viện Nghiên cứu Trẻ em (2024)", content: "Theo dõi 20 trường trong 1 năm: Nhóm trường áp dụng tủ khóa điện thoại đầu giờ giảm 32% hội chứng sợ bỏ lỡ (FOMO) và giảm 45% mâu thuẫn xích mích bắt nguồn từ tin nhắn mạng xã hội." },
+          source2: { name: "Nguồn B: Khảo sát 1.500 học sinh trên diễn đàn mạng tuổi teen", content: "82% học sinh phản đối cấm điện thoại với lý do không thể liên lạc khẩn cấp khi xe hỏng hoặc gia đình có việc đột xuất." },
+          questions: [
+            "Nghiên cứu khoa học dài hạn và khảo sát cảm xúc trực tuyến phản ánh những mặt đối lập nào của vấn đề?",
+            "Giải pháp tủ khóa cất điện thoại đầu giờ có giải quyết được cả nhu cầu tập trung học và an toàn liên lạc?",
+            "Có cơ sở để cấm hoàn toàn việc mang điện thoại vào cổng trường hay chỉ nên giới hạn trong giờ học?"
+          ]
+        },
         roles: {
-          A: {
-            role: "Đại Diện Học Sinh",
-            tag: "GÓC NHÌN: HỌC SINH",
-            data: "Điện thoại là công cụ quét mã bài tập số, tra cứu từ điển và liên lạc khẩn cấp với gia đình khi tan học hoặc ốm đột xuất."
-          },
-          B: {
-            role: "Giám Thị / Đoàn Trường",
-            tag: "GÓC NHÌN: NHÀ TRƯỜNG",
-            data: "Các lớp cấm điện thoại có mức độ tập trung nghe giảng cao hơn 35%, hiện tượng học sinh lén quay video tiêu cực đưa lên TikTok giảm hẳn."
-          },
-          C: {
-            role: "Đại Diện Cha Mẹ",
-            tag: "GÓC NHÌN: GIA ĐÌNH",
-            data: "Muốn liên lạc được với con sau giờ tan trường nhưng đồng tình cần quản lý không cho con chơi game hoặc lướt mạng trong giờ học."
-          },
-          D: {
-            role: "Bác Sĩ Tâm Lý Học",
-            tag: "GÓC NHÌN: CHUYÊN GIA",
-            data: "Nghiện dopamine từ thông báo mạng xã hội làm gián đoạn chu kỳ chú ý sâu của não bộ tuổi dậy thì. Giải pháp tủ khóa điện thoại đầu giờ là tối ưu."
-          }
+          A: { role: "Đại Diện Học Sinh", tag: "GÓC NHÌN: HỌC SINH", data: "Điện thoại là công cụ quét mã bài tập số, tra cứu từ điển và liên lạc khẩn cấp với gia đình khi tan học hoặc ốm đột xuất." },
+          B: { role: "Giám Thị / Đoàn Trường", tag: "GÓC NHÌN: NHÀ TRƯỜNG", data: "Các lớp cấm điện thoại có mức độ tập trung nghe giảng cao hơn 35%, hiện tượng học sinh lén quay video tiêu cực đưa lên TikTok giảm hẳn." },
+          C: { role: "Đại Diện Cha Mẹ", tag: "GÓC NHÌN: GIA ĐÌNH", data: "Muốn liên lạc được với con sau giờ tan trường nhưng đồng tình cần quản lý không cho con chơi game hoặc lướt mạng trong giờ học." },
+          D: { role: "Bác Sĩ Tâm Lý Học", tag: "GÓC NHÌN: CHUYÊN GIA", data: "Nghiện dopamine từ thông báo mạng xã hội làm gián đoạn chu kỳ chú ý sâu của não bộ tuổi dậy thì. Giải pháp tủ khóa điện thoại đầu giờ là tối ưu." }
         }
       },
       4: {
-        keyword: "đạo đức ai",
+        keyword: "đạo đức",
         title: "Tích hợp môn Đạo đức AI & Năng lực an toàn thông tin số vào chương trình THPT",
+        level1Items: [
+          { text: "Báo cáo Cục An toàn Thông tin (2024): Học sinh THPT chiếm 28% nạn nhân của các vụ lừa đảo deepfake và phát tán hình ảnh nhạy cảm giả mạo.", type: "FACT", hint: "Dữ liệu xác thực (FACT): Thống kê chính thức của cơ quan quản lý an toàn mạng quốc gia." },
+          { text: "Môn Đạo đức AI là môn học cần thiết và quan trọng bậc nhất, phải ưu tiên hơn cả các môn thi tốt nghiệp hiện tại.", type: "OPINION", hint: "Quan điểm cá nhân (OPINION): Đánh giá chủ quan về mức độ ưu tiên giữa các môn học." },
+          { text: "Nếu không đưa môn Đạo đức AI vào dạy ngay, thế hệ trẻ chắc chắn sẽ mất kiểm soát nhân cách và toàn xã hội sẽ sụp đổ.", type: "FALLACY", hint: "Bẫy suy diễn gây nhiễu (FALLACY): Ngụy biện dốc trơn (Slippery Slope) phóng đại hậu quả tận thế." },
+          { text: "Khung năng lực số UNESCO và DigComp 2.2 xác định Đạo đức AI là 1 trong 5 trụ cột bắt buộc trong giáo dục phổ thông thế kỷ 21.", type: "FACT", hint: "Dữ liệu xác thực (FACT): Trích dẫn khung chuẩn quốc tế được công bố chính thức." },
+          { text: "Nhà trường chỉ cần tuyên truyền ngoại khóa, không nên biến thành môn học tính điểm làm tăng gánh nặng thi cử.", type: "OPINION", hint: "Quan điểm cá nhân (OPINION): Đề xuất về hình thức tổ chức giáo dục dựa trên giảm tải áp lực." }
+        ],
+        level2Sources: {
+          source1: { name: "Nguồn A: Báo cáo thực nghiệm của Hội đồng Giáo dục Quốc gia", content: "Thí điểm 12 tiết thực hành tình huống an toàn số tại 10 trường: 85% học sinh nhận diện đúng bẫy lừa đảo deepfake và biết cách bảo vệ dữ liệu cá nhân." },
+          source2: { name: "Nguồn B: Khảo sát phụ huynh tại 5 buổi họp phụ huynh đầu năm", content: "92% phụ huynh đồng tình cần giáo dục an toàn mạng cho con nhưng 88% kiến nghị không được tổ chức thi cử chấm điểm." },
+          questions: [
+            "Hiệu quả giáo dục qua trải nghiệm thực tế khác gì so với phương pháp dạy lý thuyết thi cử?",
+            "Làm thế nào để đánh giá năng lực an toàn số của học sinh mà không biến thành áp lực điểm số?",
+            "Mô hình tích hợp liên môn vào Tin học và GDCD có khả thi hơn là mở thêm môn học độc lập?"
+          ]
+        },
         roles: {
-          A: {
-            role: "Học Sinh Khối Tự Nhiên",
-            tag: "GÓC NHÌN: HỌC SINH",
-            data: "Học sinh rất muốn được trang bị kỹ năng nhận diện deepfake, bảo vệ dữ liệu cá nhân trước các chiêu trò lừa đảo trực tuyến đang bùng nổ."
-          },
-          B: {
-            role: "Tổ Chuyên Môn Tin Học",
-            tag: "GÓC NHÌN: NHÀ TRƯỜNG",
-            data: "Chương trình hiện tại đã khá nặng, cần tích hợp linh hoạt theo chuyên đề liên môn thay vì thêm một môn học thi cử độc lập tạo áp lực."
-          },
-          C: {
-            role: "Ban Đại Diện Cha Mẹ",
-            tag: "GÓC NHÌN: GIA ĐÌNH",
-            data: "Ủng hộ mạnh mẽ vì nhiều phụ huynh không đủ kiến thức công nghệ để bảo vệ và định hướng cho con em trước các cạm bẫy mạng xã hội."
-          },
-          D: {
-            role: "Chuyên Gia An Ninh Mạng",
-            tag: "GÓC NHÌN: CHUYÊN GIA",
-            data: "Kỹ năng số là năng lực sinh tồn trong thế kỷ 21. Cần thực hành tình huống thực nghiệm thay vì chỉ dạy lý thuyết hàn lâm trên sách vở."
-          }
+          A: { role: "Học Sinh Khối Tự Nhiên", tag: "GÓC NHÌN: HỌC SINH", data: "Học sinh rất muốn được trang bị kỹ năng nhận diện deepfake, bảo vệ dữ liệu cá nhân trước các chiêu trò lừa đảo trực tuyến đang bùng nổ." },
+          B: { role: "Tổ Chuyên Môn Tin Học", tag: "GÓC NHÌN: NHÀ TRƯỜNG", data: "Chương trình hiện tại đã khá nặng, cần tích hợp linh hoạt theo chuyên đề liên môn thay vì thêm một môn học thi cử độc lập tạo áp lực." },
+          C: { role: "Ban Đại Diện Cha Mẹ", tag: "GÓC NHÌN: GIA ĐÌNH", data: "Ủng hộ mạnh mẽ vì nhiều phụ huynh không đủ kiến thức công nghệ để bảo vệ và định hướng cho con em trước các cạm bẫy mạng xã hội." },
+          D: { role: "Chuyên Gia An Ninh Mạng", tag: "GÓC NHÌN: CHUYÊN GIA", data: "Kỹ năng số là năng lực sinh tồn trong thế kỷ 21. Cần thực hành tình huống thực nghiệm thay vì chỉ dạy lý thuyết hàn lâm trên sách vở." }
         }
       },
       5: {
         keyword: "đồng phục",
         title: "Áp dụng đồng phục học đường linh hoạt không phân biệt giới tính tại trường THPT",
+        level1Items: [
+          { text: "Khảo sát thực tế: 78% nữ sinh cho biết việc mặc áo dài hoặc váy ngắn gây bất tiện khi đạp xe, sinh hoạt thể thao và mùa mưa bão.", type: "FACT", hint: "Dữ liệu xác thực (FACT): Tỷ lệ % khảo sát phản ánh thực tế sinh hoạt học đường." },
+          { text: "Áo dài là quốc phục truyền thống thiêng liêng, bất kỳ sự thay đổi nào cũng là làm suy đồi thuần phong mỹ tục của dân tộc.", type: "FALLACY", hint: "Bẫy suy diễn gây nhiễu (FALLACY): Ngụy biện bám víu truyền thống (Appeal to Tradition) và quy chụp đạo đức." },
+          { text: "Mặc quần âu và áo sơ mi giúp học sinh cảm thấy thoải mái, tự tin và tập trung học tập hơn rất nhiều.", type: "OPINION", hint: "Quan điểm cá nhân (OPINION): Đánh giá chủ quan về cảm giác cá nhân và sự tiện lợi." },
+          { text: "Báo cáo của UNICEF (2023): Chính sách đồng phục linh hoạt theo nhu cầu vận động giúp giảm 35% nguy cơ bị quấy rối và tự ti ngoại hình ở học sinh nữ.", type: "FACT", hint: "Dữ liệu xác thực (FACT): Báo cáo từ tổ chức quốc tế có số liệu giảm thiểu rủi ro tâm lý." },
+          { text: "Trường học nên đặt sự an toàn và tiện dụng của học sinh lên trên các quy chuẩn hình thức bề ngoài khắt khe.", type: "OPINION", hint: "Quan điểm cá nhân (OPINION): Quan điểm về triết lý giáo dục hướng đến con người." }
+        ],
+        level2Sources: {
+          source1: { name: "Nguồn A: Nghiên cứu của Khoa Xã hội học ĐH KHXH&NV", content: "Thực nghiệm áp dụng 2 lựa chọn (váy hoặc quần tây đối với nữ) tại 3 trường THPT trong 1 năm: 94% giáo viên và phụ huynh đánh giá mô hình vừa lịch sự, vừa tiện dụng và an toàn." },
+          source2: { name: "Nguồn B: Bài viết phản đối trên hội nhóm mạng xã hội", content: "Nhiều bình luận của cựu học sinh lo ngại việc bỏ áo dài bắt buộc thứ Hai sẽ làm 'mất đi nét đẹp thơ mộng thời áo trắng'." },
+          questions: [
+            "Nghiên cứu về tính an toàn, tiện dụng có giá trị thực tiễn hơn hay cảm xúc hoài niệm của người ngoài cuộc?",
+            "Phương án 'tự chọn linh hoạt' có dung hòa được cả yếu tố giữ gìn truyền thống lẫn sự thoải mái không?",
+            "Có số liệu thực nghiệm nào chứng minh việc cho mặc quần tây ảnh hưởng tiêu cực đến học tập hay không?"
+          ]
+        },
         roles: {
-          A: {
-            role: "Đoàn Viên Học Sinh",
-            tag: "GÓC NHÌN: HỌC SINH",
-            data: "Nữ sinh mong muốn được mặc quần dài thể thao thuận tiện vận động, đi xe đạp; tôn trọng bản dạng giới và giảm áp lực tự ti về hình thể."
-          },
-          B: {
-            role: "Ban Giám Hiệu Nhà Trường",
-            tag: "GÓC NHÌN: NHÀ TRƯỜNG",
-            data: "Đồng phục thể hiện nét đẹp truyền thống và thương hiệu nhà trường; thay đổi cần lộ trình thẩm mỹ và không gây phản cảm học đường."
-          },
-          C: {
-            role: "Hội Phụ Huynh",
-            tag: "GÓC NHÌN: GIA ĐÌNH",
-            data: "Quan tâm đến chi phí may mặc, độ bền và tính tiện dụng của đồng phục để tránh lãng phí kinh tế hàng năm."
-          },
-          D: {
-            role: "Nhà Xã Hội Học Giáo Dục",
-            tag: "GÓC NHÌN: CHUYÊN GIA",
-            data: "Xu hướng giáo dục bình đẳng toàn cầu đang chuyển dịch sang tính thoải mái, hòa nhập xã hội và tôn trọng nhân cách cá nhân."
-          }
+          A: { role: "Đoàn Viên Học Sinh", tag: "GÓC NHÌN: HỌC SINH", data: "Nữ sinh mong muốn được mặc quần dài thể thao thuận tiện vận động, đi xe đạp; tôn trọng bản dạng giới và giảm áp lực tự ti về hình thể." },
+          B: { role: "Ban Giám Hiệu Nhà Trường", tag: "GÓC NHÌN: NHÀ TRƯỜNG", data: "Đồng phục thể hiện nét đẹp truyền thống và thương hiệu nhà trường; thay đổi cần lộ trình thẩm mỹ và không gây phản cảm học đường." },
+          C: { role: "Hội Phụ Huynh", tag: "GÓC NHÌN: GIA ĐÌNH", data: "Quan tâm đến chi phí may mặc, độ bền và tính tiện dụng của đồng phục để tránh lãng phí kinh tế hàng năm." },
+          D: { role: "Nhà Xã Hội Học Giáo Dục", tag: "GÓC NHÌN: CHUYÊN GIA", data: "Xu hướng giáo dục bình đẳng toàn cầu đang chuyển dịch sang tính thoải mái, hòa nhập xã hội và tôn trọng nhân cách cá nhân." }
         }
       },
       6: {
         keyword: "hạnh kiểm",
         title: "Đánh giá hạnh kiểm học sinh THPT dựa trên các phát ngôn và tương tác trên mạng xã hội",
+        level1Items: [
+          { text: "Khảo sát của Đoàn trường: 62% các vụ mâu thuẫn xô xát trong trường bắt nguồn từ những lời lăng mạ, châm chọc nhau trên Facebook và TikTok.", type: "FACT", hint: "Dữ liệu xác thực (FACT): Thống kê thực tế về nguồn cơn các vụ việc xung đột học đường." },
+          { text: "Tài khoản mạng xã hội là không gian riêng tư tuyệt đối của cá nhân em, nhà trường không có quyền can thiệp hay theo dõi.", type: "OPINION", hint: "Quan điểm cá nhân (OPINION): Quan điểm về ranh giới không gian cá nhân trên Internet." },
+          { text: "Nếu không trừ điểm hạnh kiểm trên mạng, trường học sẽ hoàn toàn bất lực và toàn bộ học sinh sẽ trở thành tội phạm công nghệ.", type: "FALLACY", hint: "Bẫy suy diễn gây nhiễu (FALLACY): Ngụy biện song đề giả (False Dilemma) và phóng đại hậu quả." },
+          { text: "Thông tư 32 của Bộ GD&ĐT quy định hành vi xúc phạm danh dự nhân phẩm người khác (kể cả trên không gian mạng) là vi phạm kỷ luật học sinh.", type: "FACT", hint: "Dữ liệu xác thực (FACT): Căn cứ văn bản quy phạm pháp luật giáo dục hiện hành." },
+          { text: "Lứa tuổi học trò còn bồng bột, nhà trường nên dùng biện pháp hòa giải và hướng dẫn ứng xử thay vì trừ điểm ghi vào học bạ.", type: "OPINION", hint: "Quan điểm cá nhân (OPINION): Nhận định về phương pháp giáo dục nhân văn." }
+        ],
+        level2Sources: {
+          source1: { name: "Nguồn A: Nghiên cứu của Viện Khoa học Pháp lý Giáo dục", content: "Khảo sát 20 trường THPT ban hành 'Bộ quy tắc ứng xử văn minh số': Giảm 48% hành vi công kích trên mạng mà không cần dùng đến hình phạt trừ hạnh kiểm nặng nề." },
+          source2: { name: "Nguồn B: Bài viết trên mạng xã hội về một vụ trừ hạnh kiểm", content: "Dư luận tranh cãi dữ dội khi một học sinh bị xếp hạnh kiểm yếu vì ấn nút 'thả ha ha' vào thông báo của trường, bị chỉ trích là lạm quyền." },
+          questions: [
+            "Bộ quy tắc ứng xử văn minh số có mang lại hiệu quả bền vững hơn việc trừng phạt hành chính?",
+            "Ranh giới giữa hành vi vu khống/đe dọa và quyền bày tỏ cảm xúc tự do cá nhân được phân định ra sao?",
+            "Liệu việc trừ hạnh kiểm có làm học sinh thay đổi nhận thức hay chỉ thúc đẩy họ lập tài khoản ẩn danh?"
+          ]
+        },
         roles: {
-          A: {
-            role: "Đại Diện Học Sinh",
-            tag: "GÓC NHÌN: HỌC SINH",
-            data: "Mạng xã hội cá nhân là không gian xả stress sau giờ học; việc giám sát phát ngôn để trừ điểm hạnh kiểm tạo cảm giác bị trừng phạt và mất tự do."
-          },
-          B: {
-            role: "Đoàn Thanh Niên Trường",
-            tag: "GÓC NHÌN: NHÀ TRƯỜNG",
-            data: "Nhiều vụ bạo lực học đường bắt nguồn từ những bình luận xúc phạm, bêu riếu nhau trên Facebook; nhà trường phải có chế tài răn đe."
-          },
-          C: {
-            role: "Phụ Huynh Học Sinh",
-            tag: "GÓC NHÌN: GIA ĐÌNH",
-            data: "Cần phân biệt giữa trò đùa bồng bột tuổi học trò với hành vi vi phạm đạo đức nghiêm trọng để có biện pháp giáo dục uốn nắn hơn là trừ điểm."
-          },
-          D: {
-            role: "Luật Sư Quyền Trẻ Em",
-            tag: "GÓC NHÌN: CHUYÊN GIA",
-            data: "Ranh giới giữa tự do ngôn luận và vi phạm quy chế rất mong manh. Cần cẩm nang văn hóa ứng xử số thay vì áp dụng hình phạt cảm tính."
-          }
+          A: { role: "Đại Diện Học Sinh", tag: "GÓC NHÌN: HỌC SINH", data: "Mạng xã hội cá nhân là không gian xả stress sau giờ học; việc giám sát phát ngôn để trừ điểm hạnh kiểm tạo cảm giác bị trừng phạt và mất tự do." },
+          B: { role: "Đoàn Thanh Niên Trường", tag: "GÓC NHÌN: NHÀ TRƯỜNG", data: "Nhiều vụ bạo lực học đường bắt nguồn từ những bình luận xúc phạm, bêu riếu nhau trên Facebook; nhà trường phải có chế tài răn đe." },
+          C: { role: "Phụ Huynh Học Sinh", tag: "GÓC NHÌN: GIA ĐÌNH", data: "Cần phân biệt giữa trò đùa bồng bột tuổi học trò với hành vi vi phạm đạo đức nghiêm trọng để có biện pháp giáo dục uốn nắn hơn là trừ điểm." },
+          D: { role: "Luật Sư Quyền Trẻ Em", tag: "GÓC NHÌN: CHUYÊN GIA", data: "Ranh giới giữa tự do ngôn luận và vi phạm quy chế rất mong manh. Cần cẩm nang văn hóa ứng xử số thay vì áp dụng hình phạt cảm tính." }
         }
       },
       7: {
         keyword: "nghệ thuật",
         title: "Cho phép tranh vẽ đồng sáng tạo với GenAI tham gia các cuộc thi nghệ thuật học sinh",
+        level1Items: [
+          { text: "Khảo sát triển lãm nghệ thuật số 2024: 75% tác phẩm đạt giải sáng tạo sử dụng phần mềm đồ họa và công cụ AI hỗ trợ phác thảo ý tưởng.", type: "FACT", hint: "Dữ liệu xác thực (FACT): Thống kê số lượng thực tế từ triển lãm nghệ thuật đương đại." },
+          { text: "Tranh do AI tạo ra chỉ là sự chắp vá pixel vô hồn của máy tính, hoàn toàn không có cảm xúc hay giá trị nghệ thuật đích thực.", type: "OPINION", hint: "Quan điểm cá nhân (OPINION): Nhận định thẩm mỹ mang tính cảm tính cá nhân." },
+          { text: "Nếu cho tranh AI thi chung, tất cả họa sĩ vẽ tay truyền thống chắc chắn sẽ chết đói và nền hội họa chân chính sẽ hoàn toàn diệt vong.", type: "FALLACY", hint: "Bẫy suy diễn gây nhiễu (FALLACY): Ngụy biện dốc trơn cực đoan (Slippery Slope) và kịch tính hóa." },
+          { text: "Quy chuẩn của Tổ chức Sở hữu Trí tuệ Thế giới (WIPO): Hình ảnh do AI tự tạo thuần túy không được cấp bản quyền; chỉ phần can thiệp sáng tạo của con người mới được công nhận.", type: "FACT", hint: "Dữ liệu xác thực (FACT): Khung pháp lý sở hữu trí tuệ quốc tế đã ban hành." },
+          { text: "Nghệ thuật quan trọng nhất là câu chuyện và thông điệp gửi gắm, công cụ cọ vẽ hay thuật toán chỉ là phương tiện biểu đạt.", type: "OPINION", hint: "Quan điểm cá nhân (OPINION): Quan niệm mở về triết lý sáng tạo nghệ thuật." }
+        ],
+        level2Sources: {
+          source1: { name: "Nguồn A: Báo cáo thực nghiệm của Hội Mỹ thuật Giáo dục", content: "Thí điểm cuộc thi chia làm 2 bảng: 'Bảng A - Hội họa thủ công truyền thống' và 'Bảng B - Nghệ thuật số & AI Co-creation': 92% thí sinh cả 2 bảng đánh giá cuộc thi công bằng và minh bạch." },
+          source2: { name: "Nguồn B: Bài đăng tranh cãi trên diễn đàn nghệ sĩ trẻ", content: "Bức xúc trước một bức tranh đoạt giải nhất nhưng bị phát hiện tạo hoàn toàn từ Midjourney mà thí sinh không hề có kỹ năng hội họa cơ bản." },
+          questions: [
+            "Việc phân chia thành 2 bảng thi độc lập có bảo đảm tính công bằng tuyệt đối cho cả 2 nhóm thí sinh?",
+            "Yêu cầu nộp kèm lịch sử câu lệnh (prompt log) và video quá trình chỉnh sửa có đủ minh bạch quyền tác giả?",
+            "Làm thế nào để đánh giá đúng công sức của thí sinh vẽ tay 20 giờ so với người tinh chỉnh prompt trong 30 phút?"
+          ]
+        },
         roles: {
-          A: {
-            role: "Học Sinh Yêu Nghệ Thuật",
-            tag: "GÓC NHÌN: HỌC SINH",
-            data: "AI là một cây cọ vẽ kỹ thuật số mới giúp những bạn không có hoa tay nhưng giàu ý tưởng câu chuyện vẫn có thể biến trí tưởng tượng thành tác phẩm."
-          },
-          B: {
-            role: "Giáo Viên Mỹ Thuật",
-            tag: "GÓC NHÌN: NHÀ TRƯỜNG",
-            data: "Nghệ thuật cốt lõi ở sự khổ luyện kỹ năng vẽ tay và cảm xúc chân thật; cho AI tham gia chung sẽ không công bằng với bạn vẽ thủ công truyền thống."
-          },
-          C: {
-            role: "Ban Tổ Chức Cuộc Thi",
-            tag: "GÓC NHÌN: GIA ĐÌNH",
-            data: "Khó khăn trong việc phát hiện tranh do học sinh tự prompt hay do người lớn can thiệp, cần minh bạch bản quyền."
-          },
-          D: {
-            role: "Nghệ Sĩ Số & Giám Khảo",
-            tag: "GÓC NHÌN: CHUYÊN GIA",
-            data: "Giải pháp tối ưu là mở một hạng mục riêng 'Digital Art & AI Co-creation' với yêu cầu nộp kèm lịch sử prompt và video quá trình sáng tạo."
-          }
+          A: { role: "Học Sinh Yêu Nghệ Thuật", tag: "GÓC NHÌN: HỌC SINH", data: "AI là một cây cọ vẽ kỹ thuật số mới giúp những bạn không có hoa tay nhưng giàu ý tưởng câu chuyện vẫn có thể biến trí tưởng tượng thành tác phẩm." },
+          B: { role: "Giáo Viên Mỹ Thuật", tag: "GÓC NHÌN: NHÀ TRƯỜNG", data: "Nghệ thuật cốt lõi ở sự khổ luyện kỹ năng vẽ tay và cảm xúc chân thật; cho AI tham gia chung sẽ không công bằng với bạn vẽ thủ công truyền thống." },
+          C: { role: "Ban Tổ Chức Cuộc Thi", tag: "GÓC NHÌN: GIA ĐÌNH", data: "Khó khăn trong việc phát hiện tranh do học sinh tự prompt hay do người lớn can thiệp, cần minh bạch bản quyền." },
+          D: { role: "Nghệ Sĩ Số & Giám Khảo", tag: "GÓC NHÌN: CHUYÊN GIA", data: "Giải pháp tối ưu là mở một hạng mục riêng 'Digital Art & AI Co-creation' với yêu cầu nộp kèm lịch sử prompt và video quá trình sáng tạo." }
         }
       },
       8: {
         keyword: "sách giáo khoa",
         title: "Thay thế hoàn toàn 100% sách giáo khoa in truyền thống bằng máy tính bảng",
+        level1Items: [
+          { text: "Đo lường của Viện Y học Lao động: Cặp sách học sinh lớp 10 nặng trung bình 6.8kg, làm tăng 30% nguy cơ gù lưng và cong vẹo cột sống học đường.", type: "FACT", hint: "Dữ liệu xác thực (FACT): Số liệu y sinh học về trọng lượng cặp sách và bệnh lý cột sống." },
+          { text: "Đọc sách in truyền thống đem lại cảm xúc thiêng liêng, mùi mực in giúp học sinh tập trung và thông minh hơn đọc màn hình điện tử.", type: "OPINION", hint: "Quan điểm cá nhân (OPINION): Cảm nhận chủ quan dựa trên hoài niệm và sở thích đọc cá nhân." },
+          { text: "Chuyển sang máy tính bảng chắc chắn 100% học sinh sẽ bị cận thị nặng và toàn bộ giờ học sẽ biến thành giờ chơi game bí mật.", type: "FALLACY", hint: "Bẫy suy diễn gây nhiễu (FALLACY): Ngụy biện vội vã kết luận và quy chụp toàn thể (Hasty Generalization)." },
+          { text: "Nghiên cứu của ĐH Stavanger: Khả năng đọc hiểu văn bản dài và liên kết logic trên sách giấy vẫn cao hơn 18% so với đọc trên màn hình cảm ứng.", type: "FACT", hint: "Dữ liệu xác thực (FACT): Báo cáo nghiên cứu khoa học thần kinh nhận thức được kiểm chứng." },
+          { text: "Nhà nước và nhà trường nên chuyển đổi số sách giáo khoa để bảo vệ môi trường và tiết kiệm hàng ngàn tấn gỗ in giấy mỗi năm.", type: "OPINION", hint: "Quan điểm cá nhân (OPINION): Nhận định chính sách dựa trên mục tiêu phát triển bền vững." }
+        ],
+        level2Sources: {
+          source1: { name: "Nguồn A: Thực nghiệm sư phạm tại 5 trường THPT của Sở GD&ĐT", content: "Thí điểm mô hình 'Lớp học số Hybrid' (Sách bài tập và video tương tác trên tablet; sách giáo khoa cốt lõi bằng sách in): Giảm 60% sức nặng cặp sách và duy trì khả năng tập trung tốt." },
+          source2: { name: "Nguồn B: Tâm sự của phụ huynh vùng nông thôn trên báo chí", content: "Nhiều gia đình khó khăn lo ngại chi phí mua thiết bị đắt đỏ, nguy cơ hỏng hóc hoặc mất trộm máy tính bảng tạo gánh nặng nợ nần." },
+          questions: [
+            "Làm thế nào để bảo đảm sự công bằng cho học sinh có hoàn cảnh khó khăn nếu số hóa 100% tài liệu?",
+            "Nghiên cứu về khả năng ghi nhớ trên sách giấy có thể được khắc phục bằng cách nào trên thiết bị số?",
+            "Mô hình kết hợp (Hybrid) có phải là phương án dung hòa tối ưu giữa công nghệ và sư phạm truyền thống?"
+          ]
+        },
         roles: {
-          A: {
-            role: "Học Sinh Khối 11",
-            tag: "GÓC NHÌN: HỌC SINH",
-            data: "Giảm sức nặng của ba lô từ 7kg xuống 500g; tích hợp video 3D tương tác thí nghiệm sinh động và ghi chú trực tiếp rất tiện lợi."
-          },
-          B: {
-            role: "Ban Giám Hiệu & Thủ Thư",
-            tag: "GÓC NHÌN: NHÀ TRƯỜNG",
-            data: "Cơ sở hạ tầng wifi học đường chưa phủ sóng đồng đều; rủi ro hỏng hóc, mất trộm và nguy cơ học sinh mở tab game trong giờ học."
-          },
-          C: {
-            role: "Phụ Huynh Nông Thôn / Đô Thị",
-            tag: "GÓC NHÌN: GIA ĐÌNH",
-            data: "Gánh nặng tài chính trang bị tablet cho các gia đình khó khăn; lo lắng ánh sáng xanh gây cận thị và thoái hóa cột sống cổ."
-          },
-          D: {
-            role: "Bác Sĩ Nhãn Khoa & Sư Phạm",
-            tag: "GÓC NHÌN: CHUYÊN GIA",
-            data: "Nghiên cứu chỉ ra khả năng đọc hiểu sâu và ghi nhớ văn bản trên sách giấy vẫn cao hơn 20% so với màn hình cảm ứng điện tử."
-          }
+          A: { role: "Học Sinh Khối 11", tag: "GÓC NHÌN: HỌC SINH", data: "Giảm sức nặng của ba lô từ 7kg xuống 500g; tích hợp video 3D tương tác thí nghiệm sinh động và ghi chú trực tiếp rất tiện lợi." },
+          B: { role: "Ban Giám Hiệu & Thủ Thư", tag: "GÓC NHÌN: NHÀ TRƯỜNG", data: "Cơ sở hạ tầng wifi học đường chưa phủ sóng đồng đều; rủi ro hỏng hóc, mất trộm và nguy cơ học sinh mở tab game trong giờ học." },
+          C: { role: "Phụ Huynh Nông Thôn / Đô Thị", tag: "GÓC NHÌN: GIA ĐÌNH", data: "Gánh nặng tài chính trang bị tablet cho các gia đình khó khăn; lo lắng ánh sáng xanh gây cận thị và thoái hóa cột sống cổ." },
+          D: { role: "Bác Sĩ Nhãn Khoa & Sư Phạm", tag: "GÓC NHÌN: CHUYÊN GIA", data: "Nghiên cứu chỉ ra khả năng đọc hiểu sâu và ghi nhớ văn bản trên sách giấy vẫn cao hơn 20% so với màn hình cảm ứng điện tử." }
         }
       },
       9: {
-        keyword: "bạo lực mạng",
+        keyword: "bạo lực",
         title: "Xử lý bạo lực mạng học đường: Đưa ra hội đồng kỷ luật công khai hay hòa giải tâm lý kín?",
+        level1Items: [
+          { text: "Nghiên cứu của Hiệp hội Tâm lý Học đường: 74% nạn nhân bị bạo lực mạng cho biết việc kỷ luật công khai trước toàn trường khiến họ bị đàm tiếu và tổn thương kéo dài.", type: "FACT", hint: "Dữ liệu xác thực (FACT): Thống kê tâm lý học đường về tác động ngược của việc bêu tên công khai." },
+          { text: "Phải bêu tên kẻ bắt nạt trước cờ để làm nhục công khai, có như thế chúng mới biết sợ mà không dám tái phạm.", type: "OPINION", hint: "Quan điểm cá nhân (OPINION): Quan điểm trừng phạt răn đe mang tính cảm xúc trả đũa." },
+          { text: "Nếu chỉ hòa giải kín trong phòng tâm lý mà không đuổi học thì mọi nề nếp kỷ cương của trường học sẽ hoàn toàn sụp đổ.", type: "FALLACY", hint: "Bẫy suy diễn gây nhiễu (FALLACY): Ngụy biện song đề giả (False Dilemma) coi trừng phạt là cách duy nhất." },
+          { text: "Theo mô hình Công lý phục hồi (Restorative Justice), người vi phạm thực hiện lao động công ích và đối thoại hàn gắn giúp giảm 55% tỷ lệ tái phạm so với đuổi học.", type: "FACT", hint: "Dữ liệu xác thực (FACT): Số liệu thực nghiệm khoa học về hiệu quả của công lý phục hồi." },
+          { text: "Trường học phải là nơi uốn nắn và chữa lành tổn thương tâm lý, không phải là cơ quan xét xử trừng phạt học trò.", type: "OPINION", hint: "Quan điểm cá nhân (OPINION): Nhận định về sứ mệnh nhân văn của môi trường giáo dục." }
+        ],
+        level2Sources: {
+          source1: { name: "Nguồn A: Nghiên cứu của Viện Nghiên cứu Giáo dục tại 30 trường", content: "So sánh 2 mô hình: Nhóm áp dụng 'Hội đồng hòa giải phục hồi có tham vấn tâm lý' đạt tỷ lệ hàn gắn quan hệ 82%, so với chỉ 25% ở nhóm áp dụng đình chỉ học tập trước toàn trường." },
+          source2: { name: "Nguồn B: Bài đăng phẫn nộ của phụ huynh nạn nhân bạo lực mạng", content: "Phụ huynh kiên quyết yêu cầu nhà trường phải công khai đuổi học kẻ bắt nạt và từ chối mọi nỗ lực gặp gỡ hòa giải kín." },
+          questions: [
+            "Mục đích cốt lõi của giáo dục học đường là chữa lành phục hồi hành vi hay là trừng phạt cách ly?",
+            "Làm thế nào để bảo đảm sự an toàn danh dự và không gây tổn thương thứ phát cho nạn nhân?",
+            "Cần cơ chế giám sát thực nghiệm nào để bảo đảm kẻ bắt nạt thực sự chuyển biến nhận thức sâu sắc?"
+          ]
+        },
         roles: {
-          A: {
-            role: "Nạn Nhân & Đại Diện Học Sinh",
-            tag: "GÓC NHÌN: HỌC SINH",
-            data: "Công khai kỷ luật trước cờ chỉ làm vết thương tâm lý lan rộng, khiến nạn nhân tiếp tục bị bàn tán và kẻ bắt nạt nảy sinh thù hận trả thù."
-          },
-          B: {
-            role: "Ban Quản Sinh & Giám Thị",
-            tag: "GÓC NHÌN: NHÀ TRƯỜNG",
-            data: "Cần có tính răn đe toàn trường để cảnh tỉnh các nhóm khác; nếu chỉ hòa giải kín thì các hành vi bắt nạt mạng sẽ tiếp tục tái diễn."
-          },
-          C: {
-            role: "Hai Bên Phụ Huynh",
-            tag: "GÓC NHÌN: GIA ĐÌNH",
-            data: "Mong muốn tìm hiểu căn nguyên mâu thuẫn gia đình và cam kết giáo dục con em, yêu cầu xóa vĩnh viễn các bài đăng độc hại."
-          },
-          D: {
-            role: "Chuyên Viên Tham Vấn Tâm Lý",
-            tag: "GÓC NHÌN: CHUYÊN GIA",
-            data: "Mô hình Công lý phục hồi (Restorative Justice): Bắt buộc kẻ bắt nạt thực hiện các hành động bù đắp trách nhiệm và tham gia trị liệu tâm lý."
-          }
+          A: { role: "Nạn Nhân & Đại Diện Học Sinh", tag: "GÓC NHÌN: HỌC SINH", data: "Công khai kỷ luật trước cờ chỉ làm vết thương tâm lý lan rộng, khiến nạn nhân tiếp tục bị bàn tán và kẻ bắt nạt nảy sinh thù hận trả thù." },
+          B: { role: "Ban Quản Sinh & Giám Thị", tag: "GÓC NHÌN: NHÀ TRƯỜNG", data: "Cần có tính răn đe toàn trường để cảnh tỉnh các nhóm khác; nếu chỉ hòa giải kín thì các hành vi bắt nạt mạng sẽ tiếp tục tái diễn." },
+          C: { role: "Hai Bên Phụ Huynh", tag: "GÓC NHÌN: GIA ĐÌNH", data: "Mong muốn tìm hiểu căn nguyên mâu thuẫn gia đình và cam kết giáo dục con em, yêu cầu xóa vĩnh viễn các bài đăng độc hại." },
+          D: { role: "Chuyên Viên Tham Vấn Tâm Lý", tag: "GÓC NHÌN: CHUYÊN GIA", data: "Mô hình Công lý phục hồi (Restorative Justice): Bắt buộc kẻ bắt nạt thực hiện các hành động bù đắp trách nhiệm và tham gia trị liệu tâm lý." }
         }
       },
       10: {
         keyword: "trắc nghiệm",
         title: "Đổi mới kiểm tra: Thay thế hoàn toàn thi trắc nghiệm bằng tự luận mở kết hợp vấn đáp phản biện",
+        level1Items: [
+          { text: "Báo cáo của Hội Khảo thí Quốc tế: Thi trắc nghiệm khách quan chuẩn hóa có độ tin cậy chấm thi (Reliability) đạt 0.95/1.0, cao hơn chấm tự luận và vấn đáp (0.65 - 0.75).", type: "FACT", hint: "Dữ liệu xác thực (FACT): Chỉ số độ tin cậy đo lường khoa học khảo thí quốc tế." },
+          { text: "Thi trắc nghiệm đã biến học sinh thành những cỗ máy khoanh bừa vô cảm, làm thui chột hoàn toàn khả năng tư duy và diễn đạt.", type: "OPINION", hint: "Quan điểm cá nhân (OPINION): Đánh giá mang tính phóng đại chủ quan về tác động của trắc nghiệm." },
+          { text: "Nếu chuyển sang thi vấn đáp, chắc chắn 100% giáo viên sẽ thiên vị, tiêu cực xin điểm và nền học thuật sẽ hoàn toàn tan vỡ.", type: "FALLACY", hint: "Bẫy suy diễn gây nhiễu (FALLACY): Ngụy biện quy kết cực đoan (Hasty Generalization) thiếu bằng chứng." },
+          { text: "Khảo sát thị trường lao động 2024: 80% năng lực tuyển dụng đòi hỏi kỹ năng đối thoại trực tiếp, phản biện tình huống và giải quyết vấn đề mở.", type: "FACT", hint: "Dữ liệu xác thực (FACT): Thống kê nhu cầu tuyển dụng thực tế của thị trường nghề nghiệp." },
+          { text: "Học sinh THPT cần được rèn luyện bản lĩnh nói trước đám đông, không nên tự giam mình trong 4 đáp án A, B, C, D cứng nhắc.", type: "OPINION", hint: "Quan điểm cá nhân (OPINION): Đề xuất về định hướng rèn luyện kỹ năng mềm cho học sinh." }
+        ],
+        level2Sources: {
+          source1: { name: "Nguồn A: Đề án khảo sát 2.000 giáo viên THPT của Viện Khoa học Giáo dục", content: "88% giáo viên ủng hộ đề thi có câu hỏi mở và vấn đáp, nhưng 94% thừa nhận không đủ thời gian và nhân lực để chấm thi nếu áp dụng ở quy mô hàng ngàn học sinh." },
+          source2: { name: "Nguồn B: Thảo luận trên diễn đàn ôn thi học sinh THPT", content: "78% học sinh khối 12 lo sợ thi vấn đáp sẽ bị tâm lý run rẩy, 'khớp' trước giám khảo khó tính và kiến nghị giữ nguyên thi trắc nghiệm chuẩn hóa." },
+          questions: [
+            "Làm thế nào để cân bằng giữa tính khách quan quy mô lớn của trắc nghiệm và chiều sâu tư duy của vấn đáp?",
+            "Liệu việc áp dụng mô hình phối hợp (40% trắc nghiệm + 40% tự luận + 20% vấn đáp) có giải quyết được điểm nghẽn nhân lực?",
+            "Cần xây dựng rubric thang đo chi tiết thế nào để hạn chế tối đa tính cảm tính chủ quan của người chấm thi?"
+          ]
+        },
         roles: {
-          A: {
-            role: "Thí Sinh THPT",
-            tag: "GÓC NHÌN: HỌC SINH",
-            data: "Thi vấn đáp và tự luận mở giúp phát huy tư duy logic, không còn phải học vẹt mẹo khoanh bừa trắc nghiệm nhưng lo lắng áp lực tâm lý khi đối diện giám khảo."
-          },
-          B: {
-            role: "Tổ Khảo Thí & Giáo Viên",
-            tag: "GÓC NHÌN: NHÀ TRƯỜNG",
-            data: "Áp lực quá tải về thời gian chấm thi khi quy mô hàng ngàn học sinh; khó đảm bảo tính khách quan và đồng đều tuyệt đối giữa các giám khảo."
-          },
-          C: {
-            role: "Ban Đại Diện Cha Mẹ",
-            tag: "GÓC NHÌN: GIA ĐÌNH",
-            data: "Ủng hộ rèn luyện kỹ năng ăn nói tự tin cho con trước khi vào đại học nhưng lo ngại tiêu cực, xin điểm trong thi vấn đáp."
-          },
-          D: {
-            role: "Chuyên Gia Đo Lường Giáo Dục",
-            tag: "GÓC NHÌN: CHUYÊN GIA",
-            data: "Mô hình đánh giá chuẩn quốc tế khuyến nghị phối hợp đa phương thức: 40% trắc nghiệm chuẩn hóa + 40% tiểu luận dự án + 20% vấn đáp đối thoại."
-          }
+          A: { role: "Thí Sinh THPT", tag: "GÓC NHÌN: HỌC SINH", data: "Thi vấn đáp và tự luận mở giúp phát huy tư duy logic, không còn phải học vẹt mẹo khoanh bừa trắc nghiệm nhưng lo lắng áp lực tâm lý khi đối diện giám khảo." },
+          B: { role: "Tổ Khảo Thí & Giáo Viên", tag: "GÓC NHÌN: NHÀ TRƯỜNG", data: "Áp lực quá tải về thời gian chấm thi khi quy mô hàng ngàn học sinh; khó đảm bảo tính khách quan và đồng đều tuyệt đối giữa các giám khảo." },
+          C: { role: "Ban Đại Diện Cha Mẹ", tag: "GÓC NHÌN: GIA ĐÌNH", data: "Ủng hộ rèn luyện kỹ năng ăn nói tự tin cho con trước khi vào đại học nhưng lo ngại tiêu cực, xin điểm trong thi vấn đáp." },
+          D: { role: "Chuyên Gia Đo Lường Giáo Dục", tag: "GÓC NHÌN: CHUYÊN GIA", data: "Mô hình đánh giá chuẩn quốc tế khuyến nghị phối hợp đa phương thức: 40% trắc nghiệm chuẩn hóa + 40% tiểu luận dự án + 20% vấn đáp đối thoại." }
         }
       }
     };
@@ -4223,7 +4223,7 @@ Trả về DUY NHẤT một chuỗi JSON hợp lệ không kèm markdown theo đ
           <div class="text-[11px] font-mono text-amber-400 font-bold flex items-center gap-1.5 not-italic">
             <i class="fa-solid fa-magnifying-glass-chart text-amber-300"></i> AI ĐÃ ĐỌC BẢN ĐỒNG THUẬN ANCHOR CARD VÀ ĐẶT CÂU HỎI PHẢN BIỆN CHUYÊN SÂU:
           </div>
-          <p class="leading-relaxed font-serif text-amber-100 text-xs sm:text-sm"><i class="fa-solid fa-quote-left text-amber-400 mr-2 opacity-60"></i>${chosen}<i class="fa-solid fa-quote-right text-amber-400 ml-2 opacity-60"></i></p>
+          <p class="font-sans font-medium text-amber-50 text-sm sm:text-base leading-relaxed tracking-normal not-italic"><i class="fa-solid fa-quote-left text-amber-400 mr-2 opacity-70"></i>${chosen}<i class="fa-solid fa-quote-right text-amber-400 ml-2 opacity-70"></i></p>
         </div>
       `;
     }
